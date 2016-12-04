@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f1f1238d63824315a673f294c3d3461f" Name="Diagram1">
+        <EntityTypeShape EntityType="YBPFDB_Model.BaoWens" Width="1.5" PointX="3" PointY="3" />
+        <EntityTypeShape EntityType="YBPFDB_Model.BwYbs" Width="1.5" PointX="5.25" PointY="1.125" />
+        <EntityTypeShape EntityType="YBPFDB_Model.sysdiagrams" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="YBPFDB_Model.YbUsers" Width="1.5" PointX="0.75" PointY="3.5" />
+        <AssociationConnector Association="YBPFDB_Model.FK_BaoWen_YbUsers" />
+        <AssociationConnector Association="YBPFDB_Model.FK_BWYB_BaoWen" />
+        <AssociationConnector Association="YBPFDB_Model.FK_BWYB_YbUsers" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

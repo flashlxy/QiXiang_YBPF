@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="YBPFDB_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityType Name="BaoWens">
+          <Key>
+            <PropertyRef Name="BWID" />
+          </Key>
+          <Property Name="BWID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FileName" Type="nvarchar" MaxLength="200" />
+          <Property Name="Content" Type="nvarchar(max)" />
+          <Property Name="YBUserName" Type="nvarchar" MaxLength="20" />
+          <Property Name="CreateTime" Type="datetime" />
+          <Property Name="YBDateTime" Type="datetime" />
+          <Property Name="BWType" Type="nvarchar" MaxLength="20" />
+          <Property Name="YBUserID" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="BwYbs">
+          <Key>
+            <PropertyRef Name="BWYBID" />
+          </Key>
+          <Property Name="BWYBID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="YBUserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="YBDateTime" Type="datetime" />
+          <Property Name="YBType" Type="nvarchar" MaxLength="20" />
+          <Property Name="BWFileName" Type="nvarchar" MaxLength="200" />
+          <Property Name="CountryCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="CountryName" Type="nvarchar" MaxLength="20" />
+          <Property Name="TianQiCode241" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="TianQiCode242" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="TianQiName241" Type="nvarchar" MaxLength="20" />
+          <Property Name="TianQiName242" Type="nvarchar" MaxLength="20" />
+          <Property Name="MinTemp24" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="MaxTemp24" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="TianQiCode481" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="TianQiCode482" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="TianQiName481" Type="nvarchar" MaxLength="20" />
+          <Property Name="TianQiName482" Type="nvarchar" MaxLength="20" />
+          <Property Name="MinTemp48" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="MaxTemp48" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="TianQiCode721" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="TianQiCode722" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="TianQiName721" Type="nvarchar" MaxLength="20" />
+          <Property Name="TianQiName722" Type="nvarchar" MaxLength="20" />
+          <Property Name="MinTemp72" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="MaxTemp72" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="CreateTime" Type="datetime" />
+          <Property Name="BWID" Type="uniqueidentifier" />
+          <Property Name="YBUserID" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="YbUsers">
+          <Key>
+            <PropertyRef Name="YBUserID" />
+          </Key>
+          <Property Name="YBUserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="YBUserName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_BaoWen_YbUsers">
+          <End Role="YbUsers" Type="Self.YbUsers" Multiplicity="0..1" />
+          <End Role="BaoWens" Type="Self.BaoWens" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="YbUsers">
+              <PropertyRef Name="YBUserID" />
+            </Principal>
+            <Dependent Role="BaoWens">
+              <PropertyRef Name="YBUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BWYB_BaoWen">
+          <End Role="BaoWens" Type="Self.BaoWens" Multiplicity="0..1" />
+          <End Role="BwYbs" Type="Self.BwYbs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BaoWens">
+              <PropertyRef Name="BWID" />
+            </Principal>
+            <Dependent Role="BwYbs">
+              <PropertyRef Name="BWID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BWYB_YbUsers">
+          <End Role="YbUsers" Type="Self.YbUsers" Multiplicity="0..1" />
+          <End Role="BwYbs" Type="Self.BwYbs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="YbUsers">
+              <PropertyRef Name="YBUserID" />
+            </Principal>
+            <Dependent Role="BwYbs">
+              <PropertyRef Name="YBUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="YBPFDB_ModelStoreContainer">
+          <EntitySet Name="BaoWens" EntityType="Self.BaoWens" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BwYbs" EntityType="Self.BwYbs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="YbUsers" EntityType="Self.YbUsers" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_BaoWen_YbUsers" Association="Self.FK_BaoWen_YbUsers">
+            <End Role="YbUsers" EntitySet="YbUsers" />
+            <End Role="BaoWens" EntitySet="BaoWens" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BWYB_BaoWen" Association="Self.FK_BWYB_BaoWen">
+            <End Role="BaoWens" EntitySet="BaoWens" />
+            <End Role="BwYbs" EntitySet="BwYbs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BWYB_YbUsers" Association="Self.FK_BWYB_YbUsers">
+            <End Role="YbUsers" EntitySet="YbUsers" />
+            <End Role="BwYbs" EntitySet="BwYbs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="YBPFDB_Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="YBPFDB_Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BaoWens" EntityType="YBPFDB_Model.BaoWens" />
+          <EntitySet Name="BwYbs" EntityType="YBPFDB_Model.BwYbs" />
+          <EntitySet Name="sysdiagrams" EntityType="YBPFDB_Model.sysdiagrams" />
+          <EntitySet Name="YbUsers" EntityType="YBPFDB_Model.YbUsers" />
+          <AssociationSet Name="FK_BaoWen_YbUsers" Association="YBPFDB_Model.FK_BaoWen_YbUsers">
+            <End Role="YbUsers" EntitySet="YbUsers" />
+            <End Role="BaoWens" EntitySet="BaoWens" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BWYB_BaoWen" Association="YBPFDB_Model.FK_BWYB_BaoWen">
+            <End Role="BaoWens" EntitySet="BaoWens" />
+            <End Role="BwYbs" EntitySet="BwYbs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BWYB_YbUsers" Association="YBPFDB_Model.FK_BWYB_YbUsers">
+            <End Role="YbUsers" EntitySet="YbUsers" />
+            <End Role="BwYbs" EntitySet="BwYbs" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="BaoWens">
+          <Key>
+            <PropertyRef Name="BWID" />
+          </Key>
+          <Property Name="BWID" Type="Guid" Nullable="false" />
+          <Property Name="FileName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="YBUserName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="DateTime" Precision="3" />
+          <Property Name="YBDateTime" Type="DateTime" Precision="3" />
+          <Property Name="BWType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="YBUserID" Type="Guid" />
+          <NavigationProperty Name="YbUsers" Relationship="YBPFDB_Model.FK_BaoWen_YbUsers" FromRole="BaoWens" ToRole="YbUsers" />
+          <NavigationProperty Name="BwYbs" Relationship="YBPFDB_Model.FK_BWYB_BaoWen" FromRole="BaoWens" ToRole="BwYbs" />
+        </EntityType>
+        <EntityType Name="BwYbs">
+          <Key>
+            <PropertyRef Name="BWYBID" />
+          </Key>
+          <Property Name="BWYBID" Type="Guid" Nullable="false" />
+          <Property Name="YBUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="YBDateTime" Type="DateTime" Precision="3" />
+          <Property Name="YBType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="BWFileName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="CountryCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CountryName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TianQiCode241" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TianQiCode242" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TianQiName241" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TianQiName242" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MinTemp24" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="MaxTemp24" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TianQiCode481" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TianQiCode482" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TianQiName481" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TianQiName482" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MinTemp48" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="MaxTemp48" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TianQiCode721" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TianQiCode722" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TianQiName721" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TianQiName722" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MinTemp72" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="MaxTemp72" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CreateTime" Type="DateTime" Precision="3" />
+          <Property Name="BWID" Type="Guid" />
+          <Property Name="YBUserID" Type="Guid" />
+          <NavigationProperty Name="BaoWens" Relationship="YBPFDB_Model.FK_BWYB_BaoWen" FromRole="BwYbs" ToRole="BaoWens" />
+          <NavigationProperty Name="YbUsers" Relationship="YBPFDB_Model.FK_BWYB_YbUsers" FromRole="BwYbs" ToRole="YbUsers" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="YbUsers">
+          <Key>
+            <PropertyRef Name="YBUserID" />
+          </Key>
+          <Property Name="YBUserID" Type="Guid" Nullable="false" />
+          <Property Name="YBUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="BaoWens" Relationship="YBPFDB_Model.FK_BaoWen_YbUsers" FromRole="YbUsers" ToRole="BaoWens" />
+          <NavigationProperty Name="BwYbs" Relationship="YBPFDB_Model.FK_BWYB_YbUsers" FromRole="YbUsers" ToRole="BwYbs" />
+        </EntityType>
+        <Association Name="FK_BaoWen_YbUsers">
+          <End Type="YBPFDB_Model.YbUsers" Role="YbUsers" Multiplicity="0..1" />
+          <End Type="YBPFDB_Model.BaoWens" Role="BaoWens" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="YbUsers">
+              <PropertyRef Name="YBUserID" />
+            </Principal>
+            <Dependent Role="BaoWens">
+              <PropertyRef Name="YBUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BWYB_BaoWen">
+          <End Type="YBPFDB_Model.BaoWens" Role="BaoWens" Multiplicity="0..1" />
+          <End Type="YBPFDB_Model.BwYbs" Role="BwYbs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BaoWens">
+              <PropertyRef Name="BWID" />
+            </Principal>
+            <Dependent Role="BwYbs">
+              <PropertyRef Name="BWID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BWYB_YbUsers">
+          <End Type="YBPFDB_Model.YbUsers" Role="YbUsers" Multiplicity="0..1" />
+          <End Type="YBPFDB_Model.BwYbs" Role="BwYbs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="YbUsers">
+              <PropertyRef Name="YBUserID" />
+            </Principal>
+            <Dependent Role="BwYbs">
+              <PropertyRef Name="YBUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="YBPFDB_ModelStoreContainer" CdmEntityContainer="YBPFDB_Entities">
+          <EntitySetMapping Name="BaoWens">
+            <EntityTypeMapping TypeName="YBPFDB_Model.BaoWens">
+              <MappingFragment StoreEntitySet="BaoWens">
+                <ScalarProperty Name="YBUserID" ColumnName="YBUserID" />
+                <ScalarProperty Name="BWType" ColumnName="BWType" />
+                <ScalarProperty Name="YBDateTime" ColumnName="YBDateTime" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="YBUserName" ColumnName="YBUserName" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="BWID" ColumnName="BWID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BwYbs">
+            <EntityTypeMapping TypeName="YBPFDB_Model.BwYbs">
+              <MappingFragment StoreEntitySet="BwYbs">
+                <ScalarProperty Name="YBUserID" ColumnName="YBUserID" />
+                <ScalarProperty Name="BWID" ColumnName="BWID" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="MaxTemp72" ColumnName="MaxTemp72" />
+                <ScalarProperty Name="MinTemp72" ColumnName="MinTemp72" />
+                <ScalarProperty Name="TianQiName722" ColumnName="TianQiName722" />
+                <ScalarProperty Name="TianQiName721" ColumnName="TianQiName721" />
+                <ScalarProperty Name="TianQiCode722" ColumnName="TianQiCode722" />
+                <ScalarProperty Name="TianQiCode721" ColumnName="TianQiCode721" />
+                <ScalarProperty Name="MaxTemp48" ColumnName="MaxTemp48" />
+                <ScalarProperty Name="MinTemp48" ColumnName="MinTemp48" />
+                <ScalarProperty Name="TianQiName482" ColumnName="TianQiName482" />
+                <ScalarProperty Name="TianQiName481" ColumnName="TianQiName481" />
+                <ScalarProperty Name="TianQiCode482" ColumnName="TianQiCode482" />
+                <ScalarProperty Name="TianQiCode481" ColumnName="TianQiCode481" />
+                <ScalarProperty Name="MaxTemp24" ColumnName="MaxTemp24" />
+                <ScalarProperty Name="MinTemp24" ColumnName="MinTemp24" />
+                <ScalarProperty Name="TianQiName242" ColumnName="TianQiName242" />
+                <ScalarProperty Name="TianQiName241" ColumnName="TianQiName241" />
+                <ScalarProperty Name="TianQiCode242" ColumnName="TianQiCode242" />
+                <ScalarProperty Name="TianQiCode241" ColumnName="TianQiCode241" />
+                <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+                <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+                <ScalarProperty Name="BWFileName" ColumnName="BWFileName" />
+                <ScalarProperty Name="YBType" ColumnName="YBType" />
+                <ScalarProperty Name="YBDateTime" ColumnName="YBDateTime" />
+                <ScalarProperty Name="YBUserName" ColumnName="YBUserName" />
+                <ScalarProperty Name="BWYBID" ColumnName="BWYBID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="YBPFDB_Model.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="YbUsers">
+            <EntityTypeMapping TypeName="YBPFDB_Model.YbUsers">
+              <MappingFragment StoreEntitySet="YbUsers">
+                <ScalarProperty Name="YBUserName" ColumnName="YBUserName" />
+                <ScalarProperty Name="YBUserID" ColumnName="YBUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
