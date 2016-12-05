@@ -26,7 +26,7 @@ namespace PF.Wpf
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            BaoWen.BaoWenFile bf = new BaoWen.BaoWenFile();
+            //BaoWen.BaoWenFile bf = new BaoWen.BaoWenFile();
             //bf.BaoWen_ImportYbUser();
         }
     }
