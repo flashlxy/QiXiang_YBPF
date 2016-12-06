@@ -14,7 +14,7 @@ namespace PF.Utility
             try
             {
                 XmlDocument xmlDoc = new XmlDocument();
-                xmlDoc.Load(AppDomain.CurrentDomain.BaseDirectory + ("/data/tq.xml"));
+                xmlDoc.Load(@"D:\data\tq.xml");
                 XmlNode xn = xmlDoc.SelectSingleNode("information");
                 XmlNodeList xnl = xn.ChildNodes;
                 foreach (XmlNode xns in xnl)
@@ -45,7 +45,7 @@ namespace PF.Utility
             try
             {
                 XmlDocument xmlDoc = new XmlDocument();
-                xmlDoc.Load(AppDomain.CurrentDomain.BaseDirectory+("/data/tq.xml"));
+                xmlDoc.Load(@"D:\data\tq.xml");
                 XmlNode xn = xmlDoc.SelectSingleNode("information");
                 XmlNodeList xnl = xn.ChildNodes;
                 foreach (XmlNode xns in xnl)
@@ -75,7 +75,7 @@ namespace PF.Utility
             try
             {
                 XmlDocument xmlDoc = new XmlDocument();
-                xmlDoc.Load(AppDomain.CurrentDomain.BaseDirectory + ("/data/tq.xml"));
+                xmlDoc.Load(@"D:\data\tq.xml");
                 XmlNode xn = xmlDoc.SelectSingleNode("information");
                 XmlNodeList xnl = xn.ChildNodes;
                 foreach (XmlNode xns in xnl)
@@ -106,7 +106,7 @@ namespace PF.Utility
             try
             {
                 XmlDocument xmlDoc = new XmlDocument();
-                xmlDoc.Load(AppDomain.CurrentDomain.BaseDirectory + ("/data/fs.xml"));
+                xmlDoc.Load(@"D:\data\fs.xml");
                 XmlNode xn = xmlDoc.SelectSingleNode("information");
                 XmlNodeList xnl = xn.ChildNodes;
                 foreach (XmlNode xns in xnl)
@@ -133,7 +133,7 @@ namespace PF.Utility
             try
             {
                 XmlDocument xmlDoc = new XmlDocument();
-                xmlDoc.Load(AppDomain.CurrentDomain.BaseDirectory + ("/data/fx.xml"));
+                xmlDoc.Load(@"D:\data\fx.xml");
                 XmlNode xn = xmlDoc.SelectSingleNode("information");
                 XmlNodeList xnl = xn.ChildNodes;
                 foreach (XmlNode xns in xnl)
