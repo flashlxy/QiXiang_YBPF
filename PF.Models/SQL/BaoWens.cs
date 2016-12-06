@@ -27,6 +27,7 @@ namespace PF.Models.SQL
         public Nullable<System.DateTime> YBDateTime { get; set; }
         public string BWType { get; set; }
         public Nullable<System.Guid> YBUserID { get; set; }
+        public Nullable<bool> IsTranslate { get; set; }
     
         public virtual YbUsers YbUsers { get; set; }
         public virtual ICollection<BwYbs> BwYbs { get; set; }

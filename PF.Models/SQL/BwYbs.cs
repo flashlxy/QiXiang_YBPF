@@ -21,27 +21,51 @@ namespace PF.Models.SQL
         public string BWFileName { get; set; }
         public string CountryCode { get; set; }
         public string CountryName { get; set; }
-        public Nullable<decimal> TianQiCode241 { get; set; }
-        public Nullable<decimal> TianQiCode242 { get; set; }
-        public string TianQiName241 { get; set; }
-        public string TianQiName242 { get; set; }
+        public Nullable<decimal> TianQiCode12 { get; set; }
+        public Nullable<decimal> TianQiCode24 { get; set; }
+        public string TianQiName12 { get; set; }
+        public string TianQiName24 { get; set; }
         public Nullable<decimal> MinTemp24 { get; set; }
         public Nullable<decimal> MaxTemp24 { get; set; }
-        public Nullable<decimal> TianQiCode481 { get; set; }
-        public Nullable<decimal> TianQiCode482 { get; set; }
-        public string TianQiName481 { get; set; }
-        public string TianQiName482 { get; set; }
+        public Nullable<decimal> TianQiCode36 { get; set; }
+        public Nullable<decimal> TianQiCode48 { get; set; }
+        public string TianQiName36 { get; set; }
+        public string TianQiName48 { get; set; }
         public Nullable<decimal> MinTemp48 { get; set; }
         public Nullable<decimal> MaxTemp48 { get; set; }
-        public Nullable<decimal> TianQiCode721 { get; set; }
-        public Nullable<decimal> TianQiCode722 { get; set; }
-        public string TianQiName721 { get; set; }
-        public string TianQiName722 { get; set; }
+        public Nullable<decimal> TianQiCode60 { get; set; }
+        public Nullable<decimal> TianQiCode72 { get; set; }
+        public string TianQiName60 { get; set; }
+        public string TianQiName72 { get; set; }
         public Nullable<decimal> MinTemp72 { get; set; }
         public Nullable<decimal> MaxTemp72 { get; set; }
         public Nullable<System.DateTime> CreateTime { get; set; }
         public Nullable<System.Guid> BWID { get; set; }
         public Nullable<System.Guid> YBUserID { get; set; }
+        public Nullable<decimal> WindDirCode12 { get; set; }
+        public Nullable<decimal> WindDirCode24 { get; set; }
+        public Nullable<decimal> WindDirCode36 { get; set; }
+        public Nullable<decimal> WindDirCode48 { get; set; }
+        public Nullable<decimal> WindDirCode60 { get; set; }
+        public Nullable<decimal> WindDirCode72 { get; set; }
+        public string WindDirName12 { get; set; }
+        public string WindDirName24 { get; set; }
+        public string WindDirName36 { get; set; }
+        public string WindDirName48 { get; set; }
+        public string WindDirName60 { get; set; }
+        public string WindDirName72 { get; set; }
+        public Nullable<decimal> WindSpeCode12 { get; set; }
+        public Nullable<decimal> WindSpeCode24 { get; set; }
+        public Nullable<decimal> WindSpeCode36 { get; set; }
+        public Nullable<decimal> WindSpeCode48 { get; set; }
+        public Nullable<decimal> WindSpeCode60 { get; set; }
+        public Nullable<decimal> WindSpeCode72 { get; set; }
+        public string WindSpeName12 { get; set; }
+        public string WindSpeName24 { get; set; }
+        public string WindSpeName36 { get; set; }
+        public string WindSpeName48 { get; set; }
+        public string WindSpeName60 { get; set; }
+        public string WindSpeName72 { get; set; }
     
         public virtual BaoWens BaoWens { get; set; }
         public virtual YbUsers YbUsers { get; set; }

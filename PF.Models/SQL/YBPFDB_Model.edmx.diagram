@@ -6,13 +6,13 @@
     <edmx:Diagrams>
       <Diagram DiagramId="f1f1238d63824315a673f294c3d3461f" Name="Diagram1">
         <EntityTypeShape EntityType="YBPFDB_Model.BaoWens" Width="1.5" PointX="3" PointY="3" />
-        <EntityTypeShape EntityType="YBPFDB_Model.BwYbs" Width="1.5" PointX="5.25" PointY="1.125" />
         <EntityTypeShape EntityType="YBPFDB_Model.sysdiagrams" Width="1.5" PointX="0.75" PointY="6.75" />
         <EntityTypeShape EntityType="YBPFDB_Model.YbUsers" Width="1.5" PointX="0.75" PointY="3.5" />
         <AssociationConnector Association="YBPFDB_Model.FK_BaoWen_YbUsers" />
+        <EntityTypeShape EntityType="YBPFDB_Model.BwYbs" Width="1.5" PointX="5.25" PointY="0.75" />
         <AssociationConnector Association="YBPFDB_Model.FK_BWYB_BaoWen" />
         <AssociationConnector Association="YBPFDB_Model.FK_BWYB_YbUsers" />
-      </Diagram>
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

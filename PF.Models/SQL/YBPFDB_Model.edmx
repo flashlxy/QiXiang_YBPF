@@ -17,6 +17,7 @@
           <Property Name="YBDateTime" Type="datetime" />
           <Property Name="BWType" Type="nvarchar" MaxLength="20" />
           <Property Name="YBUserID" Type="uniqueidentifier" />
+          <Property Name="IsTranslate" Type="bit" />
         </EntityType>
         <EntityType Name="BwYbs">
           <Key>
@@ -29,27 +30,51 @@
           <Property Name="BWFileName" Type="nvarchar" MaxLength="200" />
           <Property Name="CountryCode" Type="nvarchar" MaxLength="20" />
           <Property Name="CountryName" Type="nvarchar" MaxLength="20" />
-          <Property Name="TianQiCode241" Type="decimal" Precision="18" Scale="0" />
-          <Property Name="TianQiCode242" Type="decimal" Precision="18" Scale="0" />
-          <Property Name="TianQiName241" Type="nvarchar" MaxLength="20" />
-          <Property Name="TianQiName242" Type="nvarchar" MaxLength="20" />
+          <Property Name="TianQiCode12" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="TianQiCode24" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="TianQiName12" Type="nvarchar" MaxLength="20" />
+          <Property Name="TianQiName24" Type="nvarchar" MaxLength="20" />
           <Property Name="MinTemp24" Type="decimal" Precision="18" Scale="0" />
           <Property Name="MaxTemp24" Type="decimal" Precision="18" Scale="0" />
-          <Property Name="TianQiCode481" Type="decimal" Precision="18" Scale="0" />
-          <Property Name="TianQiCode482" Type="decimal" Precision="18" Scale="0" />
-          <Property Name="TianQiName481" Type="nvarchar" MaxLength="20" />
-          <Property Name="TianQiName482" Type="nvarchar" MaxLength="20" />
+          <Property Name="TianQiCode36" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="TianQiCode48" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="TianQiName36" Type="nvarchar" MaxLength="20" />
+          <Property Name="TianQiName48" Type="nvarchar" MaxLength="20" />
           <Property Name="MinTemp48" Type="decimal" Precision="18" Scale="0" />
           <Property Name="MaxTemp48" Type="decimal" Precision="18" Scale="0" />
-          <Property Name="TianQiCode721" Type="decimal" Precision="18" Scale="0" />
-          <Property Name="TianQiCode722" Type="decimal" Precision="18" Scale="0" />
-          <Property Name="TianQiName721" Type="nvarchar" MaxLength="20" />
-          <Property Name="TianQiName722" Type="nvarchar" MaxLength="20" />
+          <Property Name="TianQiCode60" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="TianQiCode72" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="TianQiName60" Type="nvarchar" MaxLength="20" />
+          <Property Name="TianQiName72" Type="nvarchar" MaxLength="20" />
           <Property Name="MinTemp72" Type="decimal" Precision="18" Scale="0" />
           <Property Name="MaxTemp72" Type="decimal" Precision="18" Scale="0" />
           <Property Name="CreateTime" Type="datetime" />
           <Property Name="BWID" Type="uniqueidentifier" />
           <Property Name="YBUserID" Type="uniqueidentifier" />
+          <Property Name="WindDirCode12" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="WindDirCode24" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="WindDirCode36" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="WindDirCode48" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="WindDirCode60" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="WindDirCode72" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="WindDirName12" Type="nvarchar" MaxLength="20" />
+          <Property Name="WindDirName24" Type="nvarchar" MaxLength="20" />
+          <Property Name="WindDirName36" Type="nvarchar" MaxLength="20" />
+          <Property Name="WindDirName48" Type="nvarchar" MaxLength="20" />
+          <Property Name="WindDirName60" Type="nvarchar" MaxLength="20" />
+          <Property Name="WindDirName72" Type="nvarchar" MaxLength="20" />
+          <Property Name="WindSpeCode12" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="WindSpeCode24" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="WindSpeCode36" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="WindSpeCode48" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="WindSpeCode60" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="WindSpeCode72" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="WindSpeName12" Type="nvarchar" MaxLength="20" />
+          <Property Name="WindSpeName24" Type="nvarchar" MaxLength="20" />
+          <Property Name="WindSpeName36" Type="nvarchar" MaxLength="20" />
+          <Property Name="WindSpeName48" Type="nvarchar" MaxLength="20" />
+          <Property Name="WindSpeName60" Type="nvarchar" MaxLength="20" />
+          <Property Name="WindSpeName72" Type="nvarchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -128,13 +153,13 @@
       <Schema Namespace="YBPFDB_Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
         <EntityContainer Name="YBPFDB_Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="BaoWens" EntityType="YBPFDB_Model.BaoWens" />
-          <EntitySet Name="BwYbs" EntityType="YBPFDB_Model.BwYbs" />
           <EntitySet Name="sysdiagrams" EntityType="YBPFDB_Model.sysdiagrams" />
           <EntitySet Name="YbUsers" EntityType="YBPFDB_Model.YbUsers" />
           <AssociationSet Name="FK_BaoWen_YbUsers" Association="YBPFDB_Model.FK_BaoWen_YbUsers">
             <End Role="YbUsers" EntitySet="YbUsers" />
             <End Role="BaoWens" EntitySet="BaoWens" />
           </AssociationSet>
+          <EntitySet Name="BwYbs" EntityType="YBPFDB_Model.BwYbs" />
           <AssociationSet Name="FK_BWYB_BaoWen" Association="YBPFDB_Model.FK_BWYB_BaoWen">
             <End Role="BaoWens" EntitySet="BaoWens" />
             <End Role="BwYbs" EntitySet="BwYbs" />
@@ -143,7 +168,7 @@
             <End Role="YbUsers" EntitySet="YbUsers" />
             <End Role="BwYbs" EntitySet="BwYbs" />
           </AssociationSet>
-        </EntityContainer>
+          </EntityContainer>
         <EntityType Name="BaoWens">
           <Key>
             <PropertyRef Name="BWID" />
@@ -158,41 +183,7 @@
           <Property Name="YBUserID" Type="Guid" />
           <NavigationProperty Name="YbUsers" Relationship="YBPFDB_Model.FK_BaoWen_YbUsers" FromRole="BaoWens" ToRole="YbUsers" />
           <NavigationProperty Name="BwYbs" Relationship="YBPFDB_Model.FK_BWYB_BaoWen" FromRole="BaoWens" ToRole="BwYbs" />
-        </EntityType>
-        <EntityType Name="BwYbs">
-          <Key>
-            <PropertyRef Name="BWYBID" />
-          </Key>
-          <Property Name="BWYBID" Type="Guid" Nullable="false" />
-          <Property Name="YBUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="YBDateTime" Type="DateTime" Precision="3" />
-          <Property Name="YBType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="BWFileName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="CountryCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="CountryName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="TianQiCode241" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="TianQiCode242" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="TianQiName241" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="TianQiName242" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="MinTemp24" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="MaxTemp24" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="TianQiCode481" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="TianQiCode482" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="TianQiName481" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="TianQiName482" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="MinTemp48" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="MaxTemp48" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="TianQiCode721" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="TianQiCode722" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="TianQiName721" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="TianQiName722" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="MinTemp72" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="MaxTemp72" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="CreateTime" Type="DateTime" Precision="3" />
-          <Property Name="BWID" Type="Guid" />
-          <Property Name="YBUserID" Type="Guid" />
-          <NavigationProperty Name="BaoWens" Relationship="YBPFDB_Model.FK_BWYB_BaoWen" FromRole="BwYbs" ToRole="BaoWens" />
-          <NavigationProperty Name="YbUsers" Relationship="YBPFDB_Model.FK_BWYB_YbUsers" FromRole="BwYbs" ToRole="YbUsers" />
+          <Property Name="IsTranslate" Type="Boolean" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -225,6 +216,65 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="BwYbs">
+          <Key>
+            <PropertyRef Name="BWYBID" />
+          </Key>
+          <Property Name="BWYBID" Type="Guid" Nullable="false" />
+          <Property Name="YBUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="YBDateTime" Type="DateTime" Precision="3" />
+          <Property Name="YBType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="BWFileName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="CountryCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CountryName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TianQiCode12" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TianQiCode24" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TianQiName12" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TianQiName24" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MinTemp24" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="MaxTemp24" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TianQiCode36" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TianQiCode48" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TianQiName36" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TianQiName48" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MinTemp48" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="MaxTemp48" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TianQiCode60" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TianQiCode72" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TianQiName60" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TianQiName72" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MinTemp72" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="MaxTemp72" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CreateTime" Type="DateTime" Precision="3" />
+          <Property Name="BWID" Type="Guid" />
+          <Property Name="YBUserID" Type="Guid" />
+          <Property Name="WindDirCode12" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="WindDirCode24" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="WindDirCode36" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="WindDirCode48" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="WindDirCode60" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="WindDirCode72" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="WindDirName12" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="WindDirName24" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="WindDirName36" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="WindDirName48" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="WindDirName60" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="WindDirName72" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="WindSpeCode12" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="WindSpeCode24" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="WindSpeCode36" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="WindSpeCode48" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="WindSpeCode60" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="WindSpeCode72" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="WindSpeName12" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="WindSpeName24" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="WindSpeName36" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="WindSpeName48" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="WindSpeName60" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="WindSpeName72" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="BaoWens" Relationship="YBPFDB_Model.FK_BWYB_BaoWen" FromRole="BwYbs" ToRole="BaoWens" />
+          <NavigationProperty Name="YbUsers" Relationship="YBPFDB_Model.FK_BWYB_YbUsers" FromRole="BwYbs" ToRole="YbUsers" />
+        </EntityType>
         <Association Name="FK_BWYB_BaoWen">
           <End Type="YBPFDB_Model.BaoWens" Role="BaoWens" Multiplicity="0..1" />
           <End Type="YBPFDB_Model.BwYbs" Role="BwYbs" Multiplicity="*" />
@@ -249,7 +299,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -258,6 +308,7 @@
           <EntitySetMapping Name="BaoWens">
             <EntityTypeMapping TypeName="YBPFDB_Model.BaoWens">
               <MappingFragment StoreEntitySet="BaoWens">
+                <ScalarProperty Name="IsTranslate" ColumnName="IsTranslate" />
                 <ScalarProperty Name="YBUserID" ColumnName="YBUserID" />
                 <ScalarProperty Name="BWType" ColumnName="BWType" />
                 <ScalarProperty Name="YBDateTime" ColumnName="YBDateTime" />
@@ -266,40 +317,6 @@
                 <ScalarProperty Name="Content" ColumnName="Content" />
                 <ScalarProperty Name="FileName" ColumnName="FileName" />
                 <ScalarProperty Name="BWID" ColumnName="BWID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="BwYbs">
-            <EntityTypeMapping TypeName="YBPFDB_Model.BwYbs">
-              <MappingFragment StoreEntitySet="BwYbs">
-                <ScalarProperty Name="YBUserID" ColumnName="YBUserID" />
-                <ScalarProperty Name="BWID" ColumnName="BWID" />
-                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
-                <ScalarProperty Name="MaxTemp72" ColumnName="MaxTemp72" />
-                <ScalarProperty Name="MinTemp72" ColumnName="MinTemp72" />
-                <ScalarProperty Name="TianQiName722" ColumnName="TianQiName722" />
-                <ScalarProperty Name="TianQiName721" ColumnName="TianQiName721" />
-                <ScalarProperty Name="TianQiCode722" ColumnName="TianQiCode722" />
-                <ScalarProperty Name="TianQiCode721" ColumnName="TianQiCode721" />
-                <ScalarProperty Name="MaxTemp48" ColumnName="MaxTemp48" />
-                <ScalarProperty Name="MinTemp48" ColumnName="MinTemp48" />
-                <ScalarProperty Name="TianQiName482" ColumnName="TianQiName482" />
-                <ScalarProperty Name="TianQiName481" ColumnName="TianQiName481" />
-                <ScalarProperty Name="TianQiCode482" ColumnName="TianQiCode482" />
-                <ScalarProperty Name="TianQiCode481" ColumnName="TianQiCode481" />
-                <ScalarProperty Name="MaxTemp24" ColumnName="MaxTemp24" />
-                <ScalarProperty Name="MinTemp24" ColumnName="MinTemp24" />
-                <ScalarProperty Name="TianQiName242" ColumnName="TianQiName242" />
-                <ScalarProperty Name="TianQiName241" ColumnName="TianQiName241" />
-                <ScalarProperty Name="TianQiCode242" ColumnName="TianQiCode242" />
-                <ScalarProperty Name="TianQiCode241" ColumnName="TianQiCode241" />
-                <ScalarProperty Name="CountryName" ColumnName="CountryName" />
-                <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
-                <ScalarProperty Name="BWFileName" ColumnName="BWFileName" />
-                <ScalarProperty Name="YBType" ColumnName="YBType" />
-                <ScalarProperty Name="YBDateTime" ColumnName="YBDateTime" />
-                <ScalarProperty Name="YBUserName" ColumnName="YBUserName" />
-                <ScalarProperty Name="BWYBID" ColumnName="BWYBID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -319,6 +336,64 @@
               <MappingFragment StoreEntitySet="YbUsers">
                 <ScalarProperty Name="YBUserName" ColumnName="YBUserName" />
                 <ScalarProperty Name="YBUserID" ColumnName="YBUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BwYbs">
+            <EntityTypeMapping TypeName="YBPFDB_Model.BwYbs">
+              <MappingFragment StoreEntitySet="BwYbs">
+                <ScalarProperty Name="WindSpeName72" ColumnName="WindSpeName72" />
+                <ScalarProperty Name="WindSpeName60" ColumnName="WindSpeName60" />
+                <ScalarProperty Name="WindSpeName48" ColumnName="WindSpeName48" />
+                <ScalarProperty Name="WindSpeName36" ColumnName="WindSpeName36" />
+                <ScalarProperty Name="WindSpeName24" ColumnName="WindSpeName24" />
+                <ScalarProperty Name="WindSpeName12" ColumnName="WindSpeName12" />
+                <ScalarProperty Name="WindSpeCode72" ColumnName="WindSpeCode72" />
+                <ScalarProperty Name="WindSpeCode60" ColumnName="WindSpeCode60" />
+                <ScalarProperty Name="WindSpeCode48" ColumnName="WindSpeCode48" />
+                <ScalarProperty Name="WindSpeCode36" ColumnName="WindSpeCode36" />
+                <ScalarProperty Name="WindSpeCode24" ColumnName="WindSpeCode24" />
+                <ScalarProperty Name="WindSpeCode12" ColumnName="WindSpeCode12" />
+                <ScalarProperty Name="WindDirName72" ColumnName="WindDirName72" />
+                <ScalarProperty Name="WindDirName60" ColumnName="WindDirName60" />
+                <ScalarProperty Name="WindDirName48" ColumnName="WindDirName48" />
+                <ScalarProperty Name="WindDirName36" ColumnName="WindDirName36" />
+                <ScalarProperty Name="WindDirName24" ColumnName="WindDirName24" />
+                <ScalarProperty Name="WindDirName12" ColumnName="WindDirName12" />
+                <ScalarProperty Name="WindDirCode72" ColumnName="WindDirCode72" />
+                <ScalarProperty Name="WindDirCode60" ColumnName="WindDirCode60" />
+                <ScalarProperty Name="WindDirCode48" ColumnName="WindDirCode48" />
+                <ScalarProperty Name="WindDirCode36" ColumnName="WindDirCode36" />
+                <ScalarProperty Name="WindDirCode24" ColumnName="WindDirCode24" />
+                <ScalarProperty Name="WindDirCode12" ColumnName="WindDirCode12" />
+                <ScalarProperty Name="YBUserID" ColumnName="YBUserID" />
+                <ScalarProperty Name="BWID" ColumnName="BWID" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="MaxTemp72" ColumnName="MaxTemp72" />
+                <ScalarProperty Name="MinTemp72" ColumnName="MinTemp72" />
+                <ScalarProperty Name="TianQiName72" ColumnName="TianQiName72" />
+                <ScalarProperty Name="TianQiName60" ColumnName="TianQiName60" />
+                <ScalarProperty Name="TianQiCode72" ColumnName="TianQiCode72" />
+                <ScalarProperty Name="TianQiCode60" ColumnName="TianQiCode60" />
+                <ScalarProperty Name="MaxTemp48" ColumnName="MaxTemp48" />
+                <ScalarProperty Name="MinTemp48" ColumnName="MinTemp48" />
+                <ScalarProperty Name="TianQiName48" ColumnName="TianQiName48" />
+                <ScalarProperty Name="TianQiName36" ColumnName="TianQiName36" />
+                <ScalarProperty Name="TianQiCode48" ColumnName="TianQiCode48" />
+                <ScalarProperty Name="TianQiCode36" ColumnName="TianQiCode36" />
+                <ScalarProperty Name="MaxTemp24" ColumnName="MaxTemp24" />
+                <ScalarProperty Name="MinTemp24" ColumnName="MinTemp24" />
+                <ScalarProperty Name="TianQiName24" ColumnName="TianQiName24" />
+                <ScalarProperty Name="TianQiName12" ColumnName="TianQiName12" />
+                <ScalarProperty Name="TianQiCode24" ColumnName="TianQiCode24" />
+                <ScalarProperty Name="TianQiCode12" ColumnName="TianQiCode12" />
+                <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+                <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+                <ScalarProperty Name="BWFileName" ColumnName="BWFileName" />
+                <ScalarProperty Name="YBType" ColumnName="YBType" />
+                <ScalarProperty Name="YBDateTime" ColumnName="YBDateTime" />
+                <ScalarProperty Name="YBUserName" ColumnName="YBUserName" />
+                <ScalarProperty Name="BWYBID" ColumnName="BWYBID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
