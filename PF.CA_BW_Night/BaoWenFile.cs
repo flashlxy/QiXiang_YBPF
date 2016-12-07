@@ -4,12 +4,11 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using PF.BLL.SQL;
 using PF.Models.SQL;
 using PF.Utility;
 
-namespace PF.ConAppNight
+namespace PF.CA_BW_Night
 {
     public class BaoWenFile
     {
@@ -24,6 +23,8 @@ namespace PF.ConAppNight
 
             List<FileInfo> nearFileList = allFileList.Where(a => a.CreationTime >= DateTime.Now.AddDays(-7)).ToList();
 
+
+            int total = 0;
             foreach (FileInfo fileInfo in nearFileList)
             {
                 string fileName = @"\\172.18.226.109\市县一体化平台文档\基本预报\城镇报文\下午16点15前\" + fileInfo.Name;
@@ -80,10 +81,11 @@ namespace PF.ConAppNight
                         baowen.FileName = @"\\172.18.226.109\市县一体化平台文档\基本预报\城镇报文\下午16点15前\" + fileInfo.Name;
                         baowen.IsTranslate = false;
                         bll.Add(baowen);
+                        total++;
                     }
                 }
             }
-
+            Console.WriteLine("晚间报文导入成功，总数：" + total);
 
 
 
@@ -192,7 +194,7 @@ namespace PF.ConAppNight
 
                 return 0;
             }
-            
+
         }
     }
 

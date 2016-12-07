@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("PF.ConAppNight")]
+[assembly: AssemblyTitle("PF.CA_BW_Night")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("PF.ConAppNight")]
+[assembly: AssemblyProduct("PF.CA_BW_Night")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("41b0b013-d287-4e95-9d6f-222a005eff28")]
+[assembly: Guid("e819f36b-a725-40cc-9561-9d2432be9e9b")]
 
 // 程序集的版本信息由下列四个值组成: 
 //
