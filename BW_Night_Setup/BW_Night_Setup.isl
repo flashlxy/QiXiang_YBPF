@@ -343,7 +343,6 @@
 		<row><td>EntityFramework.resources.dll</td><td>{3A0D9AC6-3163-45C2-A7EF-57E32C5B0F7A}</td><td>ZH_HANS</td><td>2</td><td/><td>entityframework.resources.dl</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT</td><td>{ACAEA583-38D4-4B26-A351-1CA8A2D18079}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT1</td><td>{EB31DE9D-12BE-401B-80C8-2B7174F6569C}</td><td>ZH_HANS</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>ISX_DEFAULTCOMPONENT2</td><td>{065EF41D-0FA2-4F94-92A6-206B3C4A6EF7}</td><td>DATA</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>IS_ININSTALL_SHORTCUT</td><td>{0D583DEE-8432-4D0B-8A3B-160D3B22A42F}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>NetworkConnection.dll</td><td>{8F19E472-1589-4E34-A52C-434C763037F6}</td><td>INSTALLDIR</td><td>2</td><td/><td>networkconnection.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>PF.BLL.dll</td><td>{818898BF-1496-4424-8717-4C9C94ABF6D1}</td><td>INSTALLDIR</td><td>2</td><td/><td>pf.bll.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -1060,12 +1059,10 @@
 	<table name="CreateFolder">
 		<col key="yes" def="s72">Directory_</col>
 		<col key="yes" def="s72">Component_</col>
-		<row><td>DATA</td><td>ISX_DEFAULTCOMPONENT2</td></row>
 		<row><td>INSTALLDIR</td><td>EntityFramework.dll</td></row>
 		<row><td>INSTALLDIR</td><td>EntityFramework.resources.dll</td></row>
 		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT</td></row>
 		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT1</td></row>
-		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT2</td></row>
 		<row><td>INSTALLDIR</td><td>IS_ININSTALL_SHORTCUT</td></row>
 		<row><td>INSTALLDIR</td><td>NetworkConnection.dll</td></row>
 		<row><td>INSTALLDIR</td><td>PF.BLL.dll</td></row>
@@ -1160,7 +1157,6 @@
 		<row><td>CommonAppDataFolder</td><td>TARGETDIR</td><td>.:Common~1|CommonAppData</td><td/><td>0</td><td/></row>
 		<row><td>CommonFiles64Folder</td><td>TARGETDIR</td><td>.:Common64</td><td/><td>0</td><td/></row>
 		<row><td>CommonFilesFolder</td><td>TARGETDIR</td><td>.:Common</td><td/><td>0</td><td/></row>
-		<row><td>DATA</td><td>INSTALLDIR</td><td>Data</td><td/><td>0</td><td/></row>
 		<row><td>DATABASEDIR</td><td>ISYourDataBaseDir</td><td>.</td><td/><td>0</td><td/></row>
 		<row><td>DIRECTORY</td><td>ProgramFilesFolder</td><td>青岛市气象局</td><td/><td>0</td><td/></row>
 		<row><td>DIRECTORY1</td><td>ProgramFilesFolder</td><td>刘延瑞</td><td/><td>0</td><td/></row>
@@ -1897,7 +1893,6 @@
 		<row><td>AlwaysInstall</td><td>EntityFramework.resources.dll</td></row>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT</td></row>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT1</td></row>
-		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT2</td></row>
 		<row><td>AlwaysInstall</td><td>IS_ININSTALL_SHORTCUT</td></row>
 		<row><td>AlwaysInstall</td><td>NetworkConnection.dll</td></row>
 		<row><td>AlwaysInstall</td><td>PF.BLL.dll</td></row>
@@ -1923,8 +1918,6 @@
 		<row><td>entityframework.dll</td><td>EntityFramework.dll</td><td>ENTITY~1.DLL|EntityFramework.dll</td><td>0</td><td/><td/><td/><td>1</td><td>E:\我的工作\单位项目\预报评分\程序\QiXiang_YBPF\PF.CA_BW_Night\bin\Debug\EntityFramework.dll</td><td>1</td><td/></row>
 		<row><td>entityframework.resources.dl</td><td>EntityFramework.resources.dll</td><td>ENTITY~1.DLL|EntityFramework.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>E:\我的工作\单位项目\预报评分\程序\QiXiang_YBPF\PF.CA_BW_Night\bin\Debug\zh-Hans\EntityFramework.resources.dll</td><td>1</td><td/></row>
 		<row><td>entityframework.xml</td><td>ISX_DEFAULTCOMPONENT</td><td>ENTITY~1.XML|EntityFramework.xml</td><td>0</td><td/><td/><td/><td>1</td><td>E:\我的工作\单位项目\预报评分\程序\QiXiang_YBPF\PF.CA_BW_Night\bin\Debug\EntityFramework.xml</td><td>1</td><td/></row>
-		<row><td>fs.xml</td><td>ISX_DEFAULTCOMPONENT2</td><td>fs.xml</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Data\fs.xml</td><td>1</td><td/></row>
-		<row><td>fx.xml</td><td>ISX_DEFAULTCOMPONENT2</td><td>fx.xml</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Data\fx.xml</td><td>1</td><td/></row>
 		<row><td>networkconnection.dll</td><td>NetworkConnection.dll</td><td>NETWOR~1.DLL|NetworkConnection.dll</td><td>0</td><td/><td/><td/><td>1</td><td>E:\我的工作\单位项目\预报评分\程序\QiXiang_YBPF\PF.CA_BW_Night\bin\Debug\NetworkConnection.dll</td><td>1</td><td/></row>
 		<row><td>pf.bll.dll</td><td>PF.BLL.dll</td><td>PFBLL~1.DLL|PF.BLL.dll</td><td>0</td><td/><td/><td/><td>1</td><td>E:\我的工作\单位项目\预报评分\程序\QiXiang_YBPF\PF.CA_BW_Night\bin\Debug\PF.BLL.dll</td><td>1</td><td/></row>
 		<row><td>pf.bll.pdb</td><td>ISX_DEFAULTCOMPONENT</td><td>PFBLL~1.PDB|PF.BLL.pdb</td><td>0</td><td/><td/><td/><td>1</td><td>E:\我的工作\单位项目\预报评分\程序\QiXiang_YBPF\PF.CA_BW_Night\bin\Debug\PF.BLL.pdb</td><td>1</td><td/></row>
@@ -1943,7 +1936,6 @@
 		<row><td>pf.models.pdb</td><td>ISX_DEFAULTCOMPONENT</td><td>PFMODE~1.PDB|PF.Models.pdb</td><td>0</td><td/><td/><td/><td>1</td><td>E:\我的工作\单位项目\预报评分\程序\QiXiang_YBPF\PF.CA_BW_Night\bin\Debug\PF.Models.pdb</td><td>1</td><td/></row>
 		<row><td>pf.utility.dll</td><td>PF.Utility.dll</td><td>PFUTIL~1.DLL|PF.Utility.dll</td><td>0</td><td/><td/><td/><td>1</td><td>E:\我的工作\单位项目\预报评分\程序\QiXiang_YBPF\PF.CA_BW_Night\bin\Debug\PF.Utility.dll</td><td>1</td><td/></row>
 		<row><td>pf.utility.pdb</td><td>ISX_DEFAULTCOMPONENT</td><td>PFUTIL~1.PDB|PF.Utility.pdb</td><td>0</td><td/><td/><td/><td>1</td><td>E:\我的工作\单位项目\预报评分\程序\QiXiang_YBPF\PF.CA_BW_Night\bin\Debug\PF.Utility.pdb</td><td>1</td><td/></row>
-		<row><td>tq.xml</td><td>ISX_DEFAULTCOMPONENT2</td><td>tq.xml</td><td>0</td><td/><td/><td/><td>1</td><td>D:\Data\tq.xml</td><td>1</td><td/></row>
 	</table>
 
 	<table name="FileSFPCatalog">
@@ -2091,7 +2083,6 @@
 		<row><td>EntityFramework.resources.dll</td><td/><td/><td>_F39B6A7D_44D3_4FCF_90F4_A5FDED65682E_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT</td><td/><td/><td>_29C4FD26_F8D3_4EA1_82AE_BD63296FC98B_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT1</td><td/><td/><td>_A5796226_060F_4A6D_B747_BE1F3ACDE32C_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>ISX_DEFAULTCOMPONENT2</td><td/><td/><td>_D74C8DA4_D235_4D6E_85BC_F478CC1BE8CC_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>IS_ININSTALL_SHORTCUT</td><td/><td/><td>_4E2A4741_8745_4568_AC8E_AD98D6C6A484_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>NetworkConnection.dll</td><td/><td/><td>_62577AF4_9CCE_459E_8E7E_7B5003292BC6_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>PF.BLL.dll</td><td/><td/><td>_F66B9F48_EB38_45E8_8BBE_8DDCDAA7A344_FILTER</td><td/><td/><td/><td/></row>

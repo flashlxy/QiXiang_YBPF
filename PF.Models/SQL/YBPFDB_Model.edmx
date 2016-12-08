@@ -86,6 +86,15 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
+        <EntityType Name="WeatherDictionary">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="Name" Type="nvarchar" MaxLength="20" />
+          <Property Name="Code" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="Type" Type="nvarchar" MaxLength="20" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
         <EntityType Name="YbUsers">
           <Key>
             <PropertyRef Name="YBUserID" />
@@ -133,6 +142,7 @@
           <EntitySet Name="BaoWens" EntityType="Self.BaoWens" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BwYbs" EntityType="Self.BwYbs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WeatherDictionary" EntityType="Self.WeatherDictionary" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="YbUsers" EntityType="Self.YbUsers" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_BaoWen_YbUsers" Association="Self.FK_BaoWen_YbUsers">
             <End Role="YbUsers" EntitySet="YbUsers" />
@@ -168,6 +178,7 @@
             <End Role="YbUsers" EntitySet="YbUsers" />
             <End Role="BwYbs" EntitySet="BwYbs" />
           </AssociationSet>
+          <EntitySet Name="WeatherDictionary" EntityType="YBPFDB_Model.WeatherDictionary" />
           </EntityContainer>
         <EntityType Name="BaoWens">
           <Key>
@@ -299,6 +310,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="WeatherDictionary">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Code" Type="Decimal" Precision="10" Scale="0" />
+          <Property Name="Type" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -394,6 +414,16 @@
                 <ScalarProperty Name="YBDateTime" ColumnName="YBDateTime" />
                 <ScalarProperty Name="YBUserName" ColumnName="YBUserName" />
                 <ScalarProperty Name="BWYBID" ColumnName="BWYBID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WeatherDictionary">
+            <EntityTypeMapping TypeName="YBPFDB_Model.WeatherDictionary">
+              <MappingFragment StoreEntitySet="WeatherDictionary">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

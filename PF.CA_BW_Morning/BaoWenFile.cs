@@ -107,6 +107,7 @@ namespace PF.CA_BW_Morning
                 string[] contents = baowen.Content.Replace("\r\n", ";").Split(';');
 
                 List<string> citycodes = CityUtility.AllCodeList();
+                List<WeatherDictionary> weathercodes = new WeatherDictionary_BLL().GetList().ToList();
 
 
                 BwYbs_BLL bll = new BwYbs_BLL();
@@ -161,28 +162,29 @@ namespace PF.CA_BW_Morning
 
 
 
-                    model.TianQiName12 = WeatherUtility.TQCodeToText(string.Format("{0:D2}", Convert.ToInt32(model.TianQiCode12)));
-                    model.TianQiName24 = WeatherUtility.TQCodeToText(string.Format("{0:D2}", Convert.ToInt32(model.TianQiCode24)));
-                    model.TianQiName36 = WeatherUtility.TQCodeToText(string.Format("{0:D2}", Convert.ToInt32(model.TianQiCode36)));
-                    model.TianQiName48 = WeatherUtility.TQCodeToText(string.Format("{0:D2}", Convert.ToInt32(model.TianQiCode48)));
-                    model.TianQiName60 = WeatherUtility.TQCodeToText(string.Format("{0:D2}", Convert.ToInt32(model.TianQiCode60)));
-                    model.TianQiName72 = WeatherUtility.TQCodeToText(string.Format("{0:D2}", Convert.ToInt32(model.TianQiCode72)));
+                    model.TianQiName12 = weathercodes.Where(a => a.Code == model.TianQiCode12 && a.Type == "天气").FirstOrDefault().Name;
+                    model.TianQiName24 = weathercodes.Where(a => a.Code == model.TianQiCode24 && a.Type == "天气").FirstOrDefault().Name;
+                    model.TianQiName36 = weathercodes.Where(a => a.Code == model.TianQiCode36 && a.Type == "天气").FirstOrDefault().Name;
+                    model.TianQiName48 = weathercodes.Where(a => a.Code == model.TianQiCode48 && a.Type == "天气").FirstOrDefault().Name;
+                    model.TianQiName60 = weathercodes.Where(a => a.Code == model.TianQiCode60 && a.Type == "天气").FirstOrDefault().Name;
+                    model.TianQiName72 = weathercodes.Where(a => a.Code == model.TianQiCode72 && a.Type == "天气").FirstOrDefault().Name;
 
 
-                    model.WindDirName12 = WeatherUtility.FXCodeToText(Convert.ToInt32(model.WindDirCode12).ToString());
-                    model.WindDirName24 = WeatherUtility.FXCodeToText(Convert.ToInt32(model.WindDirCode24).ToString());
-                    model.WindDirName36 = WeatherUtility.FXCodeToText(Convert.ToInt32(model.WindDirCode36).ToString());
-                    model.WindDirName48 = WeatherUtility.FXCodeToText(Convert.ToInt32(model.WindDirCode48).ToString());
-                    model.WindDirName60 = WeatherUtility.FXCodeToText(Convert.ToInt32(model.WindDirCode60).ToString());
-                    model.WindDirName72 = WeatherUtility.FXCodeToText(Convert.ToInt32(model.WindDirCode72).ToString());
+                    model.WindDirName12 = weathercodes.Where(a => a.Code == model.WindDirCode12 && a.Type == "风向").FirstOrDefault().Name;
+                    model.WindDirName24 = weathercodes.Where(a => a.Code == model.WindDirCode24 && a.Type == "风向").FirstOrDefault().Name;
+                    model.WindDirName36 = weathercodes.Where(a => a.Code == model.WindDirCode36 && a.Type == "风向").FirstOrDefault().Name;
+                    model.WindDirName48 = weathercodes.Where(a => a.Code == model.WindDirCode48 && a.Type == "风向").FirstOrDefault().Name;
+                    model.WindDirName60 = weathercodes.Where(a => a.Code == model.WindDirCode60 && a.Type == "风向").FirstOrDefault().Name;
+                    model.WindDirName72 = weathercodes.Where(a => a.Code == model.WindDirCode72 && a.Type == "风向").FirstOrDefault().Name;
 
 
-                    model.WindSpeName12 = WeatherUtility.FSCodeToText(Convert.ToInt32(model.WindSpeCode12).ToString());
-                    model.WindSpeName24 = WeatherUtility.FSCodeToText(Convert.ToInt32(model.WindSpeCode24).ToString());
-                    model.WindSpeName36 = WeatherUtility.FSCodeToText(Convert.ToInt32(model.WindSpeCode36).ToString());
-                    model.WindSpeName48 = WeatherUtility.FSCodeToText(Convert.ToInt32(model.WindSpeCode48).ToString());
-                    model.WindSpeName60 = WeatherUtility.FSCodeToText(Convert.ToInt32(model.WindSpeCode60).ToString());
-                    model.WindSpeName72 = WeatherUtility.FSCodeToText(Convert.ToInt32(model.WindSpeCode72).ToString());
+
+                    model.WindSpeName12 = weathercodes.Where(a => a.Code == model.WindSpeCode12 && a.Type == "风速").FirstOrDefault().Name;
+                    model.WindSpeName24 = weathercodes.Where(a => a.Code == model.WindSpeCode24 && a.Type == "风速").FirstOrDefault().Name;
+                    model.WindSpeName36 = weathercodes.Where(a => a.Code == model.WindSpeCode36 && a.Type == "风速").FirstOrDefault().Name;
+                    model.WindSpeName48 = weathercodes.Where(a => a.Code == model.WindSpeCode48 && a.Type == "风速").FirstOrDefault().Name;
+                    model.WindSpeName60 = weathercodes.Where(a => a.Code == model.WindSpeCode60 && a.Type == "风速").FirstOrDefault().Name;
+                    model.WindSpeName72 = weathercodes.Where(a => a.Code == model.WindSpeCode72 && a.Type == "风速").FirstOrDefault().Name;
 
 
                     bll.Add(model, false);

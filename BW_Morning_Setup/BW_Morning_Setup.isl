@@ -339,19 +339,18 @@
 		<col def="S0">ISDotNetInstallerArgsCommit</col>
 		<col def="S0">ISDotNetInstallerArgsUninstall</col>
 		<col def="S0">ISDotNetInstallerArgsRollback</col>
-		<row><td>EntityFramework.dll</td><td>{B87D2B7A-D366-402F-B50B-BAC1B3288142}</td><td>INSTALLDIR</td><td>2</td><td/><td>entityframework.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>EntityFramework.resources.dll</td><td>{123B68A1-3798-4DEA-BB4A-07771772A1B4}</td><td>ZH_HANS</td><td>2</td><td/><td>entityframework.resources.dl</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>EntityFramework.dll</td><td>{2B3C25C8-0C84-481E-81EE-981635A0A7A3}</td><td>INSTALLDIR</td><td>2</td><td/><td>entityframework.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>EntityFramework.resources.dll</td><td>{3B9F0E1D-6E55-4B21-8381-5110530D8EA7}</td><td>ZH_HANS</td><td>2</td><td/><td>entityframework.resources.dl</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT</td><td>{63DCE95E-58CD-4415-88D5-F0C26FBF7D01}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>ISX_DEFAULTCOMPONENT1</td><td>{A212B421-1C77-4472-BFFC-A778933F9651}</td><td>ZH_HANS</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>ISX_DEFAULTCOMPONENT2</td><td>{111EB820-0868-4065-92D3-E6D2245939C6}</td><td>DATA</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>ISX_DEFAULTCOMPONENT1</td><td>{4A109643-F471-49EC-9ECA-FF8E7355DB08}</td><td>ZH_HANS</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>IS_ININSTALL_SHORTCUT</td><td>{F7CBB0E4-D417-40AA-BD0C-AD970F5FD5FF}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>NetworkConnection.dll</td><td>{21B68184-CF4C-491D-8A25-2C8E9A9CE5D4}</td><td>INSTALLDIR</td><td>2</td><td/><td>networkconnection.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>PF.BLL.dll</td><td>{EAA1F7D4-40EC-4738-B134-6D0E4E1A7077}</td><td>INSTALLDIR</td><td>2</td><td/><td>pf.bll.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>PF.CA_BW_Morning.exe</td><td>{F423F012-AA49-4FBF-8A0A-4EF6DED5FF0C}</td><td>INSTALLDIR</td><td>2</td><td/><td>pf.ca_bw_morning.exe</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>PF.CA_BW_Morning.vshost.exe</td><td>{BE91834E-AC62-4CE9-93BA-88F794F315C8}</td><td>INSTALLDIR</td><td>2</td><td/><td>pf.ca_bw_morning.vshost.exe</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>PF.DAL.dll</td><td>{CB7BCE3A-FBA8-42F2-9827-5CC2AFE906A2}</td><td>INSTALLDIR</td><td>2</td><td/><td>pf.dal.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>PF.Models.dll</td><td>{0C7727A7-DC85-4EFF-89D2-8244C649B71A}</td><td>INSTALLDIR</td><td>2</td><td/><td>pf.models.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>PF.Utility.dll</td><td>{20F74B0C-4D75-4FA9-A1EB-20788D4B9FEB}</td><td>INSTALLDIR</td><td>2</td><td/><td>pf.utility.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>NetworkConnection.dll</td><td>{7E897E6A-A067-4273-82BF-06ED010F11A5}</td><td>INSTALLDIR</td><td>2</td><td/><td>networkconnection.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>PF.BLL.dll</td><td>{E3B13BCD-7844-4F52-A55A-1B7AB380408B}</td><td>INSTALLDIR</td><td>2</td><td/><td>pf.bll.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>PF.CA_BW_Morning.exe</td><td>{D81996B5-D5A2-4798-8169-CF771FC9F573}</td><td>INSTALLDIR</td><td>2</td><td/><td>pf.ca_bw_morning.exe</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>PF.CA_BW_Morning.vshost.exe</td><td>{DF742DA4-1781-4EF3-AB2B-20578B41ED5B}</td><td>INSTALLDIR</td><td>2</td><td/><td>pf.ca_bw_morning.vshost.exe</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>PF.DAL.dll</td><td>{F1EA52E6-D2B0-4063-8B36-4C86061F6E6D}</td><td>INSTALLDIR</td><td>2</td><td/><td>pf.dal.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>PF.Models.dll</td><td>{AE77B107-5FD0-4057-9B7A-E58C9F2042AB}</td><td>INSTALLDIR</td><td>2</td><td/><td>pf.models.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>PF.Utility.dll</td><td>{7AAAE36A-27FC-4A02-9F4A-C231BF950ECD}</td><td>INSTALLDIR</td><td>2</td><td/><td>pf.utility.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 	</table>
 
 	<table name="Condition">
@@ -1060,12 +1059,10 @@
 	<table name="CreateFolder">
 		<col key="yes" def="s72">Directory_</col>
 		<col key="yes" def="s72">Component_</col>
-		<row><td>DATA</td><td>ISX_DEFAULTCOMPONENT2</td></row>
 		<row><td>INSTALLDIR</td><td>EntityFramework.dll</td></row>
 		<row><td>INSTALLDIR</td><td>EntityFramework.resources.dll</td></row>
 		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT</td></row>
 		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT1</td></row>
-		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT2</td></row>
 		<row><td>INSTALLDIR</td><td>IS_ININSTALL_SHORTCUT</td></row>
 		<row><td>INSTALLDIR</td><td>NetworkConnection.dll</td></row>
 		<row><td>INSTALLDIR</td><td>PF.BLL.dll</td></row>
@@ -1160,7 +1157,6 @@
 		<row><td>CommonAppDataFolder</td><td>TARGETDIR</td><td>.:Common~1|CommonAppData</td><td/><td>0</td><td/></row>
 		<row><td>CommonFiles64Folder</td><td>TARGETDIR</td><td>.:Common64</td><td/><td>0</td><td/></row>
 		<row><td>CommonFilesFolder</td><td>TARGETDIR</td><td>.:Common</td><td/><td>0</td><td/></row>
-		<row><td>DATA</td><td>INSTALLDIR</td><td>Data</td><td/><td>0</td><td/></row>
 		<row><td>DATABASEDIR</td><td>ISYourDataBaseDir</td><td>.</td><td/><td>0</td><td/></row>
 		<row><td>DIRECTORY</td><td>ProgramFilesFolder</td><td>刘延瑞</td><td/><td>0</td><td/></row>
 		<row><td>DIRECTORY1</td><td>DIRECTORY</td><td>早间报文入库</td><td/><td>0</td><td/></row>
@@ -1894,7 +1890,6 @@
 		<row><td>AlwaysInstall</td><td>EntityFramework.resources.dll</td></row>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT</td></row>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT1</td></row>
-		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT2</td></row>
 		<row><td>AlwaysInstall</td><td>IS_ININSTALL_SHORTCUT</td></row>
 		<row><td>AlwaysInstall</td><td>NetworkConnection.dll</td></row>
 		<row><td>AlwaysInstall</td><td>PF.BLL.dll</td></row>
@@ -1920,8 +1915,6 @@
 		<row><td>entityframework.dll</td><td>EntityFramework.dll</td><td>ENTITY~1.DLL|EntityFramework.dll</td><td>0</td><td/><td/><td/><td>1</td><td>E:\我的工作\单位项目\预报评分\程序\QiXiang_YBPF\PF.CA_BW_Morning\bin\Debug\EntityFramework.dll</td><td>1</td><td/></row>
 		<row><td>entityframework.resources.dl</td><td>EntityFramework.resources.dll</td><td>ENTITY~1.DLL|EntityFramework.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>E:\我的工作\单位项目\预报评分\程序\QiXiang_YBPF\PF.CA_BW_Morning\bin\Debug\zh-Hans\EntityFramework.resources.dll</td><td>1</td><td/></row>
 		<row><td>entityframework.xml</td><td>ISX_DEFAULTCOMPONENT</td><td>ENTITY~1.XML|EntityFramework.xml</td><td>0</td><td/><td/><td/><td>1</td><td>E:\我的工作\单位项目\预报评分\程序\QiXiang_YBPF\PF.CA_BW_Morning\bin\Debug\EntityFramework.xml</td><td>1</td><td/></row>
-		<row><td>fs.xml</td><td>ISX_DEFAULTCOMPONENT2</td><td>fs.xml</td><td>0</td><td/><td/><td/><td>1</td><td>E:\我的工作\单位项目\预报评分\程序\QiXiang_YBPF\PF.CA_BW_Morning\Data\fs.xml</td><td>1</td><td/></row>
-		<row><td>fx.xml</td><td>ISX_DEFAULTCOMPONENT2</td><td>fx.xml</td><td>0</td><td/><td/><td/><td>1</td><td>E:\我的工作\单位项目\预报评分\程序\QiXiang_YBPF\PF.CA_BW_Morning\Data\fx.xml</td><td>1</td><td/></row>
 		<row><td>networkconnection.dll</td><td>NetworkConnection.dll</td><td>NETWOR~1.DLL|NetworkConnection.dll</td><td>0</td><td/><td/><td/><td>1</td><td>E:\我的工作\单位项目\预报评分\程序\QiXiang_YBPF\PF.CA_BW_Morning\bin\Debug\NetworkConnection.dll</td><td>1</td><td/></row>
 		<row><td>pf.bll.dll</td><td>PF.BLL.dll</td><td>PFBLL~1.DLL|PF.BLL.dll</td><td>0</td><td/><td/><td/><td>1</td><td>E:\我的工作\单位项目\预报评分\程序\QiXiang_YBPF\PF.CA_BW_Morning\bin\Debug\PF.BLL.dll</td><td>1</td><td/></row>
 		<row><td>pf.bll.pdb</td><td>ISX_DEFAULTCOMPONENT</td><td>PFBLL~1.PDB|PF.BLL.pdb</td><td>0</td><td/><td/><td/><td>1</td><td>E:\我的工作\单位项目\预报评分\程序\QiXiang_YBPF\PF.CA_BW_Morning\bin\Debug\PF.BLL.pdb</td><td>1</td><td/></row>
@@ -1937,7 +1930,6 @@
 		<row><td>pf.models.pdb</td><td>ISX_DEFAULTCOMPONENT</td><td>PFMODE~1.PDB|PF.Models.pdb</td><td>0</td><td/><td/><td/><td>1</td><td>E:\我的工作\单位项目\预报评分\程序\QiXiang_YBPF\PF.CA_BW_Morning\bin\Debug\PF.Models.pdb</td><td>1</td><td/></row>
 		<row><td>pf.utility.dll</td><td>PF.Utility.dll</td><td>PFUTIL~1.DLL|PF.Utility.dll</td><td>0</td><td/><td/><td/><td>1</td><td>E:\我的工作\单位项目\预报评分\程序\QiXiang_YBPF\PF.CA_BW_Morning\bin\Debug\PF.Utility.dll</td><td>1</td><td/></row>
 		<row><td>pf.utility.pdb</td><td>ISX_DEFAULTCOMPONENT</td><td>PFUTIL~1.PDB|PF.Utility.pdb</td><td>0</td><td/><td/><td/><td>1</td><td>E:\我的工作\单位项目\预报评分\程序\QiXiang_YBPF\PF.CA_BW_Morning\bin\Debug\PF.Utility.pdb</td><td>1</td><td/></row>
-		<row><td>tq.xml</td><td>ISX_DEFAULTCOMPONENT2</td><td>tq.xml</td><td>0</td><td/><td/><td/><td>1</td><td>E:\我的工作\单位项目\预报评分\程序\QiXiang_YBPF\PF.CA_BW_Morning\Data\tq.xml</td><td>1</td><td/></row>
 	</table>
 
 	<table name="FileSFPCatalog">
@@ -2081,19 +2073,18 @@
 		<col def="S0">FTPLocation</col>
 		<col def="S0">HTTPLocation</col>
 		<col def="S0">Miscellaneous</col>
-		<row><td>EntityFramework.dll</td><td/><td/><td>_9A25DED1_1F64_44BB_862C_01E9FC5E62F5_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>EntityFramework.resources.dll</td><td/><td/><td>_C4FD4F87_8F42_4688_9DE2_8B1E78D6CB4E_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>EntityFramework.dll</td><td/><td/><td>_4A044D94_0F95_4581_BC08_170C301125D3_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>EntityFramework.resources.dll</td><td/><td/><td>_6A27A9FC_90E8_4E28_A611_B319AE68797E_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT</td><td/><td/><td>_9A9B3278_F66D_4D9D_89FC_C5D75593E2BD_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>ISX_DEFAULTCOMPONENT1</td><td/><td/><td>_3D518B7B_5E6F_403A_92C1_F49974E13793_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>ISX_DEFAULTCOMPONENT2</td><td/><td/><td>_DDD4170B_D78E_4093_8BF8_4AB003C74A1A_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>ISX_DEFAULTCOMPONENT1</td><td/><td/><td>_C6C464C4_29D1_4E66_B552_21FBD25338FD_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>IS_ININSTALL_SHORTCUT</td><td/><td/><td>_0C6CFCD9_860B_4A49_9A4B_3CB68501CF7A_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>NetworkConnection.dll</td><td/><td/><td>_D6E5ABC6_69BC_4CD1_8ABE_7C7395A4BDC9_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>PF.BLL.dll</td><td/><td/><td>_24A78A41_7DC0_4176_AC45_C68DA776FC98_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>PF.CA_BW_Morning.exe</td><td/><td/><td>_7B2A6D85_C190_4143_92D0_397C5C38F5BE_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>PF.CA_BW_Morning.vshost.exe</td><td/><td/><td>_0C274A8E_9283_4591_BFD7_398D81BF7F5B_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>PF.DAL.dll</td><td/><td/><td>_8A8857C6_40AA_4A72_8088_466270BEFBF7_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>PF.Models.dll</td><td/><td/><td>_30FC6CBE_DF2A_4DAE_8A54_A9C9E66D1D91_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>PF.Utility.dll</td><td/><td/><td>_729BAEAC_2A38_4D8F_A7CC_6748827836F2_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>NetworkConnection.dll</td><td/><td/><td>_6E6879E3_32C3_4C4C_A7EE_913AD6E159D4_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>PF.BLL.dll</td><td/><td/><td>_05649219_A751_4500_B83F_858E12480864_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>PF.CA_BW_Morning.exe</td><td/><td/><td>_4D9189DC_A5FB_4A23_943A_49584268937D_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>PF.CA_BW_Morning.vshost.exe</td><td/><td/><td>_E545C1D0_E6D8_454B_B7B0_222F51271A59_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>PF.DAL.dll</td><td/><td/><td>_5CFC230B_A418_4184_B696_1620659B4871_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>PF.Models.dll</td><td/><td/><td>_A0491EEC_B614_432D_96F0_F1000F674BAA_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>PF.Utility.dll</td><td/><td/><td>_368F16F5_45D1_4F70_8A62_1CE97B449F82_FILTER</td><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="ISCustomActionReference">
@@ -3506,6 +3497,10 @@
 		<row><td>IDS_SHORTCUT_DISPLAY_NAME6</td><td>2052</td><td>早间报文入库</td><td>0</td><td/><td>1042585198</td></row>
 		<row><td>IDS_SHORTCUT_DISPLAY_NAME7</td><td>1033</td><td/><td>0</td><td/><td>1042599374</td></row>
 		<row><td>IDS_SHORTCUT_DISPLAY_NAME7</td><td>2052</td><td>LAUNCH~1.EXE|Launch PF.CA_BW_Morning.vshost.exe</td><td>0</td><td/><td>1042599374</td></row>
+		<row><td>IDS_SHORTCUT_DISPLAY_NAME8</td><td>1033</td><td/><td>0</td><td/><td>1176783374</td></row>
+		<row><td>IDS_SHORTCUT_DISPLAY_NAME8</td><td>2052</td><td>早间报文入库</td><td>0</td><td/><td>1176812174</td></row>
+		<row><td>IDS_SHORTCUT_DISPLAY_NAME9</td><td>1033</td><td/><td>0</td><td/><td>1176783374</td></row>
+		<row><td>IDS_SHORTCUT_DISPLAY_NAME9</td><td>2052</td><td>LAUNCH~1.EXE|Launch PF.CA_BW_Morning.vshost.exe</td><td>0</td><td/><td>1176783374</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO</td><td>2052</td><td>从以下服务器列表中选择要连接的数据库服务器。</td><td>0</td><td/><td>1042604494</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO_DB</td><td>2052</td><td>从以下的编录名称列表中，选择您希望将其作为目标的数据库编录。</td><td>0</td><td/><td>1042604494</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO_TEMPLATE</td><td>2052</td><td>[IS_SQLBROWSE_INTRO]</td><td>0</td><td/><td>1042604494</td></row>
@@ -3799,6 +3794,12 @@
 		<row><td>ID_STRING3</td><td>2052</td><td>早间报文入库</td><td>0</td><td/><td>1042604494</td></row>
 		<row><td>ID_STRING4</td><td>1033</td><td>早间报文入库</td><td>0</td><td/><td>1042583278</td></row>
 		<row><td>ID_STRING4</td><td>2052</td><td>早间报文入库</td><td>0</td><td/><td>1042583278</td></row>
+		<row><td>ID_STRING5</td><td>1033</td><td>早间报文入库</td><td>0</td><td/><td>1176812174</td></row>
+		<row><td>ID_STRING5</td><td>2052</td><td>早间报文入库</td><td>0</td><td/><td>1176812174</td></row>
+		<row><td>ID_STRING6</td><td>1033</td><td>卸载 早间报文入库</td><td>0</td><td/><td>1176765102</td></row>
+		<row><td>ID_STRING6</td><td>2052</td><td>卸载 早间报文入库</td><td>0</td><td/><td>1176765102</td></row>
+		<row><td>ID_STRING7</td><td>1033</td><td>卸载 早间报文入库</td><td>0</td><td/><td>1176779438</td></row>
+		<row><td>ID_STRING7</td><td>2052</td><td>卸载 早间报文入库</td><td>0</td><td/><td>1176779438</td></row>
 		<row><td>IIDS_UITEXT_FeatureUninstalled</td><td>2052</td><td>系统将不安装此功能。</td><td>0</td><td/><td>1042604494</td></row>
 	</table>
 
@@ -3913,10 +3914,12 @@
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I2">ISIconIndex</col>
 		<row><td>ARPPRODUCTICON.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\setupicon.ico</td><td>0</td></row>
+		<row><td>PF.CA_BW_Morning.e_38DA6920D8AA4595B2289176AADC6E70.exe</td><td/><td>C:\Users\LYR\Pictures\www.ico.la_ed869afd70644029aae694678736d0c9_128X128.ico</td><td>0</td></row>
 		<row><td>PF.CA_BW_Morning.e_4EBEDD25B89943BEA5151E7458716A56.exe</td><td/><td>C:\Users\LYR\Pictures\www.ico.la_ed869afd70644029aae694678736d0c9_128X128.ico</td><td>0</td></row>
 		<row><td>PF.CA_BW_Morning.e_5D1B78F525554183ABE0083170822AD8.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\GenericExe.ico</td><td>0</td></row>
 		<row><td>PF.CA_BW_Morning.e_6962598FED7B40969F3D3691E672F3BE.exe</td><td/><td>C:\Users\LYR\Pictures\www.ico.la_ed869afd70644029aae694678736d0c9_128X128.ico</td><td>0</td></row>
 		<row><td>PF.CA_BW_Morning.e_73D257C1A04D4A19BB9FD3D5F0B163B6.exe</td><td/><td>C:\Users\LYR\Pictures\www.ico.la_ed869afd70644029aae694678736d0c9_128X128.ico</td><td>0</td></row>
+		<row><td>PF.CA_BW_Morning.e_BE2C13DDB0284E45863BCEA0A6A497B1.exe</td><td/><td>C:\Users\LYR\Pictures\www.ico.la_ed869afd70644029aae694678736d0c9_128X128.ico</td><td>0</td></row>
 		<row><td>PF.CA_BW_Morning.e_DCC465BC10B44614B41EA4C324165EE0.exe</td><td/><td>C:\Users\LYR\Pictures\www.ico.la_ed869afd70644029aae694678736d0c9_128X128.ico</td><td>0</td></row>
 		<row><td>PF.CA_BW_Morning.v_6E940A56B5D34446B45E75E513605CE9.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\GenericExe.ico</td><td>0</td></row>
 		<row><td>Shortcut_405CDCE9434D4CCFBD18CA6ADC29E1D7.exe</td><td/><td>C:\Program Files (x86)\InstallShield\2015LE\Redist\Language Independent\OS Independent\uninstall.ico</td><td>0</td></row>
@@ -4501,6 +4504,8 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="L255">FileName</col>
 		<col def="s72">DirProperty</col>
 		<col def="i2">InstallMode</col>
+		<row><td>FileKey1</td><td>PF.CA_BW_Morning.exe</td><td/><td>company_name1</td><td>2</td></row>
+		<row><td>FileKey2</td><td>PF.CA_BW_Morning.exe</td><td/><td>product_name1</td><td>2</td></row>
 		<row><td>PF.CA_BW_Morning.exe</td><td>PF.CA_BW_Morning.exe</td><td/><td>product_name</td><td>2</td></row>
 		<row><td>Shortcut</td><td>IS_ININSTALL_SHORTCUT</td><td/><td>product_name</td><td>2</td></row>
 	</table>
@@ -4588,8 +4593,8 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="S255">ISComments</col>
 		<col def="S255">ISShortcutName</col>
 		<col def="I4">ISAttributes</col>
-		<row><td>PF.CA_BW_Morning.exe</td><td>product_name</td><td>##IDS_SHORTCUT_DISPLAY_NAME6##</td><td>PF.CA_BW_Morning.exe</td><td>AlwaysInstall</td><td/><td/><td/><td>PF.CA_BW_Morning.e_6962598FED7B40969F3D3691E672F3BE.exe</td><td>0</td><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>PF.CA_BW_Morning.exe1</td><td>DesktopFolder</td><td>##IDS_SHORTCUT_DISPLAY_NAME6##</td><td>PF.CA_BW_Morning.exe</td><td>AlwaysInstall</td><td/><td/><td/><td>PF.CA_BW_Morning.e_4EBEDD25B89943BEA5151E7458716A56.exe</td><td>0</td><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>PF.CA_BW_Morning.exe</td><td>product_name</td><td>##IDS_SHORTCUT_DISPLAY_NAME8##</td><td>PF.CA_BW_Morning.exe</td><td>AlwaysInstall</td><td/><td/><td/><td>PF.CA_BW_Morning.e_38DA6920D8AA4595B2289176AADC6E70.exe</td><td>0</td><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>PF.CA_BW_Morning.exe1</td><td>DesktopFolder</td><td>##IDS_SHORTCUT_DISPLAY_NAME8##</td><td>PF.CA_BW_Morning.exe</td><td>AlwaysInstall</td><td/><td/><td/><td>PF.CA_BW_Morning.e_BE2C13DDB0284E45863BCEA0A6A497B1.exe</td><td>0</td><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>Shortcut</td><td>product_name</td><td>##IDS_SHORTCUT_DISPLAY_NAME3##</td><td>IS_ININSTALL_SHORTCUT</td><td>[SystemFolder]msiexec.exe</td><td>/x {8A0CA4FD-3A4B-4C8D-9C0C-D5CF99955A0F}</td><td/><td/><td>Shortcut_405CDCE9434D4CCFBD18CA6ADC29E1D7.exe</td><td>0</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 	</table>
 

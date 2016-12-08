@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Xml;
@@ -12,7 +13,7 @@ namespace PF.CA_BW_Night
     {
         static void Main(string[] args)
         {
-
+            //Console.WriteLine(File.ReadAllText(@"data\tq.xml"));
             BaoWenFile bf = new BaoWenFile();
             bf.BaoWen_Import();
             BaoWens_BLL bwbll = new BaoWens_BLL();
@@ -27,7 +28,7 @@ namespace PF.CA_BW_Night
                 }
             }
             Console.WriteLine("晚间报文翻译成功,总数：" + list.Count);
-
+            //Console.Read();
 
         }
     }

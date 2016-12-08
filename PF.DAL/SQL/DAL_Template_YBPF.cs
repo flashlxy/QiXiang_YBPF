@@ -17,6 +17,10 @@ namespace PF.DAL.SQL
     {
 	   
     }
+	public partial class WeatherDictionary_DAL : Base_DAL_YBPF<WeatherDictionary>
+    {
+	   
+    }
 	public partial class YbUsers_DAL : Base_DAL_YBPF<YbUsers>
     {
 	   

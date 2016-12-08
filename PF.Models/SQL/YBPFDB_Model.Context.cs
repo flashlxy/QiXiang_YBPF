@@ -29,5 +29,6 @@ namespace PF.Models.SQL
         public DbSet<sysdiagrams> sysdiagrams { get; set; }
         public DbSet<YbUsers> YbUsers { get; set; }
         public DbSet<BwYbs> BwYbs { get; set; }
+        public DbSet<WeatherDictionary> WeatherDictionary { get; set; }
     }
 }
