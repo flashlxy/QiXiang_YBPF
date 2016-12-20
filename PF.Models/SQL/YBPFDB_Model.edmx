@@ -76,6 +76,20 @@
           <Property Name="WindSpeName60" Type="nvarchar" MaxLength="20" />
           <Property Name="WindSpeName72" Type="nvarchar" MaxLength="20" />
         </EntityType>
+        <EntityType Name="LiveData">
+          <Key>
+            <PropertyRef Name="LDID" />
+          </Key>
+          <Property Name="LDID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FDate" Type="date" />
+          <Property Name="CountryCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="CountryName" Type="nvarchar" MaxLength="20" />
+          <Property Name="Rain" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="MaxTemp" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="MinTemp" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Category" Type="nvarchar" MaxLength="20" />
+          <Property Name="CreateTime" Type="datetime" />
+        </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -141,6 +155,7 @@
         <EntityContainer Name="YBPFDB_ModelStoreContainer">
           <EntitySet Name="BaoWens" EntityType="Self.BaoWens" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BwYbs" EntityType="Self.BwYbs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LiveData" EntityType="Self.LiveData" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WeatherDictionary" EntityType="Self.WeatherDictionary" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="YbUsers" EntityType="Self.YbUsers" Schema="dbo" store:Type="Tables" />
@@ -179,6 +194,7 @@
             <End Role="BwYbs" EntitySet="BwYbs" />
           </AssociationSet>
           <EntitySet Name="WeatherDictionary" EntityType="YBPFDB_Model.WeatherDictionary" />
+          <EntitySet Name="LiveData" EntityType="YBPFDB_Model.LiveData" />
           </EntityContainer>
         <EntityType Name="BaoWens">
           <Key>
@@ -319,6 +335,20 @@
           <Property Name="Type" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
+        <EntityType Name="LiveData">
+          <Key>
+            <PropertyRef Name="LDID" />
+          </Key>
+          <Property Name="LDID" Type="Guid" Nullable="false" />
+          <Property Name="FDate" Type="DateTime" Precision="0" />
+          <Property Name="CountryCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CountryName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Rain" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="MaxTemp" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="MinTemp" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Category" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="DateTime" Precision="3" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -424,6 +454,21 @@
                 <ScalarProperty Name="Type" ColumnName="Type" />
                 <ScalarProperty Name="Code" ColumnName="Code" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LiveData">
+            <EntityTypeMapping TypeName="YBPFDB_Model.LiveData">
+              <MappingFragment StoreEntitySet="LiveData">
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="MinTemp" ColumnName="MinTemp" />
+                <ScalarProperty Name="MaxTemp" ColumnName="MaxTemp" />
+                <ScalarProperty Name="Rain" ColumnName="Rain" />
+                <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+                <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+                <ScalarProperty Name="FDate" ColumnName="FDate" />
+                <ScalarProperty Name="LDID" ColumnName="LDID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

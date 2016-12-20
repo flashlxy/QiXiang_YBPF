@@ -123,6 +123,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AFile\AFileToLive.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -149,6 +150,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AFile\AFileToLive.aspx.cs">
+      <DependentUpon>AFileToLive.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AFile\AFileToLive.aspx.designer.cs">
+      <DependentUpon>AFileToLive.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Forecast\SanTian.aspx.cs">
       <DependentUpon>SanTian.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
