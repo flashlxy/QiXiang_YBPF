@@ -47,6 +47,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Oracle\DATAHOUR.cs">
+      <DependentUpon>OracleSAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Oracle\OracleSAModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OracleSAModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Oracle\OracleSAModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OracleSAModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Oracle\OracleSAModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OracleSAModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQL\BaoWens.cs">
       <DependentUpon>YBPFDB_Model.tt</DependentUpon>
@@ -84,6 +102,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
+    <EntityDeploy Include="Oracle\OracleSAModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>OracleSAModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Oracle\OracleSAModel.edmx.diagram">
+      <DependentUpon>OracleSAModel.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <EntityDeploy Include="SQL\YBPFDB_Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -96,10 +121,18 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Oracle\" />
-  </ItemGroup>
-  <ItemGroup>
+    <Content Include="Oracle\OracleSAModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OracleSAModel.edmx</DependentUpon>
+      <LastGenOutput>OracleSAModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Oracle\OracleSAModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OracleSAModel.edmx</DependentUpon>
+      <LastGenOutput>OracleSAModel.cs</LastGenOutput>
+    </Content>
     <Content Include="SQL\YBPFDB_Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>YBPFDB_Model.edmx</DependentUpon>
