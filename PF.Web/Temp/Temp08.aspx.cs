@@ -24,7 +24,7 @@ namespace PF.Web.Temp
         {
             DATAHOUR_BLL hbll = new DATAHOUR_BLL();
             LiveData_BLL lbll = new LiveData_BLL();
-            DateTime startTime = DateTime.ParseExact(DateTime.Now.ToString("yyyy") + MonthDDL.SelectedItem.Value + "01" + "08", "yyyyMMddHH", CultureInfo.InvariantCulture);
+            DateTime startTime = DateTime.ParseExact("2016" + MonthDDL.SelectedItem.Value + "01" + "08", "yyyyMMddHH", CultureInfo.InvariantCulture);
             DateTime endTime = startTime.AddMonths(1);
 
             TimeSpan ts = endTime - startTime;
