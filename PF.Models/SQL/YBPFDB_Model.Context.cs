@@ -31,5 +31,9 @@ namespace PF.Models.SQL
         public DbSet<BwYbs> BwYbs { get; set; }
         public DbSet<WeatherDictionary> WeatherDictionary { get; set; }
         public DbSet<LiveData> LiveData { get; set; }
+        public DbSet<Score_Day> Score_Day { get; set; }
+        public DbSet<WarnCheck> WarnCheck { get; set; }
+        public DbSet<WarnStatistics> WarnStatistics { get; set; }
+        public DbSet<Score_Month> Score_Month { get; set; }
     }
 }

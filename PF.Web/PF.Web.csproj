@@ -141,6 +141,8 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="R248\Rain08ToData.aspx" />
+    <Content Include="Score\ScoreMonth.aspx" />
+    <Content Include="Score\ScoreDay.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
@@ -149,6 +151,8 @@
     <Content Include="Scripts\jquery-3.1.1.slim.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
     <Content Include="Temp\Temp08.aspx" />
+    <Content Include="Warn\WarnCheck.aspx" />
+    <Content Include="Warn\WarnStatistics.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -188,12 +192,40 @@
     <Compile Include="R248\Rain08ToData.aspx.designer.cs">
       <DependentUpon>Rain08ToData.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Score\ScoreMonth.aspx.cs">
+      <DependentUpon>ScoreMonth.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Score\ScoreMonth.aspx.designer.cs">
+      <DependentUpon>ScoreMonth.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Score\ScoreDay.aspx.cs">
+      <DependentUpon>ScoreDay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Score\ScoreDay.aspx.designer.cs">
+      <DependentUpon>ScoreDay.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Temp\Temp08.aspx.cs">
       <DependentUpon>Temp08.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Temp\Temp08.aspx.designer.cs">
       <DependentUpon>Temp08.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Warn\WarnCheck.aspx.cs">
+      <DependentUpon>WarnCheck.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Warn\WarnCheck.aspx.designer.cs">
+      <DependentUpon>WarnCheck.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Warn\WarnStatistics.aspx.cs">
+      <DependentUpon>WarnStatistics.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Warn\WarnStatistics.aspx.designer.cs">
+      <DependentUpon>WarnStatistics.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

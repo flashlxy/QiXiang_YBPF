@@ -90,6 +90,60 @@
           <Property Name="Category" Type="nvarchar" MaxLength="20" />
           <Property Name="CreateTime" Type="datetime" />
         </EntityType>
+        <EntityType Name="Score_Day">
+          <Key>
+            <PropertyRef Name="ScoreID" />
+          </Key>
+          <Property Name="ScoreID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="YBDate" Type="date" />
+          <Property Name="YBTime" Type="nvarchar" MaxLength="20" />
+          <Property Name="YBUserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="YBUserID" Type="uniqueidentifier" />
+          <Property Name="RainShine24" Type="int" />
+          <Property Name="MaxTemp24" Type="int" />
+          <Property Name="MinTemp24" Type="int" />
+          <Property Name="RainShine48" Type="int" />
+          <Property Name="MaxTemp48" Type="int" />
+          <Property Name="MinTemp48" Type="int" />
+          <Property Name="RainShine72" Type="int" />
+          <Property Name="MaxTemp72" Type="int" />
+          <Property Name="MinTemp72" Type="int" />
+          <Property Name="AllTotal" Type="int" />
+          <Property Name="Rainfall24" Type="int" />
+          <Property Name="Rainfall24Total" Type="int" />
+          <Property Name="Rainfall48" Type="int" />
+          <Property Name="Rainfall48Total" Type="int" />
+          <Property Name="Rainfall72" Type="int" />
+          <Property Name="Rainfall72Total" Type="int" />
+          <Property Name="Rainstorm24" Type="int" />
+          <Property Name="Rainstorm24Total" Type="int" />
+          <Property Name="Rainstorm48" Type="int" />
+          <Property Name="Rainstorm48Total" Type="int" />
+          <Property Name="CreateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Score_Month">
+          <Key>
+            <PropertyRef Name="ScoreID" />
+          </Key>
+          <Property Name="ScoreID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="YBUserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="RainShine" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="MinTemp" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="MaxTemp" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Rainfall" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Rainstorm" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Total" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="WeightedTotal" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="RainShine_Group" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="MinTemp_Group" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="MaxTemp_Group" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Rainfall_Group" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Rainstorm_Group" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Total_Group" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Year" Type="int" />
+          <Property Name="Month" Type="int" />
+          <Property Name="YBUserID" Type="uniqueidentifier" />
+        </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -99,6 +153,38 @@
           <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="WarnCheck">
+          <Key>
+            <PropertyRef Name="CheckID" />
+          </Key>
+          <Property Name="CheckID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ReleaseTime" Type="datetime" />
+          <Property Name="WarningCategory" Type="nvarchar" MaxLength="20" />
+          <Property Name="WarningLevel" Type="nvarchar" MaxLength="20" />
+          <Property Name="ReachTime" Type="datetime" />
+          <Property Name="ReachSpendMinute" Type="int" />
+          <Property Name="Accuracy" Type="nvarchar" MaxLength="50" />
+          <Property Name="Remark" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="WarnStatistics">
+          <Key>
+            <PropertyRef Name="StatisticsID" />
+          </Key>
+          <Property Name="StatisticsID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Year" Type="int" />
+          <Property Name="Month" Type="int" />
+          <Property Name="WarnCategory" Type="nvarchar" MaxLength="20" />
+          <Property Name="WarnLevel" Type="nvarchar" MaxLength="20" />
+          <Property Name="TSScore" Type="int" />
+          <Property Name="HitRate" Type="int" />
+          <Property Name="MissRate" Type="int" />
+          <Property Name="EmptyRate" Type="int" />
+          <Property Name="ReachSpendMinute1" Type="int" />
+          <Property Name="ReachSpendMinute2" Type="int" />
+          <Property Name="ReachSpendMinute3" Type="int" />
+          <Property Name="CreateTime" Type="datetime" />
+          <Property Name="LevelOrder" Type="int" />
         </EntityType>
         <EntityType Name="WeatherDictionary">
           <Key>
@@ -152,11 +238,39 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Score_Day_YbUsers">
+          <End Role="YbUsers" Type="Self.YbUsers" Multiplicity="0..1" />
+          <End Role="Score_Day" Type="Self.Score_Day" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="YbUsers">
+              <PropertyRef Name="YBUserID" />
+            </Principal>
+            <Dependent Role="Score_Day">
+              <PropertyRef Name="YBUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Score_Month_YbUsers">
+          <End Role="YbUsers" Type="Self.YbUsers" Multiplicity="0..1" />
+          <End Role="Score_Month" Type="Self.Score_Month" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="YbUsers">
+              <PropertyRef Name="YBUserID" />
+            </Principal>
+            <Dependent Role="Score_Month">
+              <PropertyRef Name="YBUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="YBPFDB_ModelStoreContainer">
           <EntitySet Name="BaoWens" EntityType="Self.BaoWens" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BwYbs" EntityType="Self.BwYbs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LiveData" EntityType="Self.LiveData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Score_Day" EntityType="Self.Score_Day" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Score_Month" EntityType="Self.Score_Month" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WarnCheck" EntityType="Self.WarnCheck" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WarnStatistics" EntityType="Self.WarnStatistics" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WeatherDictionary" EntityType="Self.WeatherDictionary" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="YbUsers" EntityType="Self.YbUsers" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_BaoWen_YbUsers" Association="Self.FK_BaoWen_YbUsers">
@@ -170,6 +284,14 @@
           <AssociationSet Name="FK_BWYB_YbUsers" Association="Self.FK_BWYB_YbUsers">
             <End Role="YbUsers" EntitySet="YbUsers" />
             <End Role="BwYbs" EntitySet="BwYbs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Score_Day_YbUsers" Association="Self.FK_Score_Day_YbUsers">
+            <End Role="YbUsers" EntitySet="YbUsers" />
+            <End Role="Score_Day" EntitySet="Score_Day" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Score_Month_YbUsers" Association="Self.FK_Score_Month_YbUsers">
+            <End Role="YbUsers" EntitySet="YbUsers" />
+            <End Role="Score_Month" EntitySet="Score_Month" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -195,6 +317,18 @@
           </AssociationSet>
           <EntitySet Name="WeatherDictionary" EntityType="YBPFDB_Model.WeatherDictionary" />
           <EntitySet Name="LiveData" EntityType="YBPFDB_Model.LiveData" />
+          <EntitySet Name="Score_Day" EntityType="YBPFDB_Model.Score_Day" />
+          <EntitySet Name="WarnCheck" EntityType="YBPFDB_Model.WarnCheck" />
+          <AssociationSet Name="FK_Score_Day_YbUsers" Association="YBPFDB_Model.FK_Score_Day_YbUsers">
+            <End Role="YbUsers" EntitySet="YbUsers" />
+            <End Role="Score_Day" EntitySet="Score_Day" />
+          </AssociationSet>
+          <EntitySet Name="WarnStatistics" EntityType="YBPFDB_Model.WarnStatistics" />
+          <EntitySet Name="Score_Month" EntityType="YBPFDB_Model.Score_Month" />
+          <AssociationSet Name="FK_Score_Month_YbUsers" Association="YBPFDB_Model.FK_Score_Month_YbUsers">
+            <End Role="YbUsers" EntitySet="YbUsers" />
+            <End Role="Score_Month" EntitySet="Score_Month" />
+          </AssociationSet>
           </EntityContainer>
         <EntityType Name="BaoWens">
           <Key>
@@ -230,6 +364,8 @@
           <Property Name="YBUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="BaoWens" Relationship="YBPFDB_Model.FK_BaoWen_YbUsers" FromRole="YbUsers" ToRole="BaoWens" />
           <NavigationProperty Name="BwYbs" Relationship="YBPFDB_Model.FK_BWYB_YbUsers" FromRole="YbUsers" ToRole="BwYbs" />
+          <NavigationProperty Name="Score_Day" Relationship="YBPFDB_Model.FK_Score_Day_YbUsers" FromRole="YbUsers" ToRole="Score_Day" />
+          <NavigationProperty Name="Score_Month" Relationship="YBPFDB_Model.FK_Score_Month_YbUsers" FromRole="YbUsers" ToRole="Score_Month" />
         </EntityType>
         <Association Name="FK_BaoWen_YbUsers">
           <End Type="YBPFDB_Model.YbUsers" Role="YbUsers" Multiplicity="0..1" />
@@ -349,6 +485,118 @@
           <Property Name="Category" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="CreateTime" Type="DateTime" Precision="3" />
         </EntityType>
+        <EntityType Name="Score_Day">
+          <Key>
+            <PropertyRef Name="ScoreID" />
+          </Key>
+          <Property Name="ScoreID" Type="Guid" Nullable="false" />
+          <Property Name="YBDate" Type="DateTime" Precision="0" />
+          <Property Name="YBTime" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="YBUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="YBUserID" Type="Guid" />
+          <Property Name="RainShine24" Type="Int32" />
+          <Property Name="MaxTemp24" Type="Int32" />
+          <Property Name="MinTemp24" Type="Int32" />
+          <Property Name="RainShine48" Type="Int32" />
+          <Property Name="MaxTemp48" Type="Int32" />
+          <Property Name="MinTemp48" Type="Int32" />
+          <Property Name="RainShine72" Type="Int32" />
+          <Property Name="MaxTemp72" Type="Int32" />
+          <Property Name="MinTemp72" Type="Int32" />
+          <Property Name="AllTotal" Type="Int32" />
+          <Property Name="Rainfall24" Type="Int32" />
+          <Property Name="Rainfall24Total" Type="Int32" />
+          <Property Name="Rainfall48" Type="Int32" />
+          <Property Name="Rainfall48Total" Type="Int32" />
+          <Property Name="Rainfall72" Type="Int32" />
+          <Property Name="Rainfall72Total" Type="Int32" />
+          <Property Name="Rainstorm24" Type="Int32" />
+          <Property Name="Rainstorm24Total" Type="Int32" />
+          <Property Name="Rainstorm48" Type="Int32" />
+          <Property Name="Rainstorm48Total" Type="Int32" />
+          <Property Name="CreateTime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="YbUsers" Relationship="YBPFDB_Model.FK_Score_Day_YbUsers" FromRole="Score_Day" ToRole="YbUsers" />
+        </EntityType>
+        <EntityType Name="WarnCheck">
+          <Key>
+            <PropertyRef Name="CheckID" />
+          </Key>
+          <Property Name="CheckID" Type="Guid" Nullable="false" />
+          <Property Name="ReleaseTime" Type="DateTime" Precision="3" />
+          <Property Name="WarningCategory" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="WarningLevel" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ReachTime" Type="DateTime" Precision="3" />
+          <Property Name="ReachSpendMinute" Type="Int32" />
+          <Property Name="Accuracy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_Score_Day_YbUsers">
+          <End Type="YBPFDB_Model.YbUsers" Role="YbUsers" Multiplicity="0..1" />
+          <End Type="YBPFDB_Model.Score_Day" Role="Score_Day" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="YbUsers">
+              <PropertyRef Name="YBUserID" />
+            </Principal>
+            <Dependent Role="Score_Day">
+              <PropertyRef Name="YBUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="WarnStatistics">
+          <Key>
+            <PropertyRef Name="StatisticsID" />
+          </Key>
+          <Property Name="StatisticsID" Type="Guid" Nullable="false" />
+          <Property Name="Year" Type="Int32" />
+          <Property Name="Month" Type="Int32" />
+          <Property Name="WarnCategory" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="WarnLevel" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TSScore" Type="Int32" />
+          <Property Name="HitRate" Type="Int32" />
+          <Property Name="MissRate" Type="Int32" />
+          <Property Name="EmptyRate" Type="Int32" />
+          <Property Name="ReachSpendMinute1" Type="Int32" />
+          <Property Name="ReachSpendMinute2" Type="Int32" />
+          <Property Name="ReachSpendMinute3" Type="Int32" />
+          <Property Name="CreateTime" Type="DateTime" Precision="3" />
+          <Property Name="LevelOrder" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Score_Month">
+          <Key>
+            <PropertyRef Name="ScoreID" />
+          </Key>
+          <Property Name="ScoreID" Type="Guid" Nullable="false" />
+          <Property Name="YBUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RainShine" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="MinTemp" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="MaxTemp" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Rainfall" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Rainstorm" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Total" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="WeightedTotal" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="RainShine_Group" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="MinTemp_Group" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="MaxTemp_Group" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Rainfall_Group" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Rainstorm_Group" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Total_Group" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Year" Type="Int32" />
+          <Property Name="Month" Type="Int32" />
+          <Property Name="YBUserID" Type="Guid" />
+          <NavigationProperty Name="YbUsers" Relationship="YBPFDB_Model.FK_Score_Month_YbUsers" FromRole="Score_Month" ToRole="YbUsers" />
+        </EntityType>
+        <Association Name="FK_Score_Month_YbUsers">
+          <End Type="YBPFDB_Model.YbUsers" Role="YbUsers" Multiplicity="0..1" />
+          <End Type="YBPFDB_Model.Score_Month" Role="Score_Month" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="YbUsers">
+              <PropertyRef Name="YBUserID" />
+            </Principal>
+            <Dependent Role="Score_Month">
+              <PropertyRef Name="YBUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -469,6 +717,96 @@
                 <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
                 <ScalarProperty Name="FDate" ColumnName="FDate" />
                 <ScalarProperty Name="LDID" ColumnName="LDID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Score_Day">
+            <EntityTypeMapping TypeName="YBPFDB_Model.Score_Day">
+              <MappingFragment StoreEntitySet="Score_Day">
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="Rainstorm48Total" ColumnName="Rainstorm48Total" />
+                <ScalarProperty Name="Rainstorm48" ColumnName="Rainstorm48" />
+                <ScalarProperty Name="Rainstorm24Total" ColumnName="Rainstorm24Total" />
+                <ScalarProperty Name="Rainstorm24" ColumnName="Rainstorm24" />
+                <ScalarProperty Name="Rainfall72Total" ColumnName="Rainfall72Total" />
+                <ScalarProperty Name="Rainfall72" ColumnName="Rainfall72" />
+                <ScalarProperty Name="Rainfall48Total" ColumnName="Rainfall48Total" />
+                <ScalarProperty Name="Rainfall48" ColumnName="Rainfall48" />
+                <ScalarProperty Name="Rainfall24Total" ColumnName="Rainfall24Total" />
+                <ScalarProperty Name="Rainfall24" ColumnName="Rainfall24" />
+                <ScalarProperty Name="AllTotal" ColumnName="AllTotal" />
+                <ScalarProperty Name="MinTemp72" ColumnName="MinTemp72" />
+                <ScalarProperty Name="MaxTemp72" ColumnName="MaxTemp72" />
+                <ScalarProperty Name="RainShine72" ColumnName="RainShine72" />
+                <ScalarProperty Name="MinTemp48" ColumnName="MinTemp48" />
+                <ScalarProperty Name="MaxTemp48" ColumnName="MaxTemp48" />
+                <ScalarProperty Name="RainShine48" ColumnName="RainShine48" />
+                <ScalarProperty Name="MinTemp24" ColumnName="MinTemp24" />
+                <ScalarProperty Name="MaxTemp24" ColumnName="MaxTemp24" />
+                <ScalarProperty Name="RainShine24" ColumnName="RainShine24" />
+                <ScalarProperty Name="YBUserID" ColumnName="YBUserID" />
+                <ScalarProperty Name="YBUserName" ColumnName="YBUserName" />
+                <ScalarProperty Name="YBTime" ColumnName="YBTime" />
+                <ScalarProperty Name="YBDate" ColumnName="YBDate" />
+                <ScalarProperty Name="ScoreID" ColumnName="ScoreID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WarnCheck">
+            <EntityTypeMapping TypeName="YBPFDB_Model.WarnCheck">
+              <MappingFragment StoreEntitySet="WarnCheck">
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Accuracy" ColumnName="Accuracy" />
+                <ScalarProperty Name="ReachSpendMinute" ColumnName="ReachSpendMinute" />
+                <ScalarProperty Name="ReachTime" ColumnName="ReachTime" />
+                <ScalarProperty Name="WarningLevel" ColumnName="WarningLevel" />
+                <ScalarProperty Name="WarningCategory" ColumnName="WarningCategory" />
+                <ScalarProperty Name="ReleaseTime" ColumnName="ReleaseTime" />
+                <ScalarProperty Name="CheckID" ColumnName="CheckID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WarnStatistics">
+            <EntityTypeMapping TypeName="YBPFDB_Model.WarnStatistics">
+              <MappingFragment StoreEntitySet="WarnStatistics">
+                <ScalarProperty Name="LevelOrder" ColumnName="LevelOrder" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="ReachSpendMinute3" ColumnName="ReachSpendMinute3" />
+                <ScalarProperty Name="ReachSpendMinute2" ColumnName="ReachSpendMinute2" />
+                <ScalarProperty Name="ReachSpendMinute1" ColumnName="ReachSpendMinute1" />
+                <ScalarProperty Name="EmptyRate" ColumnName="EmptyRate" />
+                <ScalarProperty Name="MissRate" ColumnName="MissRate" />
+                <ScalarProperty Name="HitRate" ColumnName="HitRate" />
+                <ScalarProperty Name="TSScore" ColumnName="TSScore" />
+                <ScalarProperty Name="WarnLevel" ColumnName="WarnLevel" />
+                <ScalarProperty Name="WarnCategory" ColumnName="WarnCategory" />
+                <ScalarProperty Name="Month" ColumnName="Month" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="StatisticsID" ColumnName="StatisticsID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Score_Month">
+            <EntityTypeMapping TypeName="YBPFDB_Model.Score_Month">
+              <MappingFragment StoreEntitySet="Score_Month">
+                <ScalarProperty Name="YBUserID" ColumnName="YBUserID" />
+                <ScalarProperty Name="Month" ColumnName="Month" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Total_Group" ColumnName="Total_Group" />
+                <ScalarProperty Name="Rainstorm_Group" ColumnName="Rainstorm_Group" />
+                <ScalarProperty Name="Rainfall_Group" ColumnName="Rainfall_Group" />
+                <ScalarProperty Name="MaxTemp_Group" ColumnName="MaxTemp_Group" />
+                <ScalarProperty Name="MinTemp_Group" ColumnName="MinTemp_Group" />
+                <ScalarProperty Name="RainShine_Group" ColumnName="RainShine_Group" />
+                <ScalarProperty Name="WeightedTotal" ColumnName="WeightedTotal" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="Rainstorm" ColumnName="Rainstorm" />
+                <ScalarProperty Name="Rainfall" ColumnName="Rainfall" />
+                <ScalarProperty Name="MaxTemp" ColumnName="MaxTemp" />
+                <ScalarProperty Name="MinTemp" ColumnName="MinTemp" />
+                <ScalarProperty Name="RainShine" ColumnName="RainShine" />
+                <ScalarProperty Name="YBUserName" ColumnName="YBUserName" />
+                <ScalarProperty Name="ScoreID" ColumnName="ScoreID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

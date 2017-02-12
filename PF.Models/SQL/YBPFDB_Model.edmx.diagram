@@ -14,6 +14,12 @@
         <AssociationConnector Association="YBPFDB_Model.FK_BWYB_YbUsers" />
         <EntityTypeShape EntityType="YBPFDB_Model.WeatherDictionary" Width="1.5" PointX="7.375" PointY="0.75" />
         <EntityTypeShape EntityType="YBPFDB_Model.LiveData" Width="1.5" PointX="7.375" PointY="3.75" />
+        <EntityTypeShape EntityType="YBPFDB_Model.Score_Day" Width="1.5" PointX="3" PointY="7.5" />
+        <EntityTypeShape EntityType="YBPFDB_Model.WarnCheck" Width="1.5" PointX="7.375" PointY="7.75" />
+        <AssociationConnector Association="YBPFDB_Model.FK_Score_Day_YbUsers" />
+        <EntityTypeShape EntityType="YBPFDB_Model.WarnStatistics" Width="1.5" PointX="9.375" PointY="0.75" />
+        <EntityTypeShape EntityType="YBPFDB_Model.Score_Month" Width="1.5" PointX="3" PointY="14.25" />
+        <AssociationConnector Association="YBPFDB_Model.FK_Score_Month_YbUsers" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

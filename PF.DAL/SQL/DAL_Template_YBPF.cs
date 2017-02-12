@@ -13,7 +13,27 @@ namespace PF.DAL.SQL
     {
 	   
     }
+	public partial class LiveData_DAL : Base_DAL_YBPF<LiveData>
+    {
+	   
+    }
+	public partial class Score_Day_DAL : Base_DAL_YBPF<Score_Day>
+    {
+	   
+    }
+	public partial class Score_Month_DAL : Base_DAL_YBPF<Score_Month>
+    {
+	   
+    }
 	public partial class sysdiagrams_DAL : Base_DAL_YBPF<sysdiagrams>
+    {
+	   
+    }
+	public partial class WarnCheck_DAL : Base_DAL_YBPF<WarnCheck>
+    {
+	   
+    }
+	public partial class WarnStatistics_DAL : Base_DAL_YBPF<WarnStatistics>
     {
 	   
     }

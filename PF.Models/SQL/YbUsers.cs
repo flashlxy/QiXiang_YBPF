@@ -18,6 +18,8 @@ namespace PF.Models.SQL
         {
             this.BaoWens = new HashSet<BaoWens>();
             this.BwYbs = new HashSet<BwYbs>();
+            this.Score_Day = new HashSet<Score_Day>();
+            this.Score_Month = new HashSet<Score_Month>();
         }
     
         public System.Guid YBUserID { get; set; }
@@ -25,5 +27,7 @@ namespace PF.Models.SQL
     
         public virtual ICollection<BaoWens> BaoWens { get; set; }
         public virtual ICollection<BwYbs> BwYbs { get; set; }
+        public virtual ICollection<Score_Day> Score_Day { get; set; }
+        public virtual ICollection<Score_Month> Score_Month { get; set; }
     }
 }

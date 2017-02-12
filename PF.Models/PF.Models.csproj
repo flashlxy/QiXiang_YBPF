@@ -75,7 +75,19 @@
     <Compile Include="SQL\LiveData.cs">
       <DependentUpon>YBPFDB_Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="SQL\Score_Day.cs">
+      <DependentUpon>YBPFDB_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SQL\Score_Month.cs">
+      <DependentUpon>YBPFDB_Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="SQL\sysdiagrams.cs">
+      <DependentUpon>YBPFDB_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SQL\WarnCheck.cs">
+      <DependentUpon>YBPFDB_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SQL\WarnStatistics.cs">
       <DependentUpon>YBPFDB_Model.tt</DependentUpon>
     </Compile>
     <Compile Include="SQL\WeatherDictionary.cs">
