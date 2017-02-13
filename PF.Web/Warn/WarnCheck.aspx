@@ -97,6 +97,7 @@
                             </td>
                             <td>
                                 <asp:DropDownList ID="DropDownList_WarnCategory" runat="server" Font-Size="14pt">
+                                    <asp:ListItem Text="全部" Value="全部" Selected="True"></asp:ListItem>
                                     <asp:ListItem Text="暴雨" Value="暴雨"></asp:ListItem>
                                     <asp:ListItem Text="暴雪" Value="暴雪"></asp:ListItem>
                                     <asp:ListItem Text="大风" Value="大风"></asp:ListItem>
@@ -104,16 +105,15 @@
                                     <asp:ListItem Text="霾" Value="霾"></asp:ListItem>
                                     <asp:ListItem Text="雷电" Value="雷电"></asp:ListItem>
                                     <asp:ListItem Text="冰雹" Value="冰雹"></asp:ListItem>
-                                    <asp:ListItem Text="全部" Value="全部"></asp:ListItem>
                                 </asp:DropDownList>
                             </td>
                             <td>
                                 <asp:DropDownList ID="DropDownList_WarnLevel" runat="server" Font-Size="14pt">
+                                    <asp:ListItem Text="全部" Value="全部" Selected="True"></asp:ListItem>
                                     <asp:ListItem Text="蓝色" Value="蓝色"></asp:ListItem>
                                     <asp:ListItem Text="黄色" Value="黄色"></asp:ListItem>
                                     <asp:ListItem Text="橙色" Value="橙色"></asp:ListItem>
                                     <asp:ListItem Text="红色" Value="红色"></asp:ListItem>
-                                    <asp:ListItem Text="全部" Value="全部"></asp:ListItem>
                                 </asp:DropDownList>
 
                             </td>

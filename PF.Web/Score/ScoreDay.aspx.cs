@@ -15,7 +15,9 @@ namespace PF.Web.Score
         {
             if (!IsPostBack)
             {
-              
+                InitYBUser();
+
+
             }
         }
         public void Init()
@@ -38,8 +40,17 @@ namespace PF.Web.Score
             Score_Day_BLL bll = new Score_Day_BLL();
             DateTime startTime = DateTime.Parse(DropDownList_Year.SelectedItem.Value + "-" + DropDownList_Month.SelectedItem.Value + "-01");
             DateTime endTime = startTime.AddMonths(1).AddDays(-1);
-            List<PF.Models.SQL.Score_Day> list = bll.GetList(a => a.YBDate >= startTime && a.YBDate <= endTime && a.YBTime == DropDownList_YBTime.SelectedItem.Value).OrderBy(a => a.YBDate).ToList();
+            List<PF.Models.SQL.Score_Day> list = new List<Score_Day>();
+            if (DropDownList_YBUser.SelectedItem.Value == "全部")
+            {
+                 list = bll.GetList(a => a.YBDate >= startTime && a.YBDate <= endTime && a.YBTime == DropDownList_YBTime.SelectedItem.Value).OrderBy(a => a.YBDate).ToList();
 
+            }
+            else
+            {
+                 list = bll.GetList(a => a.YBDate >= startTime && a.YBDate <= endTime && a.YBTime == DropDownList_YBTime.SelectedItem.Value&&a.YBUserName==DropDownList_YBUser.SelectedItem.Value).OrderBy(a => a.YBDate).ToList();
+
+            }
             GridView_List.DataSource = list;
             GridView_List.DataBind();
         }
@@ -48,6 +59,20 @@ namespace PF.Web.Score
         {
             GridView_List.PageIndex = e.NewPageIndex;
             BindData();
+        }
+
+        public void InitYBUser()
+        {
+            YbUsers_BLL bll = new YbUsers_BLL();
+            List<YbUsers> ulist = bll.GetList().ToList();
+            ListItem allli = new ListItem() { Text = "全部", Value = "全部",Selected=true };
+            DropDownList_YBUser.Items.Add(allli);
+
+            foreach (var item in ulist)
+            {
+                ListItem li = new ListItem() {Text=item.YBUserName,Value=item.YBUserName};
+                DropDownList_YBUser.Items.Add(li);
+            }
         }
     }
 }

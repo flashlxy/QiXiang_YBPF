@@ -57,7 +57,7 @@
     <form id="form1" runat="server">
         <table style="margin: 0 auto;">
             <tr>
-                <td style="font-size: 1.5em; text-align: center; padding: 15px; background-color: #f6d699">每日成绩
+                <td style="font-size: 1.5em; text-align: center; padding: 15px; background-color: #f6d699">预报每日成绩
                 </td>
             </tr>
             <tr>
@@ -95,15 +95,17 @@
                                 </asp:DropDownList>
 
                             </td>
-
+                            <td>预报员</td>
+                            <td>
+                                <asp:DropDownList ID="DropDownList_YBUser" runat="server" Font-Size="14pt"></asp:DropDownList>
+                            </td>
                             <td>
                                 <asp:Button ID="Button_Query" CssClass="btn-query" runat="server" Text="确定" OnClick="Button_Query_Click" />
                             </td>
                         </tr>
 
                     </table>
-                </td>
-            </tr>
+                </td></tr>
             <tr>
                 <td>
                     <table>

@@ -61,7 +61,7 @@
     <form id="form1" runat="server">
         <table style="margin: 0 auto;">
             <tr>
-                <td style="font-size: 1.5em; text-align: center; padding: 15px; background-color: #f6d699">每月成绩
+                <td style="font-size: 1.5em; text-align: center; padding: 15px; background-color: #f6d699">预报每月成绩
                 </td>
             </tr>
             <tr>
