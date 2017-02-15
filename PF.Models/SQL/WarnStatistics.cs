@@ -28,5 +28,8 @@ namespace PF.Models.SQL
         public Nullable<int> ReachSpendMinute3 { get; set; }
         public Nullable<System.DateTime> CreateTime { get; set; }
         public Nullable<int> LevelOrder { get; set; }
+        public Nullable<int> HitCount { get; set; }
+        public Nullable<int> MissCount { get; set; }
+        public Nullable<int> EmptyCount { get; set; }
     }
 }

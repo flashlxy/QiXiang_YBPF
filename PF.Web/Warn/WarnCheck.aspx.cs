@@ -6,6 +6,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using PF.Models.SQL;
 using PF.BLL.SQL;
+using Aspose.Words;
+using System.Drawing;
+using Aspose.Words.Tables;
 
 namespace PF.Web.Warn
 {
@@ -39,8 +42,10 @@ namespace PF.Web.Warn
             {
                 list = list.Where(a => a.WarningLevel == DropDownList_WarnLevel.SelectedItem.Value).ToList();
             }
-            GridView_List.DataSource = list.OrderBy(a=>a.ReleaseTime);
+            GridView_List.DataSource = list.OrderBy(a => a.ReleaseTime);
             GridView_List.DataBind();
         }
+
+       
     }
 }

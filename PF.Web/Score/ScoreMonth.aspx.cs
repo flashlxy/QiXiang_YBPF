@@ -25,7 +25,9 @@ namespace PF.Web.Score
             int Year = int.Parse(DropDownList_Year.SelectedItem.Value);
             int Month = int.Parse(DropDownList_Month.SelectedItem.Value);
             Score_Month_BLL bll = new Score_Month_BLL();
-            List<Score_Month> list = bll.GetList(a => a.Year == Year && a.Month == Month).OrderByDescending(a => a.WeightedTotal).ToList();
+            List<Score_Month> list = bll.GetList(a => a.Year == Year && a.Month == Month&&a.YBUserName!="集体").OrderByDescending(a => a.WeightedTotal).ToList();
+            Score_Month group = bll.GetList(a => a.Year == Year && a.Month == Month&&a.YBUserName=="集体").FirstOrDefault();
+            list.Add(group);
             Repeater_List.DataSource = list;
             Repeater_List.DataBind();
         }
@@ -232,7 +234,7 @@ namespace PF.Web.Score
 
             DateTime startTime = DateTime.Parse(DropDownList_Year.SelectedItem.Value + "-" + DropDownList_Month.SelectedItem.Value + "-01");
             DateTime endTime = startTime.AddMonths(1).AddDays(-1);
-            List<Score_Day> dayList = dayBll.GetList(a => a.YBDate >= startTime && a.YBDate <= endTime && a.YBUserName != "集体").OrderBy(a => a.YBDate).ToList();
+            List<Score_Day> dayList = dayBll.GetList(a => a.YBDate >= startTime && a.YBDate <= endTime ).OrderBy(a => a.YBDate).ToList();
             List<Score_Day> dayList_Group = dayBll.GetList(a => a.YBDate >= startTime && a.YBDate <= endTime && a.YBUserName == "集体").OrderBy(a => a.YBDate).ToList();
 
 
@@ -489,5 +491,6 @@ namespace PF.Web.Score
             Response.Write("<script language=javascript defer>alert('计算成功！');</script>");
         }
 
+        
     }
 }

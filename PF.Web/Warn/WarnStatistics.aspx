@@ -94,6 +94,10 @@
 
                                 <asp:Button ID="Button_Query" CssClass="btn-query" runat="server" Text="查询" Font-Size="12pt" OnClick="Button_Query_Click" />
                           </td>
+                            <td>
+                                <asp:Button ID="Button_Export" CssClass="btn-query"  runat="server" Text="导出Word" OnClick="Button_Export_Click" />
+
+                            </td>
 
                         </tr>
                     </table>

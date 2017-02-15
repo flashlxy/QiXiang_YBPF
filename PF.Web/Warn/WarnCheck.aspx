@@ -73,6 +73,8 @@
                             <td rowspan="2">
                                 <asp:Button ID="Button_Query" CssClass="btn-query" runat="server" Text="查询" Font-Size="14pt" OnClick="Button_Query_Click" />
                             </td>
+                         
+                            
                         </tr>
                         <tr>
                             <td>

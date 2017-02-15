@@ -185,6 +185,9 @@
           <Property Name="ReachSpendMinute3" Type="int" />
           <Property Name="CreateTime" Type="datetime" />
           <Property Name="LevelOrder" Type="int" />
+          <Property Name="HitCount" Type="int" />
+          <Property Name="MissCount" Type="int" />
+          <Property Name="EmptyCount" Type="int" />
         </EntityType>
         <EntityType Name="WeatherDictionary">
           <Key>
@@ -560,6 +563,9 @@
           <Property Name="ReachSpendMinute3" Type="Int32" />
           <Property Name="CreateTime" Type="DateTime" Precision="3" />
           <Property Name="LevelOrder" Type="Int32" />
+          <Property Name="HitCount" Type="Int32" />
+          <Property Name="MissCount" Type="Int32" />
+          <Property Name="EmptyCount" Type="Int32" />
         </EntityType>
         <EntityType Name="Score_Month">
           <Key>
@@ -769,6 +775,9 @@
           <EntitySetMapping Name="WarnStatistics">
             <EntityTypeMapping TypeName="YBPFDB_Model.WarnStatistics">
               <MappingFragment StoreEntitySet="WarnStatistics">
+                <ScalarProperty Name="EmptyCount" ColumnName="EmptyCount" />
+                <ScalarProperty Name="MissCount" ColumnName="MissCount" />
+                <ScalarProperty Name="HitCount" ColumnName="HitCount" />
                 <ScalarProperty Name="LevelOrder" ColumnName="LevelOrder" />
                 <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
                 <ScalarProperty Name="ReachSpendMinute3" ColumnName="ReachSpendMinute3" />

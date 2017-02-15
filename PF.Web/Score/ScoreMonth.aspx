@@ -118,11 +118,16 @@
                             <th>TS总分</th>
                             <th>Ts加权总分</th>
                         </tr>
+                        
+                        
+                     
+                        
 
                         <asp:Repeater ID="Repeater_List" runat="server">
                             <ItemTemplate>
-                              
-                                <tr style='background-color:<%#(Container.ItemIndex%2==0)?"#fcf9d3":"#d3f3fc"%>'>
+
+                               
+                                <tr style='background-color: <%#(Container.ItemIndex%2==0)?"#fcf9d3":"#d3f3fc"%>'>
                                     <td rowspan="2"><%#Eval("YBUserName") %></td>
                                     <td>个人</td>
                                     <td><%#Eval("RainShine") %></td>
@@ -133,7 +138,7 @@
                                     <td><%#Eval("Total") %></td>
                                     <td rowspan="2"><%#Eval("WeightedTotal") %></td>
                                 </tr>
-                                <tr  style='background-color:<%#(Container.ItemIndex%2==0)?"#fcf9d3":"#d3f3fc"%>'>
+                                <tr style='background-color: <%#(Container.ItemIndex%2==0)?"#fcf9d3":"#d3f3fc"%>'>
                                     <td>集体</td>
                                     <td><%#Eval("RainShine_Group") %></td>
                                     <td><%#Eval("MinTemp_Group") %></td>
@@ -142,6 +147,22 @@
                                     <td><%#Eval("Rainstorm_Group") %></td>
                                     <td><%#Eval("Total_Group") %></td>
                                 </tr>
+                              <%--  <% }
+                                    else
+                                    { %>--%>
+                              <%--  <tr style='background-color: <%#(Container.ItemIndex%2==0)?"#fcf9d3":"#d3f3fc"%>'>
+                                    <td><%#Eval("YBUserName") %></td>
+                                    <td></td>
+                                    <td><%#Eval("RainShine") %></td>
+                                    <td><%#Eval("MinTemp") %></td>
+                                    <td><%#Eval("MaxTemp") %></td>
+                                    <td><%#Eval("Rainfall") %></td>
+                                    <td><%#Eval("Rainstorm") %></td>
+                                    <td><%#Eval("Total") %></td>
+                                    <td><%#Eval("WeightedTotal") %></td>
+                                </tr>--%>
+
+                              <%--  <% } %>--%>
                             </ItemTemplate>
                         </asp:Repeater>
                     </table>
