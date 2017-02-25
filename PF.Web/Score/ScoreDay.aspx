@@ -41,7 +41,7 @@
             padding: 3px;
             text-align: center;
             border: 1px solid #808080;
-            font-size:12px;
+            font-size: 14px;
         }
 
         .gridview-table tr:nth-child(2n+1) {
@@ -69,7 +69,7 @@
                             <td>
                                 <asp:DropDownList ID="DropDownList_YBTime" runat="server" Font-Size="14pt">
                                     <asp:ListItem Text="08时" Value="08时"></asp:ListItem>
-                                    <asp:ListItem Text="20时" Value="20时"  Selected="True"></asp:ListItem>
+                                    <asp:ListItem Text="20时" Value="20时" Selected="True"></asp:ListItem>
                                 </asp:DropDownList>
                             </td>
 
@@ -80,7 +80,7 @@
                                     <asp:ListItem Text="2017年" Value="2017" Selected="True"></asp:ListItem>
                                 </asp:DropDownList>
                                 <asp:DropDownList ID="DropDownList_Month" runat="server" Font-Size="14pt">
-                                    <asp:ListItem Text="01月" Value="01"  Selected="True"></asp:ListItem>
+                                    <asp:ListItem Text="01月" Value="01" Selected="True"></asp:ListItem>
                                     <asp:ListItem Text="02月" Value="02"></asp:ListItem>
                                     <asp:ListItem Text="03月" Value="03"></asp:ListItem>
                                     <asp:ListItem Text="04月" Value="04"></asp:ListItem>
@@ -100,49 +100,48 @@
                                 <asp:DropDownList ID="DropDownList_YBUser" runat="server" Font-Size="14pt"></asp:DropDownList>
                             </td>
                             <td>
-                                <asp:Button ID="Button_Query" CssClass="btn-query" runat="server" Text="确定" OnClick="Button_Query_Click" />
+                                <asp:Button ID="Button_Query" CssClass="btn-query" runat="server" Text="查询" OnClick="Button_Query_Click" />
+                            </td>
+                            <td>
+                                <asp:Button ID="Button_Calculate" CssClass="btn-query" runat="server" Text="计算" OnClick="Button_Calculate_Click"  />
                             </td>
                         </tr>
 
                     </table>
-                </td></tr>
+                </td>
+            </tr>
             <tr>
                 <td>
-                    <table>
-                        <tr>
-                            <td>
-                                <asp:GridView ID="GridView_List" CssClass="gridview-table" runat="server" AutoGenerateColumns="False" AllowPaging="True" OnPageIndexChanging="GridView_List_PageIndexChanging" PageSize="20">
-                                    <Columns>
-                                        <asp:BoundField DataField="YBDate" DataFormatString="{0:yyyy年M月dd日}" HeaderText="预报日期" />
-                                        <asp:BoundField DataField="YBTime" HeaderText="预报时间" />
-                                        <asp:BoundField DataField="YBUserName" HeaderText="姓名" />
-                                        <asp:BoundField DataField="RainShine24" HeaderText="晴雨24" />
-                                        <asp:BoundField DataField="MaxTemp24" HeaderText="高温24" />
-                                        <asp:BoundField DataField="MinTemp24" HeaderText="低温24" />
-                                        <asp:BoundField DataField="RainShine48" HeaderText="晴雨48" />
-                                        <asp:BoundField DataField="MaxTemp48" HeaderText="高温48" />
-                                        <asp:BoundField DataField="MinTemp48" HeaderText="低温48" />
-                                        <asp:BoundField DataField="RainShine72" HeaderText="晴雨72" />
-                                        <asp:BoundField DataField="MaxTemp72" HeaderText="高温72" />
-                                        <asp:BoundField DataField="MinTemp72" HeaderText="低温72" />
-                                        <asp:BoundField DataField="AllTotal" HeaderText="总数" />
-                                        <asp:BoundField DataField="Rainfall24" HeaderText="降水24" />
-                                        <asp:BoundField DataField="Rainfall24Total" HeaderText="降水24总数" />
-                                        <asp:BoundField DataField="Rainfall48" HeaderText="降水48" />
-                                        <asp:BoundField DataField="Rainfall48Total" HeaderText="降水48总数" />
-                                        <asp:BoundField DataField="Rainfall72" HeaderText="降水72" />
-                                        <asp:BoundField DataField="Rainfall72Total" HeaderText="降水72总数" />
-                                        <asp:BoundField DataField="Rainstorm24" HeaderText="暴雨24" />
-                                        <asp:BoundField DataField="Rainstorm24Total" HeaderText="暴雨24总数" />
-                                        <asp:BoundField DataField="Rainstorm48" HeaderText="暴雨48" />
-                                        <asp:BoundField DataField="Rainstorm48Total" HeaderText="暴雨48总数" />
-                                    </Columns>
 
-                                </asp:GridView>
-                            </td>
+                    <asp:GridView ID="GridView_List" CssClass="gridview-table" runat="server" AutoGenerateColumns="False" AllowPaging="True" OnPageIndexChanging="GridView_List_PageIndexChanging" PageSize="20">
+                        <Columns>
+                            <asp:BoundField DataField="YBDate" DataFormatString="{0:yyyy年M月dd日}" HeaderText="预报日期" />
+                            <asp:BoundField DataField="YBTime" HeaderText="预报时间" />
+                            <asp:BoundField DataField="YBUserName" HeaderText="姓名" />
+                            <asp:BoundField DataField="RainShine24" HeaderText="晴雨24" />
+                            <asp:BoundField DataField="MaxTemp24" HeaderText="高温24" />
+                            <asp:BoundField DataField="MinTemp24" HeaderText="低温24" />
+                            <asp:BoundField DataField="RainShine48" HeaderText="晴雨48" />
+                            <asp:BoundField DataField="MaxTemp48" HeaderText="高温48" />
+                            <asp:BoundField DataField="MinTemp48" HeaderText="低温48" />
+                            <asp:BoundField DataField="RainShine72" HeaderText="晴雨72" />
+                            <asp:BoundField DataField="MaxTemp72" HeaderText="高温72" />
+                            <asp:BoundField DataField="MinTemp72" HeaderText="低温72" />
+                            <asp:BoundField DataField="AllTotal" HeaderText="总数" />
+                            <asp:BoundField DataField="Rainfall24" HeaderText="降水24" />
+                            <asp:BoundField DataField="Rainfall24Total" HeaderText="降水24总数" />
+                            <asp:BoundField DataField="Rainfall48" HeaderText="降水48" />
+                            <asp:BoundField DataField="Rainfall48Total" HeaderText="降水48总数" />
+                            <asp:BoundField DataField="Rainfall72" HeaderText="降水72" />
+                            <asp:BoundField DataField="Rainfall72Total" HeaderText="降水72总数" />
+                            <asp:BoundField DataField="Rainstorm24" HeaderText="暴雨24" />
+                            <asp:BoundField DataField="Rainstorm24Total" HeaderText="暴雨24总数" />
+                            <asp:BoundField DataField="Rainstorm48" HeaderText="暴雨48" />
+                            <asp:BoundField DataField="Rainstorm48Total" HeaderText="暴雨48总数" />
+                        </Columns>
 
-                        </tr>
-                    </table>
+                    </asp:GridView>
+
                 </td>
             </tr>
         </table>

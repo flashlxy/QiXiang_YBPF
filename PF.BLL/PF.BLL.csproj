@@ -49,6 +49,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Score_Day_20_BLL.cs" />
     <Compile Include="SQL\Base_BLL_YBPF.cs" />
     <Compile Include="SQL\BLL_Template_YBPF.cs">
       <AutoGen>True</AutoGen>

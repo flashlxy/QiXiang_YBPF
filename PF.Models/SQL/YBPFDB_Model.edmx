@@ -197,6 +197,8 @@
           <Property Name="Code" Type="decimal" Precision="10" Scale="0" />
           <Property Name="Type" Type="nvarchar" MaxLength="20" />
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Priority" Type="int" />
+          <Property Name="CodeNew" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="YbUsers">
           <Key>
@@ -473,6 +475,8 @@
           <Property Name="Code" Type="Decimal" Precision="10" Scale="0" />
           <Property Name="Type" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Priority" Type="Int32" />
+          <Property Name="CodeNew" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="LiveData">
           <Key>
@@ -704,6 +708,8 @@
           <EntitySetMapping Name="WeatherDictionary">
             <EntityTypeMapping TypeName="YBPFDB_Model.WeatherDictionary">
               <MappingFragment StoreEntitySet="WeatherDictionary">
+                <ScalarProperty Name="CodeNew" ColumnName="CodeNew" />
+                <ScalarProperty Name="Priority" ColumnName="Priority" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Type" ColumnName="Type" />
                 <ScalarProperty Name="Code" ColumnName="Code" />

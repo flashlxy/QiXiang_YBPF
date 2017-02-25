@@ -18,5 +18,7 @@ namespace PF.Models.SQL
         public Nullable<decimal> Code { get; set; }
         public string Type { get; set; }
         public int ID { get; set; }
+        public Nullable<int> Priority { get; set; }
+        public string CodeNew { get; set; }
     }
 }

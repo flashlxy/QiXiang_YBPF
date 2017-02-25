@@ -74,5 +74,10 @@ namespace PF.Web.Score
                 DropDownList_YBUser.Items.Add(li);
             }
         }
+        //计算全部在下面
+        protected void Button_Calculate_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
