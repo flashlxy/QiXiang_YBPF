@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using PF.BLL;
 using PF.Models.SQL;
 using PF.BLL.SQL;
 
@@ -77,6 +78,21 @@ namespace PF.Web.Score
         //计算全部在下面
         protected void Button_Calculate_Click(object sender, EventArgs e)
         {
+            DateTime startTime = DateTime.Parse(DropDownList_Year.SelectedItem.Value + "-" + DropDownList_Month.SelectedItem.Value + "-01");
+            DateTime endTime = startTime.AddMonths(1);
+                Score_Day_BLL bll = new Score_Day_BLL();
+            if (DropDownList_YBTime.SelectedItem.Value == "08时")
+            {
+               
+                bll.Caculate08(startTime, endTime);
+            }
+            else
+            {
+               
+                bll.Caculate20(startTime, endTime);
+            }
+
+            Response.Write("<script language=javascript defer>alert('计算完成！');</script>");
 
         }
     }

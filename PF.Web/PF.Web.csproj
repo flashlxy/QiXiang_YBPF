@@ -146,9 +146,11 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="LiveData\LiveDataImport.aspx" />
     <Content Include="R248\Rain08ToData.aspx" />
     <Content Include="Score\ScoreMonth.aspx" />
     <Content Include="Score\ScoreDay.aspx" />
+    <Content Include="Score\ScoreTest.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Data\预警信号检验\预警信号质量检验报表-2017年01月.docx" />
@@ -192,6 +194,13 @@
     <Compile Include="Layout\Main.Master.designer.cs">
       <DependentUpon>Main.Master</DependentUpon>
     </Compile>
+    <Compile Include="LiveData\LiveDataImport.aspx.cs">
+      <DependentUpon>LiveDataImport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LiveData\LiveDataImport.aspx.designer.cs">
+      <DependentUpon>LiveDataImport.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="R248\Rain08ToData.aspx.cs">
       <DependentUpon>Rain08ToData.aspx</DependentUpon>
@@ -213,6 +222,13 @@
     </Compile>
     <Compile Include="Score\ScoreDay.aspx.designer.cs">
       <DependentUpon>ScoreDay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Score\ScoreTest.aspx.cs">
+      <DependentUpon>ScoreTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Score\ScoreTest.aspx.designer.cs">
+      <DependentUpon>ScoreTest.aspx</DependentUpon>
     </Compile>
     <Compile Include="Temp\Temp08.aspx.cs">
       <DependentUpon>Temp08.aspx</DependentUpon>
