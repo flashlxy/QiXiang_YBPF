@@ -37,6 +37,13 @@ namespace PF.BLL
                     foreach (BwYbs dayPerson in dayPersonList)
                     {
                         DateTime currentDay = DateTime.Parse(((DateTime)dayPerson.YBDateTime).ToShortDateString());
+
+
+                        Score_Day scoreDay = new Score_Day();
+
+                        scoreDay.AllTotal = 1;//只要有站 该值就为1
+
+
                         #region 晴雨预报判断
                         ///晴雨预报判断
                         /// 24小时
@@ -54,22 +61,26 @@ namespace PF.BLL
                             if ((double)liveRain24 <= 0.01)
                             {
                                 //1
+                                scoreDay.RainShine24 = 1;
                             }
                             else
                             {
                                 //0
+                                scoreDay.RainShine24 = 1;
                             }
                         }
                         else
                         {
                             //如果为晴
-                            if ((double)liveRain24 <= 0.01)
+                            if (liveRain24 <= 0.01)
                             {
                                 //1
+                                scoreDay.RainShine24 = 1;
                             }
                             else
                             {
                                 //0
+                                scoreDay.RainShine24 = 1;
                             }
                         }
                         ///晴雨预报判断
@@ -85,13 +96,15 @@ namespace PF.BLL
                         if (trueWd48.Priority < 11)
                         {
                             //如果有雨
-                            if ((double)liveRain48 <= 0.01)
+                            if (liveRain48 <= 0.01)
                             {
                                 //1
+                                scoreDay.RainShine48 = 1;
                             }
                             else
                             {
                                 //0
+                                scoreDay.RainShine48 = 1;
                             }
                         }
                         else
@@ -100,10 +113,12 @@ namespace PF.BLL
                             if ((double)liveRain48 <= 0.01)
                             {
                                 //1
+                                scoreDay.RainShine48 = 1;
                             }
                             else
                             {
                                 //0
+                                scoreDay.RainShine48 = 1;
                             }
                         }
 
@@ -123,10 +138,12 @@ namespace PF.BLL
                             if ((double)liveRain72 <= 0.01)
                             {
                                 //1
+                                scoreDay.RainShine72 = 1;
                             }
                             else
                             {
                                 //0
+                                scoreDay.RainShine72 = 1;
                             }
                         }
                         else
@@ -135,10 +152,12 @@ namespace PF.BLL
                             if ((double)liveRain72 <= 0.01)
                             {
                                 //1
+                                scoreDay.RainShine72 = 1;
                             }
                             else
                             {
                                 //0
+                                scoreDay.RainShine72 = 1;
                             }
                         }
                         #endregion
@@ -158,14 +177,20 @@ namespace PF.BLL
                             if (liveRain24 <= 37.9)
                             {
                                 //NaN
+                                scoreDay.Rainfall24 = null;
+                                scoreDay.Rainfall24Total = null;
                             }
                             else if (liveRain24 > 37.9 && liveRain24 < 50.0)
                             {
                                 //1
+                                scoreDay.Rainfall24 = 1;
+                                scoreDay.Rainfall24Total = 1;
                             }
                             else // >=50.0
                             {
                                 //NaN
+                                scoreDay.Rainfall24 = null;
+                                scoreDay.Rainfall24Total = null;
                             }
                         }
                         else if (trueWd24.Code == 28)
@@ -173,14 +198,20 @@ namespace PF.BLL
                             if (liveRain24 <= 7.4)
                             {
                                 //NaN
+                                scoreDay.Rainfall24 = null;
+                                scoreDay.Rainfall24Total = null;
                             }
                             else if (liveRain24 > 7.4 && liveRain24 < 10.0)
                             {
                                 //1
+                                scoreDay.Rainfall24 = 1;
+                                scoreDay.Rainfall24Total = 1;
                             }
                             else // >=10.0
                             {
                                 //NaN
+                                scoreDay.Rainfall24 = null;
+                                scoreDay.Rainfall24Total = null;
                             }
                         }
                         else if (trueWd24.CodeNew == "rain")
@@ -188,14 +219,20 @@ namespace PF.BLL
                             if (liveRain24 <= 0.01)
                             {
                                 //0
+                                scoreDay.Rainfall24 = 0;
+                                scoreDay.Rainfall24Total = 1;
                             }
                             else if (liveRain24 > 0.01 && liveRain24 < 50.0)
                             {
                                 //1
+                                scoreDay.Rainfall24 = 1;
+                                scoreDay.Rainfall24Total = 1;
                             }
                             else // >=50.0
                             {
                                 //NaN
+                                scoreDay.Rainfall24 = null;
+                                scoreDay.Rainfall24Total = null;
                             }
                         }
                         else if (trueWd24.CodeNew == "snow")
@@ -203,14 +240,20 @@ namespace PF.BLL
                             if (liveRain24 <= 0.01)
                             {
                                 //0
+                                scoreDay.Rainfall24 = 0;
+                                scoreDay.Rainfall24Total = 1;
                             }
                             else if (liveRain24 > 0.01 && liveRain24 < 10.0)
                             {
                                 //1
+                                scoreDay.Rainfall24 = 1;
+                                scoreDay.Rainfall24Total = 1;
                             }
                             else // >=10.0
                             {
                                 //NaN
+                                scoreDay.Rainfall24 = null;
+                                scoreDay.Rainfall24Total = null;
                             }
                         }
                         else if (trueWd24.CodeNew == "sunny")
@@ -218,14 +261,20 @@ namespace PF.BLL
                             if (liveRain24 <= 0.01)
                             {
                                 //NaN
+                                scoreDay.Rainfall24 = null;
+                                scoreDay.Rainfall24Total = null;
                             }
                             else if (liveRain24 > 0.01 && liveRain24 < 50.0)
                             {
                                 //1
+                                scoreDay.Rainfall24 = 1;
+                                scoreDay.Rainfall24Total = 1;
                             }
                             else // >=50.0
                             {
                                 //NaN
+                                scoreDay.Rainfall24 = null;
+                                scoreDay.Rainfall24Total = null;
                             }
                         }
                         #endregion 24小时一般性降水
@@ -237,20 +286,28 @@ namespace PF.BLL
                             trueWd48.Code == 17 || trueWd48.Code == 24 || trueWd48.Code == 25)
                         {
                             //NaN
+                            scoreDay.Rainfall48 = null;
+                            scoreDay.Rainfall48Total = null;
                         }
                         else if (trueWd48.Code == 23)
                         {
                             if (liveRain48 <= 37.9)
                             {
                                 //NaN
+                                scoreDay.Rainfall48 = null;
+                                scoreDay.Rainfall48Total = null;
                             }
                             else if (liveRain48 > 37.9 && liveRain48 < 50.0)
                             {
                                 //1
+                                scoreDay.Rainfall48 = 1;
+                                scoreDay.Rainfall48Total = 1;
                             }
                             else // >=50.0
                             {
                                 //NaN
+                                scoreDay.Rainfall48 = null;
+                                scoreDay.Rainfall48Total = null;
                             }
                         }
                         else if (trueWd48.Code == 28)
@@ -258,14 +315,20 @@ namespace PF.BLL
                             if (liveRain48 <= 7.4)
                             {
                                 //NaN
+                                scoreDay.Rainfall48 = null;
+                                scoreDay.Rainfall48Total = null;
                             }
                             else if (liveRain48 > 7.4 && liveRain48 < 10.0)
                             {
                                 //1
+                                scoreDay.Rainfall48 = 1;
+                                scoreDay.Rainfall48Total = 1;
                             }
                             else // >=10.0
                             {
                                 //NaN
+                                scoreDay.Rainfall48 = null;
+                                scoreDay.Rainfall48Total = null;
                             }
                         }
                         else if (trueWd48.CodeNew == "rain")
@@ -273,14 +336,20 @@ namespace PF.BLL
                             if (liveRain48 <= 0.01)
                             {
                                 //0
+                                scoreDay.Rainfall48 = 0;
+                                scoreDay.Rainfall48Total = 1;
                             }
                             else if (liveRain48 > 0.01 && liveRain48 < 50.0)
                             {
                                 //1
+                                scoreDay.Rainfall48 = 1;
+                                scoreDay.Rainfall48Total = 1;
                             }
                             else // >=50.0
                             {
                                 //NaN
+                                scoreDay.Rainfall48 = null;
+                                scoreDay.Rainfall48Total = null;
                             }
                         }
                         else if (trueWd48.CodeNew == "snow")
@@ -288,14 +357,20 @@ namespace PF.BLL
                             if (liveRain48 <= 0.01)
                             {
                                 //0
+                                scoreDay.Rainfall48 = 0;
+                                scoreDay.Rainfall48Total = 1;
                             }
                             else if (liveRain48 > 0.01 && liveRain48 < 10.0)
                             {
                                 //1
+                                scoreDay.Rainfall48 = 1;
+                                scoreDay.Rainfall48Total = 1;
                             }
                             else // >=10.0
                             {
                                 //NaN
+                                scoreDay.Rainfall48 = null;
+                                scoreDay.Rainfall48Total = null;
                             }
                         }
                         else if (trueWd48.CodeNew == "sunny")
@@ -303,14 +378,20 @@ namespace PF.BLL
                             if (liveRain48 <= 0.01)
                             {
                                 //NaN
+                                scoreDay.Rainfall48 = null;
+                                scoreDay.Rainfall48Total = null;
                             }
                             else if (liveRain48 > 0.01 && liveRain48 < 50.0)
                             {
                                 //1
+                                scoreDay.Rainfall48 = 1;
+                                scoreDay.Rainfall48Total = 1;
                             }
                             else // >=50.0
                             {
                                 //NaN
+                                scoreDay.Rainfall48 = null;
+                                scoreDay.Rainfall48Total = null;
                             }
                         }
                         #endregion  48小时一般性降水
@@ -328,14 +409,20 @@ namespace PF.BLL
                             if (liveRain72 <= 37.9)
                             {
                                 //NaN
+                                scoreDay.Rainfall72 = null;
+                                scoreDay.Rainfall72Total = null;
                             }
                             else if (liveRain72 > 37.9 && liveRain72 < 50.0)
                             {
                                 //1
+                                scoreDay.Rainfall72 = 1;
+                                scoreDay.Rainfall72Total = 1;
                             }
                             else // >=50.0
                             {
                                 //NaN
+                                scoreDay.Rainfall72 = null;
+                                scoreDay.Rainfall72Total = null;
                             }
                         }
                         else if (trueWd72.Code == 28)
@@ -343,14 +430,20 @@ namespace PF.BLL
                             if (liveRain72 <= 7.4)
                             {
                                 //NaN
+                                scoreDay.Rainfall72 = null;
+                                scoreDay.Rainfall72Total = null;
                             }
                             else if (liveRain72 > 7.4 && liveRain72 < 10.0)
                             {
                                 //1
+                                scoreDay.Rainfall72 = 1;
+                                scoreDay.Rainfall72Total = 1;
                             }
                             else // >=10.0
                             {
                                 //NaN
+                                scoreDay.Rainfall72 = null;
+                                scoreDay.Rainfall72Total = null;
                             }
                         }
                         else if (trueWd72.CodeNew == "rain")
@@ -358,14 +451,20 @@ namespace PF.BLL
                             if (liveRain72 <= 0.01)
                             {
                                 //0
+                                scoreDay.Rainfall72 = 0;
+                                scoreDay.Rainfall72Total = 1;
                             }
                             else if (liveRain72 > 0.01 && liveRain72 < 50.0)
                             {
                                 //1
+                                scoreDay.Rainfall72 = 1;
+                                scoreDay.Rainfall72Total = 1;
                             }
                             else // >=50.0
                             {
                                 //NaN
+                                scoreDay.Rainfall72 = null;
+                                scoreDay.Rainfall72Total = null;
                             }
                         }
                         else if (trueWd72.CodeNew == "snow")
@@ -373,14 +472,20 @@ namespace PF.BLL
                             if (liveRain72 <= 0.01)
                             {
                                 //0
+                                scoreDay.Rainfall72 = 0;
+                                scoreDay.Rainfall72Total = 1;
                             }
                             else if (liveRain72 > 0.01 && liveRain72 < 10.0)
                             {
                                 //1
+                                scoreDay.Rainfall72 = 1;
+                                scoreDay.Rainfall72Total = 1;
                             }
                             else // >=10.0
                             {
                                 //NaN
+                                scoreDay.Rainfall72 = null;
+                                scoreDay.Rainfall72Total = null;
                             }
                         }
                         else if (trueWd72.CodeNew == "sunny")
@@ -388,14 +493,20 @@ namespace PF.BLL
                             if (liveRain72 <= 0.01)
                             {
                                 //NaN
+                                scoreDay.Rainfall72 = null;
+                                scoreDay.Rainfall72Total = null;
                             }
                             else if (liveRain72 > 0.01 && liveRain72 < 50.0)
                             {
                                 //1
+                                scoreDay.Rainfall72 = 1;
+                                scoreDay.Rainfall72Total = 1;
                             }
                             else // >=50.0
                             {
                                 //NaN
+                                scoreDay.Rainfall72 = null;
+                                scoreDay.Rainfall72Total = null;
                             }
                         }
                         #endregion  72小时一般性降水
@@ -410,10 +521,14 @@ namespace PF.BLL
                             if (liveRain24 < 10.0)
                             {
                                 //0
+                                scoreDay.Rainstorm24 = 0;
+                                scoreDay.Rainstorm24Total = 1;
                             }
                             else //>=10.0
                             {
                                 //1
+                                scoreDay.Rainstorm24 = 1;
+                                scoreDay.Rainstorm24Total = 1;
                             }
                         }
                         else if (trueWd24.Code == 28)
@@ -421,14 +536,20 @@ namespace PF.BLL
                             if (liveRain24 <= 7.4)
                             {
                                 //0
+                                scoreDay.Rainstorm24 = 0;
+                                scoreDay.Rainstorm24Total = 1;
                             }
                             else if (liveRain24 > 7.4 && liveRain24 < 10.0)
                             {
                                 //NaN
+                                scoreDay.Rainstorm24 = null;
+                                scoreDay.Rainstorm24Total = null;
                             }
                             else //>=10
                             {
                                 //1
+                                scoreDay.Rainstorm24 = 1;
+                                scoreDay.Rainstorm24Total = 1;
                             }
                         }
                         else if (trueWd24.Code == 12)
@@ -436,10 +557,14 @@ namespace PF.BLL
                             if (liveRain24 < 250.0)
                             {
                                 //0
+                                scoreDay.Rainstorm24 = 0;
+                                scoreDay.Rainstorm24Total = 1;
                             }
                             else //>=250.0
                             {
                                 //1
+                                scoreDay.Rainstorm24 = 1;
+                                scoreDay.Rainstorm24Total = 1;
                             }
                         }
                         else if (trueWd24.Code == 25)
@@ -447,10 +572,14 @@ namespace PF.BLL
                             if (liveRain24 >= 175.0 && liveRain24 <= 299.9)
                             {
                                 //1
+                                scoreDay.Rainstorm24 = 1;
+                                scoreDay.Rainstorm24Total = 1;
                             }
                             else
                             {
                                 //0
+                                scoreDay.Rainstorm24 = 0;
+                                scoreDay.Rainstorm24Total = 1;
                             }
                         }
                         else if (trueWd24.Code == 11)
@@ -458,10 +587,14 @@ namespace PF.BLL
                             if (liveRain24 >= 100.0 && liveRain24 <= 249.9)
                             {
                                 //1
+                                scoreDay.Rainstorm24 = 1;
+                                scoreDay.Rainstorm24Total = 1;
                             }
                             else
                             {
                                 //0
+                                scoreDay.Rainstorm24 = 0;
+                                scoreDay.Rainstorm24Total = 1;
                             }
                         }
                         else if (trueWd24.Code == 24)
@@ -469,10 +602,14 @@ namespace PF.BLL
                             if (liveRain24 >= 75.0 && liveRain24 <= 174.9)
                             {
                                 //1
+                                scoreDay.Rainstorm24 = 1;
+                                scoreDay.Rainstorm24Total = 1;
                             }
                             else
                             {
                                 //0
+                                scoreDay.Rainstorm24 = 0;
+                                scoreDay.Rainstorm24Total = 1;
                             }
                         }
                         else if (trueWd24.Code == 10)
@@ -480,10 +617,14 @@ namespace PF.BLL
                             if (liveRain24 >= 50.0 && liveRain24 <= 99.9)
                             {
                                 //1
+                                scoreDay.Rainstorm24 = 1;
+                                scoreDay.Rainstorm24Total = 1;
                             }
                             else
                             {
                                 //0
+                                scoreDay.Rainstorm24 = 0;
+                                scoreDay.Rainstorm24Total = 1;
                             }
                         }
                         else if (trueWd24.Code == 23)
@@ -491,18 +632,26 @@ namespace PF.BLL
                             if (liveRain24 <= 37.9)
                             {
                                 //0
+                                scoreDay.Rainstorm24 = 0;
+                                scoreDay.Rainstorm24Total = 1;
                             }
                             else if (liveRain24 > 37.9 && liveRain24 < 50.0)
                             {
                                 //NaN
+                                scoreDay.Rainstorm24 = null;
+                                scoreDay.Rainstorm24Total = null;
                             }
                             else if (liveRain24 >= 50.0 && liveRain24 < 75.0)
                             {
                                 //1
+                                scoreDay.Rainstorm24 = 1;
+                                scoreDay.Rainstorm24Total = 1;
                             }
                             else //>=75.0
                             {
                                 //0
+                                scoreDay.Rainstorm24 = 0;
+                                scoreDay.Rainstorm24Total = 1;
                             }
                         }
                         else if (trueWd24.CodeNew == "rain")
@@ -510,10 +659,14 @@ namespace PF.BLL
                             if (liveRain24 < 50.0)
                             {
                                 //NaN
+                                scoreDay.Rainstorm24 = null;
+                                scoreDay.Rainstorm24Total = null;
                             }
                             else //>=50.0
                             {
                                 //0
+                                scoreDay.Rainstorm24 = 0;
+                                scoreDay.Rainstorm24Total = 1;
                             }
                         }
                         else if (trueWd24.CodeNew == "snow")
@@ -521,10 +674,14 @@ namespace PF.BLL
                             if (liveRain24 < 10.0)
                             {
                                 //NaN
+                                scoreDay.Rainstorm24 = null;
+                                scoreDay.Rainstorm24Total = null;
                             }
                             else //>=10.0
                             {
                                 //0
+                                scoreDay.Rainstorm24 = 0;
+                                scoreDay.Rainstorm24Total = 1;
                             }
                         }
                         else if (trueWd24.CodeNew == "sunny")
@@ -532,10 +689,14 @@ namespace PF.BLL
                             if (liveRain24 < 50.0)
                             {
                                 //NaN
+                                scoreDay.Rainstorm24 = null;
+                                scoreDay.Rainstorm24Total = null;
                             }
                             else //>=50.0
                             {
                                 //0
+                                scoreDay.Rainstorm24 = 0;
+                                scoreDay.Rainstorm24Total = 1;
                             }
                         }
                         #endregion 24小时暴雨（雪）预报判断
@@ -548,10 +709,14 @@ namespace PF.BLL
                             if (liveRain48 < 10.0)
                             {
                                 //0
+                                scoreDay.Rainstorm48 = 0;
+                                scoreDay.Rainstorm48Total = 1;
                             }
                             else //>=10.0
                             {
                                 //1
+                                scoreDay.Rainstorm48 = 1;
+                                scoreDay.Rainstorm48Total = 1;
                             }
                         }
                         else if (trueWd48.Code == 28)
@@ -559,14 +724,20 @@ namespace PF.BLL
                             if (liveRain48 <= 7.4)
                             {
                                 //0
+                                scoreDay.Rainstorm48 = null;
+                                scoreDay.Rainstorm48Total = 1;
                             }
                             else if (liveRain48 > 7.4 && liveRain48 < 10.0)
                             {
                                 //NaN
+                                scoreDay.Rainstorm48 = null;
+                                scoreDay.Rainstorm48Total = null;
                             }
                             else //>=10
                             {
                                 //1
+                                scoreDay.Rainstorm48 = 1;
+                                scoreDay.Rainstorm48Total = 1;
                             }
                         }
                         else if (trueWd48.Code == 12)
@@ -574,10 +745,14 @@ namespace PF.BLL
                             if (liveRain48 < 250.0)
                             {
                                 //0
+                                scoreDay.Rainstorm48 = 0;
+                                scoreDay.Rainstorm48Total = 1;
                             }
                             else //>=250.0
                             {
                                 //1
+                                scoreDay.Rainstorm48 = 1;
+                                scoreDay.Rainstorm48Total = 1;
                             }
                         }
                         else if (trueWd48.Code == 25)
@@ -585,10 +760,14 @@ namespace PF.BLL
                             if (liveRain48 >= 175.0 && liveRain48 <= 299.9)
                             {
                                 //1
+                                scoreDay.Rainstorm48 = 1;
+                                scoreDay.Rainstorm48Total = 1;
                             }
                             else
                             {
                                 //0
+                                scoreDay.Rainstorm48 = 0;
+                                scoreDay.Rainstorm48Total = 1;
                             }
                         }
                         else if (trueWd48.Code == 11)
@@ -596,10 +775,14 @@ namespace PF.BLL
                             if (liveRain48 >= 100.0 && liveRain48 <= 249.9)
                             {
                                 //1
+                                scoreDay.Rainstorm48 = 1;
+                                scoreDay.Rainstorm48Total = 1;
                             }
                             else
                             {
                                 //0
+                                scoreDay.Rainstorm48 = 0;
+                                scoreDay.Rainstorm48Total = 1;
                             }
                         }
                         else if (trueWd48.Code == 24)
@@ -607,10 +790,14 @@ namespace PF.BLL
                             if (liveRain48 >= 75.0 && liveRain48 <= 174.9)
                             {
                                 //1
+                                scoreDay.Rainstorm48 = 1;
+                                scoreDay.Rainstorm48Total = 1;
                             }
                             else
                             {
                                 //0
+                                scoreDay.Rainstorm48 = 0;
+                                scoreDay.Rainstorm48Total = 1;
                             }
                         }
                         else if (trueWd48.Code == 10)
@@ -618,10 +805,14 @@ namespace PF.BLL
                             if (liveRain48 >= 50.0 && liveRain48 <= 99.9)
                             {
                                 //1
+                                scoreDay.Rainstorm48 = 1;
+                                scoreDay.Rainstorm48Total = 1;
                             }
                             else
                             {
                                 //0
+                                scoreDay.Rainstorm48 = 0;
+                                scoreDay.Rainstorm48Total = 1;
                             }
                         }
                         else if (trueWd48.Code == 23)
@@ -629,18 +820,26 @@ namespace PF.BLL
                             if (liveRain48 <= 37.9)
                             {
                                 //0
+                                scoreDay.Rainstorm48 = 0;
+                                scoreDay.Rainstorm48Total = 1;
                             }
                             else if (liveRain48 > 37.9 && liveRain48 < 50.0)
                             {
                                 //NaN
+                                scoreDay.Rainstorm48 = 1;
+                                scoreDay.Rainstorm48Total = 1;
                             }
                             else if (liveRain48 >= 50.0 && liveRain48 < 75.0)
                             {
                                 //1
+                                scoreDay.Rainstorm48 = 1;
+                                scoreDay.Rainstorm48Total = 1;
                             }
                             else //>=75.0
                             {
                                 //0
+                                scoreDay.Rainstorm48 = 0;
+                                scoreDay.Rainstorm48Total = 1;
                             }
                         }
                         else if (trueWd48.CodeNew == "rain")
@@ -648,10 +847,14 @@ namespace PF.BLL
                             if (liveRain48 < 50.0)
                             {
                                 //NaN
+                                scoreDay.Rainstorm48 = null;
+                                scoreDay.Rainstorm48Total = null;
                             }
                             else //>=50.0
                             {
                                 //0
+                                scoreDay.Rainstorm48 = 0;
+                                scoreDay.Rainstorm48Total = 1;
                             }
                         }
                         else if (trueWd48.CodeNew == "snow")
@@ -659,10 +862,14 @@ namespace PF.BLL
                             if (liveRain48 < 10.0)
                             {
                                 //NaN
+                                scoreDay.Rainstorm48 = null;
+                                scoreDay.Rainstorm48Total = null;
                             }
                             else //>=10.0
                             {
                                 //0
+                                scoreDay.Rainstorm48 = 0;
+                                scoreDay.Rainstorm48Total = 1;
                             }
                         }
                         else if (trueWd48.CodeNew == "sunny")
@@ -670,149 +877,18 @@ namespace PF.BLL
                             if (liveRain48 < 50.0)
                             {
                                 //NaN
+                                scoreDay.Rainstorm48 = null;
+                                scoreDay.Rainstorm48Total = null;
                             }
                             else //>=50.0
                             {
                                 //0
+                                scoreDay.Rainstorm48 = 0;
+                                scoreDay.Rainstorm48Total = 1;
                             }
                         }
                         #endregion 48小时暴雨（雪）预报判断
-                        #region 72小时暴雨（雪）预报判断
-                        //72小时
-                        if (trueWd72.Code == 17)
-                        {
-                            if (liveRain72 < 10.0)
-                            {
-                                //0
-                            }
-                            else //>=10.0
-                            {
-                                //1
-                            }
-                        }
-                        else if (trueWd72.Code == 28)
-                        {
-                            if (liveRain72 <= 7.4)
-                            {
-                                //0
-                            }
-                            else if (liveRain72 > 7.4 && liveRain72 < 10.0)
-                            {
-                                //NaN
-                            }
-                            else //>=10
-                            {
-                                //1
-                            }
-                        }
-                        else if (trueWd72.Code == 12)
-                        {
-                            if (liveRain72 < 250.0)
-                            {
-                                //0
-                            }
-                            else //>=250.0
-                            {
-                                //1
-                            }
-                        }
-                        else if (trueWd72.Code == 25)
-                        {
-                            if (liveRain72 >= 175.0 && liveRain72 <= 299.9)
-                            {
-                                //1
-                            }
-                            else
-                            {
-                                //0
-                            }
-                        }
-                        else if (trueWd72.Code == 11)
-                        {
-                            if (liveRain72 >= 100.0 && liveRain72 <= 249.9)
-                            {
-                                //1
-                            }
-                            else
-                            {
-                                //0
-                            }
-                        }
-                        else if (trueWd72.Code == 24)
-                        {
-                            if (liveRain72 >= 75.0 && liveRain72 <= 174.9)
-                            {
-                                //1
-                            }
-                            else
-                            {
-                                //0
-                            }
-                        }
-                        else if (trueWd72.Code == 10)
-                        {
-                            if (liveRain72 >= 50.0 && liveRain72 <= 99.9)
-                            {
-                                //1
-                            }
-                            else
-                            {
-                                //0
-                            }
-                        }
-                        else if (trueWd72.Code == 23)
-                        {
-                            if (liveRain72 <= 37.9)
-                            {
-                                //0
-                            }
-                            else if (liveRain72 > 37.9 && liveRain72 < 50.0)
-                            {
-                                //NaN
-                            }
-                            else if (liveRain72 >= 50.0 && liveRain72 < 75.0)
-                            {
-                                //1
-                            }
-                            else //>=75.0
-                            {
-                                //0
-                            }
-                        }
-                        else if (trueWd72.CodeNew == "rain")
-                        {
-                            if (liveRain72 < 50.0)
-                            {
-                                //NaN
-                            }
-                            else //>=50.0
-                            {
-                                //0
-                            }
-                        }
-                        else if (trueWd72.CodeNew == "snow")
-                        {
-                            if (liveRain72 < 10.0)
-                            {
-                                //NaN
-                            }
-                            else //>=10.0
-                            {
-                                //0
-                            }
-                        }
-                        else if (trueWd72.CodeNew == "sunny")
-                        {
-                            if (liveRain72 < 50.0)
-                            {
-                                //NaN
-                            }
-                            else //>=50.0
-                            {
-                                //0
-                            }
-                        }
-                        #endregion 72小时暴雨（雪）预报判断
+
 
                         #endregion
                     }
