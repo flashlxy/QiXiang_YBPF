@@ -55,6 +55,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BLL_Template_YBPF.tt</DependentUpon>
     </Compile>
+    <Compile Include="SQL\LiveData_BLL.cs" />
     <Compile Include="SQL\Score_Day_BLL.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -78,6 +79,10 @@
     <ProjectReference Include="..\PF.Models\PF.Models.csproj">
       <Project>{1700914c-816a-4a9b-8a31-fa0b13279aed}</Project>
       <Name>PF.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PF.Utility\PF.Utility.csproj">
+      <Project>{a9ac554d-2db3-4707-a57a-f1f8d214d0a6}</Project>
+      <Name>PF.Utility</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

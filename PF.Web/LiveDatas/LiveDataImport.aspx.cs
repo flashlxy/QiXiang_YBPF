@@ -93,16 +93,63 @@ namespace PF.Web.LiveDatas
             Repeater_DataCheck.DataBind();
             if (ldcList.Count() > 0)
             {
-                Label_DataMiss.Text = "数据有缺失，请及时补充！";
+                Label_DataMiss.Text = startTime.ToString("yyyy年MM月")+DropDownList_YBTime.SelectedItem.Value+ "实况数据有缺失，请及时补充！";
                 Panel_DataMiss.Visible = true;
             }
             else
             {
-                Label_DataMiss.Text = "数据齐全！";
+                Label_DataMiss.Text = startTime.ToString("yyyy年MM月") + DropDownList_YBTime.SelectedItem.Value + "实况数据齐全！";
                 Panel_DataMiss.Visible = false;
 
             }
 
+
+        }
+
+        protected void Btn_Import_Rain08_Click(object sender, EventArgs e)
+        {
+            JavaScriptHelper.Loading("大人请稍后，奴才正在拼命计算...");
+
+            DateTime date = DateTime.Parse(DropDownList_Year.SelectedItem.Value + "-" + DropDownList_Month.SelectedItem.Value + "-01");
+            LiveData_BLL bll = new LiveData_BLL();
+           string message= bll.DataImportRain08(date);
+            Label_DataMiss.Text = message;
+            JavaScriptHelper.UnLoading();
+        }
+
+        protected void Btn_Import_Temp08_Click(object sender, EventArgs e)
+        {
+            JavaScriptHelper.Loading("大人请稍后，奴才正在拼命计算...");
+
+            DateTime date = DateTime.Parse(DropDownList_Year.SelectedItem.Value + "-" + DropDownList_Month.SelectedItem.Value + "-01");
+            LiveData_BLL bll = new LiveData_BLL();
+            string message = bll.DataImportTemp08(date);
+            Label_DataMiss.Text = message;
+            JavaScriptHelper.UnLoading();
+        }
+
+        protected void Btn_Import_TempAndRain20_Click(object sender, EventArgs e)
+        {
+            JavaScriptHelper.Loading("大人请稍后，奴才正在拼命计算...");
+
+            DateTime date = DateTime.Parse(DropDownList_Year.SelectedItem.Value + "-" + DropDownList_Month.SelectedItem.Value + "-01");
+            LiveData_BLL bll = new LiveData_BLL();
+            string message = bll.DataImportAFile(date);
+            Label_DataMiss.Text = message;
+            JavaScriptHelper.UnLoading();
+        }
+
+        protected void Btn_Import_All_Click(object sender, EventArgs e)
+        {
+            JavaScriptHelper.Loading("大人请稍后，奴才正在拼命计算...");
+            DateTime date = DateTime.Parse(DropDownList_Year.SelectedItem.Value + "-" + DropDownList_Month.SelectedItem.Value + "-01");
+            LiveData_BLL bll = new LiveData_BLL();
+            StringBuilder message = new StringBuilder();
+            message.Append( "1、"+bll.DataImportRain08(date));
+            message.Append("2、" +bll.DataImportTemp08(date));
+            message.Append("3、"+bll.DataImportAFile(date));
+            Label_DataMiss.Text = message.ToString();
+            JavaScriptHelper.UnLoading();
 
         }
     }

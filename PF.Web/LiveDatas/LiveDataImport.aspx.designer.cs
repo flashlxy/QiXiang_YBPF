@@ -58,6 +58,42 @@ namespace PF.Web.LiveDatas {
         protected global::System.Web.UI.WebControls.Button Btn_DataCheck;
         
         /// <summary>
+        /// Btn_Import_Rain08 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Btn_Import_Rain08;
+        
+        /// <summary>
+        /// Btn_Import_Temp08 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Btn_Import_Temp08;
+        
+        /// <summary>
+        /// Btn_Import_TempAndRain20 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Btn_Import_TempAndRain20;
+        
+        /// <summary>
+        /// Btn_Import_All 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Btn_Import_All;
+        
+        /// <summary>
         /// Label_DataMiss 控件。
         /// </summary>
         /// <remarks>
