@@ -146,7 +146,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="LiveData\LiveDataImport.aspx" />
+    <Content Include="LiveDatas\LiveDataImport.aspx" />
     <Content Include="R248\Rain08ToData.aspx" />
     <Content Include="Score\ScoreMonth.aspx" />
     <Content Include="Score\ScoreDay.aspx" />
@@ -194,11 +194,11 @@
     <Compile Include="Layout\Main.Master.designer.cs">
       <DependentUpon>Main.Master</DependentUpon>
     </Compile>
-    <Compile Include="LiveData\LiveDataImport.aspx.cs">
+    <Compile Include="LiveDatas\LiveDataImport.aspx.cs">
       <DependentUpon>LiveDataImport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="LiveData\LiveDataImport.aspx.designer.cs">
+    <Compile Include="LiveDatas\LiveDataImport.aspx.designer.cs">
       <DependentUpon>LiveDataImport.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
