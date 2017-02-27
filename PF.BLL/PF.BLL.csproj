@@ -84,6 +84,10 @@
       <Project>{a9ac554d-2db3-4707-a57a-f1f8d214d0a6}</Project>
       <Name>PF.Utility</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PF.ViewModels\PF.ViewModels.csproj">
+      <Project>{a99f895b-dea0-4473-81f8-3c761a1c7c6f}</Project>
+      <Name>PF.ViewModels</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

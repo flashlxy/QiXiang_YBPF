@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using PF.BLL;
 using PF.Models.SQL;
 using PF.BLL.SQL;
+using PF.Utility;
 
 namespace PF.Web.Score
 {
@@ -78,21 +79,39 @@ namespace PF.Web.Score
         //计算全部在下面
         protected void Button_Calculate_Click(object sender, EventArgs e)
         {
+
+            LiveData_BLL liveBll = new LiveData_BLL();
             DateTime startTime = DateTime.Parse(DropDownList_Year.SelectedItem.Value + "-" + DropDownList_Month.SelectedItem.Value + "-01");
             DateTime endTime = startTime.AddMonths(1);
-                Score_Day_BLL bll = new Score_Day_BLL();
-            if (DropDownList_YBTime.SelectedItem.Value == "08时")
+
+            if (liveBll.DataCheck(startTime, DropDownList_YBTime.SelectedItem.Value))
             {
-               
-                bll.Caculate08(startTime, endTime);
+                JavaScriptHelper.Loading("大人请稍后，奴才正在拼命计算...");
+
+
+                Score_Day_BLL bll = new Score_Day_BLL();
+                if (DropDownList_YBTime.SelectedItem.Value == "08时")
+                {
+
+                    bll.Caculate08(startTime, endTime);
+                }
+                else
+                {
+
+                    bll.Caculate20(startTime, endTime);
+                }
+                JavaScriptHelper.UnLoading();
+
+                Response.Write("<script language=javascript defer>alert('计算完成！');</script>");
             }
             else
             {
-               
-                bll.Caculate20(startTime, endTime);
+                Response.Write("<script language=javascript defer>alert('抱歉，该月实况数据不完整，请校验！');</script>");
             }
 
-            Response.Write("<script language=javascript defer>alert('计算完成！');</script>");
+
+
+
 
         }
     }
