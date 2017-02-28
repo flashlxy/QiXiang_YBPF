@@ -1091,9 +1091,9 @@ namespace PF.BLL.SQL
 
 
 
-                        LiveData liveData24 = liveList.Where(a => a.FDate == secondDay && a.CountryName == dayPerson.CountryName).FirstOrDefault();
-                        LiveData liveData48 = liveList.Where(a => a.FDate == thirdDay && a.CountryName == dayPerson.CountryName).FirstOrDefault();
-                        LiveData liveData72 = liveList.Where(a => a.FDate == thirsdDay && a.CountryName == dayPerson.CountryName).FirstOrDefault();
+                        LiveData liveData24 = liveList.Where(a => a.FDate == currentDay && a.CountryName == dayPerson.CountryName).FirstOrDefault();//08时预报应该与当前比较
+                        LiveData liveData48 = liveList.Where(a => a.FDate == secondDay && a.CountryName == dayPerson.CountryName).FirstOrDefault();
+                        LiveData liveData72 = liveList.Where(a => a.FDate == thirdDay && a.CountryName == dayPerson.CountryName).FirstOrDefault();
 
                         /////////////////温度
                         //24小时温度
