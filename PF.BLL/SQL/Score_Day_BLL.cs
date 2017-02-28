@@ -1049,14 +1049,14 @@ namespace PF.BLL.SQL
                 new LiveData_BLL().GetList(a => a.FDate >= startDate && a.FDate <= preDate && a.Category == "08时")
                     .ToList();
             BwYbs_BLL bwYbsBll = new BwYbs_BLL();
-            List<BwYbs> list = bwYbsBll.GetList(a => a.YBDateTime >= startDate && a.YBDateTime <= endDate && ((DateTime)a.YBDateTime).Hour == 16).ToList();
+            List<BwYbs> list = bwYbsBll.GetList(a => a.YBDateTime >= startDate && a.YBDateTime <= endDate && ((DateTime)a.YBDateTime).Hour == 6).ToList();
             List<WeatherDictionary> wdList = new WeatherDictionary_BLL().GetList(a => a.Type == "天气").ToList();
             TimeSpan timeSpan = endDate - startDate;//时间跨度
 
             for (int i = 0; i < timeSpan.Days; i++)
             {
                 //当前天时间
-                DateTime dayTime = DateTime.Parse(startDate.AddDays(i).ToShortDateString() + " 16:30");
+                DateTime dayTime = DateTime.Parse(startDate.AddDays(i).ToShortDateString() + " 06:45");
                 //当前天 所有人的数据
                 List<BwYbs> dayList = list.Where(a => a.YBDateTime == dayTime).ToList();
                 //当前天 所有人的名字集合
