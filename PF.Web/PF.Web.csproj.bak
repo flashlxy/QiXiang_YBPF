@@ -43,7 +43,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Aspose.Words.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Web.v16.1, Version=16.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v16.2.Core, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v16.2.Core, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -144,9 +146,11 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="LiveDatas\LiveDataImport.aspx" />
     <Content Include="R248\Rain08ToData.aspx" />
     <Content Include="Score\ScoreMonth.aspx" />
     <Content Include="Score\ScoreDay.aspx" />
+    <Content Include="Score\ScoreTest.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Data\预警信号检验\预警信号质量检验报表-2017年01月.docx" />
@@ -190,6 +194,13 @@
     <Compile Include="Layout\Main.Master.designer.cs">
       <DependentUpon>Main.Master</DependentUpon>
     </Compile>
+    <Compile Include="LiveDatas\LiveDataImport.aspx.cs">
+      <DependentUpon>LiveDataImport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LiveDatas\LiveDataImport.aspx.designer.cs">
+      <DependentUpon>LiveDataImport.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="R248\Rain08ToData.aspx.cs">
       <DependentUpon>Rain08ToData.aspx</DependentUpon>
@@ -211,6 +222,13 @@
     </Compile>
     <Compile Include="Score\ScoreDay.aspx.designer.cs">
       <DependentUpon>ScoreDay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Score\ScoreTest.aspx.cs">
+      <DependentUpon>ScoreTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Score\ScoreTest.aspx.designer.cs">
+      <DependentUpon>ScoreTest.aspx</DependentUpon>
     </Compile>
     <Compile Include="Temp\Temp08.aspx.cs">
       <DependentUpon>Temp08.aspx</DependentUpon>
@@ -271,7 +289,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Properties\licenses.licx" />
+    <None Include="Properties\licenses.licx" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
