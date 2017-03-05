@@ -11,7 +11,7 @@ namespace PF.BLL.SQL
         public void Caculate20(DateTime startDate, DateTime endDate)
         {
             
-            dal.Delete(a => a.YBDate >= startDate && a.YBDate <= endDate);
+            dal.Delete(a => a.YBTime == "20时" && a.YBDate >= startDate && a.YBDate <= endDate);
 
             DateTime preDate = endDate.AddDays(2);
 
@@ -1041,7 +1041,7 @@ namespace PF.BLL.SQL
         public void Caculate08(DateTime startDate, DateTime endDate)
         {
 
-            dal.Delete(a => a.YBDate >= startDate && a.YBDate <= endDate);
+            dal.Delete(a =>a.YBTime=="08时"&& a.YBDate >= startDate && a.YBDate <= endDate);
 
             DateTime preDate = endDate.AddDays(2);
 

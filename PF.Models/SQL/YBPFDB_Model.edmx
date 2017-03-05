@@ -206,6 +206,8 @@
           </Key>
           <Property Name="YBUserID" Type="uniqueidentifier" Nullable="false" />
           <Property Name="YBUserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Position" Type="nvarchar" MaxLength="50" />
+          <Property Name="Order" Type="int" />
         </EntityType>
         <Association Name="FK_BaoWen_YbUsers">
           <End Role="YbUsers" Type="Self.YbUsers" Multiplicity="0..1" />
@@ -371,6 +373,8 @@
           <NavigationProperty Name="BwYbs" Relationship="YBPFDB_Model.FK_BWYB_YbUsers" FromRole="YbUsers" ToRole="BwYbs" />
           <NavigationProperty Name="Score_Day" Relationship="YBPFDB_Model.FK_Score_Day_YbUsers" FromRole="YbUsers" ToRole="Score_Day" />
           <NavigationProperty Name="Score_Month" Relationship="YBPFDB_Model.FK_Score_Month_YbUsers" FromRole="YbUsers" ToRole="Score_Month" />
+          <Property Name="Position" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Order" Type="Int32" />
         </EntityType>
         <Association Name="FK_BaoWen_YbUsers">
           <End Type="YBPFDB_Model.YbUsers" Role="YbUsers" Multiplicity="0..1" />
@@ -642,6 +646,8 @@
           <EntitySetMapping Name="YbUsers">
             <EntityTypeMapping TypeName="YBPFDB_Model.YbUsers">
               <MappingFragment StoreEntitySet="YbUsers">
+                <ScalarProperty Name="Order" ColumnName="Order" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
                 <ScalarProperty Name="YBUserName" ColumnName="YBUserName" />
                 <ScalarProperty Name="YBUserID" ColumnName="YBUserID" />
               </MappingFragment>

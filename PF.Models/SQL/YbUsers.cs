@@ -24,6 +24,8 @@ namespace PF.Models.SQL
     
         public System.Guid YBUserID { get; set; }
         public string YBUserName { get; set; }
+        public string Position { get; set; }
+        public Nullable<int> Order { get; set; }
     
         public virtual ICollection<BaoWens> BaoWens { get; set; }
         public virtual ICollection<BwYbs> BwYbs { get; set; }
