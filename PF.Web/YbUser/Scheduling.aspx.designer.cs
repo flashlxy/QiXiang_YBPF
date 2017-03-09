@@ -58,13 +58,40 @@ namespace PF.Web.YbUser {
         protected global::System.Web.UI.WebControls.Button Button_Query;
         
         /// <summary>
-        /// Button_Calculate 控件。
+        /// DropDownList_Time_AddUser 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button_Calculate;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList_Time_AddUser;
+        
+        /// <summary>
+        /// ASPxDateEdit_YBDate 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxDateEdit ASPxDateEdit_YBDate;
+        
+        /// <summary>
+        /// DropDownList_YbUser 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList_YbUser;
+        
+        /// <summary>
+        /// Button_AddUser 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button_AddUser;
         
         /// <summary>
         /// Repeater_YbUser 控件。

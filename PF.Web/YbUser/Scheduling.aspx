@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Scheduling.aspx.cs" Inherits="PF.Web.YbUser.Scheduling" %>
 
+<%@ Register Assembly="DevExpress.Web.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -37,33 +39,38 @@
                 cursor: pointer;
             }
 
-       
+
         .label_red {
             color: red;
         }
+
         .table_ybuser {
             border-collapse: collapse;
-            width:100%;
-        }
-       .table_ybuser th,  .table_ybuser td {
-             padding: 3px;
-             font-size:12px;
-             border:1px solid #808080;
-         }
-       .table_ybuser tr:nth-child(2n+1) {
-            background-color: #d3f3fc;
+            width: 100%;
         }
 
-        .table_ybuser tr:nth-child(2n) {
-            background-color: #fcf9d3;
-        }
+            .table_ybuser th, .table_ybuser td {
+                padding: 3px;
+                font-size: 12px;
+                border: 1px solid #808080;
+            }
+
+            .table_ybuser tr:nth-child(2n+1) {
+                background-color: #d3f3fc;
+            }
+
+            .table_ybuser tr:nth-child(2n) {
+                background-color: #fcf9d3;
+            }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <table style="margin: 0 auto;">
             <tr>
-                <td style="font-size: 1.5em; text-align: center; padding: 15px; background-color: #f6d699">预报每日成绩
+                <td style="font-size: 1.5em; text-align: center; padding: 15px; background-color: #f6d699">预报员值班表
+                    <br />
+                    <span style="font-size: 14px; color: red;">（注：该功能需要先计算出预报每日成绩方可使用）</span>
                 </td>
             </tr>
             <tr>
@@ -105,77 +112,105 @@
                             <td>
                                 <asp:Button ID="Button_Query" CssClass="btn-query" runat="server" Text="查询" OnClick="Button_Query_Click" />
                             </td>
-                            <td>
-                                <asp:Button ID="Button_Calculate" CssClass="btn-query" runat="server" Text="计算" />
-                            </td>
+
                         </tr>
-                      
+
 
                     </table>
                 </td>
             </tr>
             <tr>
+                <td style="padding: 10px 0;">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <tr>
+                            <td style="padding: 10px 40px; border: 1px solid #808080; text-align: center; font-size: 18px; background-color: #d3f3fc;">
+                                <asp:DropDownList ID="DropDownList_Time_AddUser" runat="server" Font-Size="14pt">
+                                    <asp:ListItem Text="08时" Value="08时"></asp:ListItem>
+                                    <asp:ListItem Text="20时" Value="20时" Selected="True"></asp:ListItem>
+                                </asp:DropDownList>
+
+                            </td>
+                            <td style="padding: 10px 40px; border: 1px solid #808080; text-align: center; font-size: 18px; background-color: #d3f3fc;">
+                                <dx:ASPxDateEdit ID="ASPxDateEdit_YBDate" runat="server" Height="30px" Theme="iOS"></dx:ASPxDateEdit>
+                            </td>
+                            <td style="padding: 10px 40px; border: 1px solid #808080; text-align: center; font-size: 18px; background-color: #d3f3fc;">
+                                <asp:DropDownList ID="DropDownList_YbUser" runat="server" Font-Size="14pt">
+                                </asp:DropDownList>
+
+
+                            </td>
+                            <td style="padding: 10px 40px; border: 1px solid #808080; text-align: center; font-size: 18px; background-color: #d3f3fc;">
+                                <asp:Button ID="Button_AddUser" CssClass="btn-query" runat="server" Text="添加预报员" OnClick="Button_AddUser_Click" />
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
                 <td>
-                                <table class="table_ybuser">
+                    <table class="table_ybuser">
 
-                                    <asp:Repeater ID="Repeater_YbUser" runat="server" OnItemDataBound="Repeater_YbUser_ItemDataBound">
-                                        <HeaderTemplate>
-                                            <tr>
-                                                <th>日期</th>
-                                                <th>预报员（下午）</th>
-                                                <th>日期</th>
-                                                <th>预报员（上午）</th>
-                                            </tr>
-                                        </HeaderTemplate>
-                                        <ItemTemplate>
-                                            <tr>
-                                                <td>
-                                                    <%# DateTime.Parse( DataBinder.Eval(Container.DataItem,"Date").ToString()).ToShortDateString() %>
-                                                </td>
-                                                <td>
-                                                    <ol >
-                                                        <asp:Repeater ID="Repeater_YbUser_Night" runat="server">
-                                                            <ItemTemplate>
-                                                              
-                                                                    <li class='<%# Eval("YBUserName").ToString()=="集体"?"label_red":""%>'>
-                                                                        <%# DataBinder.Eval(Container.DataItem, "YBUserName") %>
-                                                                
-                                                                    </li>
+                        <asp:Repeater ID="Repeater_YbUser" runat="server" OnItemDataBound="Repeater_YbUser_ItemDataBound">
+                            <HeaderTemplate>
+                                <tr>
+                                    <th>日期</th>
+                                    <th>预报员（下午）</th>
+                                    <th>日期</th>
+                                    <th>预报员（上午）</th>
+                                </tr>
+                            </HeaderTemplate>
+                            <ItemTemplate>
+                                <tr>
+                                    <td>
+                                        <%# DateTime.Parse( DataBinder.Eval(Container.DataItem,"Date").ToString()).ToShortDateString() %>
+                                    </td>
+                                    <td>
+                                        <ol>
+                                            <asp:Repeater ID="Repeater_YbUser_Night" runat="server">
+                                                <ItemTemplate>
 
-                                                            
-                                                            </ItemTemplate>
-                                                        </asp:Repeater>
-                                                    </ol>
+                                                    <li class='<%# Eval("YBUserName").ToString()=="集体"?"label_red":""%>'>
+
+                                                        <%#Eval("Remark")==null?Eval("YBUserName"):Eval("YBUserName").ToString()+"  (手工补调)" %>      
+
+                                                    </li>
 
 
-                                                </td>
-                                                <td>
+                                                </ItemTemplate>
+                                            </asp:Repeater>
+                                        </ol>
 
-                                                    <%# DateTime.Parse( DataBinder.Eval(Container.DataItem,"Next_Date").ToString()).ToShortDateString() %>
+
+                                    </td>
+                                    <td>
+
+                                        <%# DateTime.Parse( DataBinder.Eval(Container.DataItem,"Next_Date").ToString()).ToShortDateString() %>
                                            
-                                                </td>
+                                    </td>
 
-                                                <td>
-                                                    <ol>
-                                                        <asp:Repeater ID="Repeater_YbUser_Morning" runat="server">
-                                                            <ItemTemplate>
-                                                                <li class='<%# Eval("YBUserName").ToString()=="集体"?"label_red":""%>'>
-                                                                    <%# DataBinder.Eval(Container.DataItem, "YBUserName") %>
+                                    <td>
+                                        <ol>
+                                            <asp:Repeater ID="Repeater_YbUser_Morning" runat="server">
+                                                <ItemTemplate>
+                                                    <li class='<%# Eval("YBUserName").ToString()=="集体"?"label_red":""%>'>
+                                                        <%--<%# DataBinder.Eval(Container.DataItem, "YBUserName") %>--%>
+                                                        <%#Eval("Remark")==null?Eval("YBUserName"):Eval("YBUserName").ToString()+"  (手工补调)" %>      
                                                                 
-                                                                </li>
-                                                            </ItemTemplate>
-                                                        </asp:Repeater>
-                                                    </ol>
+                                                    </li>
+                                                </ItemTemplate>
+                                            </asp:Repeater>
+                                        </ol>
 
 
-                                                </td>
-                                            </tr>
-                                        </ItemTemplate>
-                                    </asp:Repeater>
+                                    </td>
+                                </tr>
+                            </ItemTemplate>
+                        </asp:Repeater>
 
 
-                                </table>
-                    
+                    </table>
+
                 </td>
             </tr>
         </table>

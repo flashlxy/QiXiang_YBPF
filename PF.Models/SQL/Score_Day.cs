@@ -40,6 +40,7 @@ namespace PF.Models.SQL
         public Nullable<int> Rainstorm48 { get; set; }
         public Nullable<int> Rainstorm48Total { get; set; }
         public Nullable<System.DateTime> CreateTime { get; set; }
+        public string Remark { get; set; }
     
         public virtual YbUsers YbUsers { get; set; }
     }

@@ -114,5 +114,20 @@ namespace PF.Web.Score
 
 
         }
+
+        protected void Button_Add08_Click(object sender, EventArgs e)
+        {
+            Score_Day_BLL bll = new Score_Day_BLL();
+            DateTime startTime = DateTime.Parse(DropDownList_Year.SelectedItem.Value + "-" + DropDownList_Month.SelectedItem.Value + "-01");
+            DateTime endTime = startTime.AddMonths(1);
+            JavaScriptHelper.Loading("大人请稍后，奴才正在拼命计算...");
+
+            int count = bll.Add08_User(startTime, endTime);
+            JavaScriptHelper.UnLoading();
+
+            Response.Write("<script language=javascript defer>alert('计算完成,共计："+count.ToString()+"条数据！');</script>");
+
+
+        }
     }
 }

@@ -120,6 +120,7 @@
           <Property Name="Rainstorm48" Type="int" />
           <Property Name="Rainstorm48Total" Type="int" />
           <Property Name="CreateTime" Type="datetime" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Score_Month">
           <Key>
@@ -527,6 +528,7 @@
           <Property Name="Rainstorm48Total" Type="Int32" />
           <Property Name="CreateTime" Type="DateTime" Precision="3" />
           <NavigationProperty Name="YbUsers" Relationship="YBPFDB_Model.FK_Score_Day_YbUsers" FromRole="Score_Day" ToRole="YbUsers" />
+          <Property Name="Remark" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="WarnCheck">
           <Key>
@@ -741,6 +743,7 @@
           <EntitySetMapping Name="Score_Day">
             <EntityTypeMapping TypeName="YBPFDB_Model.Score_Day">
               <MappingFragment StoreEntitySet="Score_Day">
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
                 <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
                 <ScalarProperty Name="Rainstorm48Total" ColumnName="Rainstorm48Total" />
                 <ScalarProperty Name="Rainstorm48" ColumnName="Rainstorm48" />
