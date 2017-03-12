@@ -174,7 +174,16 @@ namespace PF.BLL.SQL
             }
             foreach (FileInfo fileInfo in allFileList)
             {
-                DateTime datetime = DateTime.ParseExact("20" + fileInfo.Name.Substring(0, 6), "yyyyMMdd", CultureInfo.InvariantCulture);
+                //DateTime datetime = DateTime.ParseExact("20" + fileInfo.Name.Substring(0, 6), "yyyyMMdd", CultureInfo.InvariantCulture);
+                DateTime fileDateTime = DateTime.ParseExact("20" + fileInfo.Name.Substring(0, 6), "yyyyMMdd", CultureInfo.InvariantCulture);
+
+
+                if (fileDateTime.Day == 9)
+                {
+                    var aaa = fileDateTime;
+                }
+                DateTime dataDateTime = fileDateTime.AddDays(-1);
+
                 string[] contents = FileHelper.GetShareTextLines(@"\\172.18.226.109\市县一体化平台文档\检验\r24-8-p\" + fileInfo.Name, "Administrator", "yubk0501!");
                 List<string> citycodes = CityUtility.AllCodeList();
                 foreach (string citycode in citycodes)
@@ -183,10 +192,10 @@ namespace PF.BLL.SQL
                     decimal rain = 0;
                     if (!string.IsNullOrEmpty(line))
                     {
-                        rain = decimal.Parse(line.Substring(27, 5).Trim());
+                        rain = decimal.Parse(line.Substring(27, line.Length-27).Trim());
 
                     }
-                    LiveData liveData = bll.Get(a => a.CountryCode == citycode && a.FDate == datetime && a.Category == "08时");
+                    LiveData liveData = bll.Get(a => a.CountryCode == citycode && a.FDate == dataDateTime && a.Category == "08时");
                     if (liveData != null)
                     {
                         liveData.Rain = rain;
@@ -201,7 +210,7 @@ namespace PF.BLL.SQL
                         newModel.CountryName = CityUtility.GetName(citycode);
                         newModel.CreateTime = DateTime.Now;
                         newModel.Rain = rain;
-                        newModel.FDate = datetime;
+                        newModel.FDate = dataDateTime;
                         bll.Add(newModel);
                     }
                 }
@@ -293,6 +302,74 @@ namespace PF.BLL.SQL
                 return true;
 
             }
+        }
+
+
+        /////////////////////////////
+        public string DataImportTemp20_FromDataBase(DateTime yearMonth)
+        {
+            StringBuilder message = new StringBuilder();
+
+            string yearMonthString = yearMonth.ToString("yyyyMM");
+            DATAHOUR_BLL hbll = new DATAHOUR_BLL();
+            LiveData_BLL lbll = new LiveData_BLL();
+            DateTime startTime = DateTime.ParseExact(yearMonthString + "01" + "20", "yyyyMMddHH", CultureInfo.InvariantCulture);
+            DateTime endTime = startTime.AddMonths(1);
+
+            DateTime startTime2 = startTime.AddDays(-1);
+
+            DateTime endTime2 = endTime.AddMonths(-1);
+
+            TimeSpan ts = endTime2 - startTime2;
+            for (int i = 0; i < ts.Days; i++)
+            {
+                DateTime stime = startTime2.AddDays(i);
+                DateTime etime = stime.AddDays(1);
+
+                List<string> citynames = CityUtility.AllNameList();
+                foreach (string cityname in citynames)
+                {
+                    string selectname = cityname;
+                    if (cityname == "黄岛")
+                    {
+                        selectname = "胶南";
+                    }
+
+                    List<DATAHOUR> dlist = hbll.GetList(a => a.STANAME == selectname && a.MINTEMP != 9999 && a.MAXTEMP != 9999 && a.FDATE >= stime && a.FDATE < etime).ToList();
+                    if (dlist.Count > 0)
+                    {
+                        DateTime seletime = DateTime.Parse(stime.ToShortDateString());
+
+                        LiveData liveData = lbll.Get(a => a.CountryName == cityname && a.FDate == seletime && a.Category == "20时");
+                        if (liveData != null)
+                        {
+                            liveData.MaxTemp = dlist.Max(a => a.MAXTEMP);
+                            liveData.MinTemp = dlist.Min(a => a.MINTEMP);
+                            lbll.Update(liveData);
+                        }
+                        else
+                        {
+                            LiveData newModel = new LiveData();
+                            newModel.LDID = Guid.NewGuid();
+                            newModel.FDate = stime;
+                            newModel.Category = "20时";
+                            newModel.CountryCode = CityUtility.GetCode(cityname);
+                            newModel.CountryName = cityname;
+                            newModel.CreateTime = DateTime.Now;
+                            newModel.MaxTemp = dlist.Max(a => a.MAXTEMP);
+                            newModel.MinTemp = dlist.Min(a => a.MINTEMP);
+                            lbll.Add(newModel);
+                        }
+                        //message.Append(cityname + "<br/>");
+                    }
+
+                }
+
+                //message.Append("导入08时温度成功，"stime.ToString("yyyy-MM-dd HH:mm") + "~" + etime.ToString("yyyy-MM-dd HH:mm") + "<br/>");
+            }
+            message.Append("导入08时温度成功,共计" + ts.Days + "天数据。<br/>");
+
+            return message.ToString();
         }
     }
 }

@@ -26,7 +26,14 @@ namespace PF.Web.R248
             List<FileInfo> allFileList = FileHelper.GetShareFileInfos(@"\\172.18.226.109\市县一体化平台文档\检验\r24-8-p", "*.000", "administrator", "yubk0501!");
             foreach (FileInfo fileInfo in allFileList)
             {
-                DateTime datetime = DateTime.ParseExact("20" + fileInfo.Name.Substring(0, 6), "yyyyMMdd", CultureInfo.InvariantCulture);
+                DateTime fileDateTime = DateTime.ParseExact("20" + fileInfo.Name.Substring(0, 6), "yyyyMMdd", CultureInfo.InvariantCulture);
+
+
+                if (fileDateTime.Day == 7)
+                {
+                    var aaa = fileDateTime;
+                }
+                DateTime dataDateTime = fileDateTime.AddDays(-1);
                 string[] contents = FileHelper.GetShareTextLines(@"\\172.18.226.109\市县一体化平台文档\检验\r24-8-p\" + fileInfo.Name, "Administrator", "yubk0501!");
                 List<string> citycodes = CityUtility.AllCodeList();
                 foreach (string citycode in citycodes)
@@ -38,7 +45,7 @@ namespace PF.Web.R248
                         rain = decimal.Parse(line.Substring(27, 5).Trim());
                         
                     }
-                    LiveData liveData = bll.Get(a => a.CountryCode == citycode && a.FDate == datetime && a.Category == "08时");
+                    LiveData liveData = bll.Get(a => a.CountryCode == citycode && a.FDate == dataDateTime && a.Category == "08时");
                     if (liveData != null)
                     {
                         liveData.Rain = rain;
@@ -53,7 +60,7 @@ namespace PF.Web.R248
                         newModel.CountryName = CityUtility.GetName(citycode);
                         newModel.CreateTime = DateTime.Now;
                         newModel.Rain = rain;
-                        newModel.FDate = datetime;
+                        newModel.FDate = dataDateTime;
                         bll.Add(newModel);
                     }
                 }

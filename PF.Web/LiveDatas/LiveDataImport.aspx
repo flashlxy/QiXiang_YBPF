@@ -53,10 +53,9 @@
     <form id="form1" runat="server">
         <table style="margin: 0 auto;">
             <tr>
-                <td style="text-align: center;font-size:2em;">
-                    实况数据校验和导入
+                <td style="text-align: center; font-size: 2em;">实况数据校验和导入
                 </td>
-                
+
             </tr>
             <tr>
                 <td style="vertical-align: top;">
@@ -101,15 +100,27 @@
                         <tr>
                             <td>
                                 <asp:Button ID="Btn_Import_Rain08" CssClass="btn btn-query" runat="server" Text="导入08时降水" OnClick="Btn_Import_Rain08_Click" />
+                               <br />
+                                <span>r24-8-p</span>
                             </td>
                             <td>
                                 <asp:Button ID="Btn_Import_Temp08" CssClass="btn btn-query" runat="server" Text="导入08时温度" OnClick="Btn_Import_Temp08_Click" />
+                                   <br />
+                                <span>数据库</span>
                             </td>
                             <td>
                                 <asp:Button ID="Btn_Import_TempAndRain20" CssClass="btn btn-query" runat="server" Text="导入20时温度和降水" OnClick="Btn_Import_TempAndRain20_Click" />
+                                <br />
+                                <span>A文件数据</span>
                             </td>
                             <td colspan="2">
                                 <asp:Button ID="Btn_Import_All" CssClass="btn btn-query" runat="server" Text="导入全部数据" BackColor="#FF3300" OnClick="Btn_Import_All_Click" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:Button ID="Button1" CssClass="btn btn-query" runat="server" Text="导入20时温度(数据库)" BackColor="#FF3300" OnClick="Btn_Import_All_Click" />
+                                
                             </td>
                         </tr>
                     </table>

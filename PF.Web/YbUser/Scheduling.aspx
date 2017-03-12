@@ -196,7 +196,7 @@
                                                     <li class='<%# Eval("YBUserName").ToString()=="集体"?"label_red":""%>'>
                                                         <%--<%# DataBinder.Eval(Container.DataItem, "YBUserName") %>--%>
                                                         <%#Eval("Remark")==null?Eval("YBUserName"):Eval("YBUserName").ToString()+"  (手工补调)" %>      
-                                                                
+                                                        <asp:LinkButton ID="LinkButton_Delete" runat="server" >删除</asp:LinkButton>    
                                                     </li>
                                                 </ItemTemplate>
                                             </asp:Repeater>

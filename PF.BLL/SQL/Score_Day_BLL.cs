@@ -46,7 +46,16 @@ namespace PF.BLL.SQL
                     //遍历每个人的数据得到每个人每天某个城市的数据
                     foreach (BwYbs dayPerson in dayPersonList)
                     {
+
+                        
+
+
                         DateTime currentDay = DateTime.Parse(((DateTime)dayPerson.YBDateTime).ToShortDateString());
+
+                        if (currentDay.Day == 28)
+                        {
+                            var aaa = currentDay;
+                        }
                         DateTime secondDay = currentDay.AddDays(1);
                         DateTime thirdDay = currentDay.AddDays(2);
                         DateTime thirsdDay = currentDay.AddDays(3);
@@ -142,8 +151,8 @@ namespace PF.BLL.SQL
                         ///晴雨预报判断
                         /// 24小时
                         WeatherDictionary wd12 = wdList.Where(a => a.Code == dayPerson.TianQiCode12).FirstOrDefault();
-                        WeatherDictionary wd24 = wdList.Where(a => a.Code == dayPerson.TianQiCode12).FirstOrDefault();
-                        WeatherDictionary trueWd24 = (decimal)wd12.Code <= (decimal)wd24.Code ? wd12 : wd24;
+                        WeatherDictionary wd24 = wdList.Where(a => a.Code == dayPerson.TianQiCode24).FirstOrDefault();
+                        WeatherDictionary trueWd24 = (decimal)wd12.Priority <= (decimal)wd24.Priority ? wd12 : wd24;
 
 
 
@@ -177,9 +186,9 @@ namespace PF.BLL.SQL
                         }
                         ///晴雨预报判断
                         /// 48小时
-                        WeatherDictionary wd36 = wdList.Where(a => a.Code == dayPerson.TianQiCode12).FirstOrDefault();
-                        WeatherDictionary wd48 = wdList.Where(a => a.Code == dayPerson.TianQiCode12).FirstOrDefault();
-                        WeatherDictionary trueWd48 = (decimal)wd12.Code <= (decimal)wd24.Code ? wd12 : wd24;
+                        WeatherDictionary wd36 = wdList.Where(a => a.Code == dayPerson.TianQiCode36).FirstOrDefault();
+                        WeatherDictionary wd48 = wdList.Where(a => a.Code == dayPerson.TianQiCode48).FirstOrDefault();
+                        WeatherDictionary trueWd48 = (decimal)wd36.Priority <= (decimal)wd48.Priority ? wd36 : wd48;
 
 
 
@@ -215,9 +224,9 @@ namespace PF.BLL.SQL
 
                         ///晴雨预报判断
                         /// 72小时
-                        WeatherDictionary wd60 = wdList.Where(a => a.Code == dayPerson.TianQiCode12).FirstOrDefault();
-                        WeatherDictionary wd72 = wdList.Where(a => a.Code == dayPerson.TianQiCode12).FirstOrDefault();
-                        WeatherDictionary trueWd72 = (decimal)wd12.Code <= (decimal)wd24.Code ? wd12 : wd24;
+                        WeatherDictionary wd60 = wdList.Where(a => a.Code == dayPerson.TianQiCode60).FirstOrDefault();
+                        WeatherDictionary wd72 = wdList.Where(a => a.Code == dayPerson.TianQiCode72).FirstOrDefault();
+                        WeatherDictionary trueWd72 = (decimal)wd60.Priority <= (decimal)wd72.Priority ? wd60 : wd72;
 
 
 
@@ -359,7 +368,7 @@ namespace PF.BLL.SQL
                             else if (liveRain24 > 0.01 && liveRain24 < 50.0)
                             {
                                 //1
-                                scoreDay.Rainfall24 = 1;
+                                scoreDay.Rainfall24 = 0;
                                 scoreDay.Rainfall24Total = 1;
                             }
                             else // >=50.0
@@ -475,8 +484,8 @@ namespace PF.BLL.SQL
                             }
                             else if (liveRain48 > 0.01 && liveRain48 < 50.0)
                             {
-                                //1
-                                scoreDay.Rainfall48 = 1;
+                                //0
+                                scoreDay.Rainfall48 = 0;
                                 scoreDay.Rainfall48Total = 1;
                             }
                             else // >=50.0
@@ -593,7 +602,7 @@ namespace PF.BLL.SQL
                             else if (liveRain72 > 0.01 && liveRain72 < 50.0)
                             {
                                 //1
-                                scoreDay.Rainfall72 = 1;
+                                scoreDay.Rainfall72 = 0;
                                 scoreDay.Rainfall72Total = 1;
                             }
                             else // >=50.0
@@ -1090,7 +1099,10 @@ namespace PF.BLL.SQL
                         scoreDay.CreateTime = DateTime.Now;
                         scoreDay.AllTotal = 1;//只要有站 该值就为1
 
-
+                        if (currentDay.Day == 5)
+                        {
+                            var aaa = currentDay;
+                        }
 
                         LiveData liveData24 = liveList.Where(a => a.FDate == currentDay && a.CountryName == dayPerson.CountryName).FirstOrDefault();//08时预报应该与当前比较
                         LiveData liveData48 = liveList.Where(a => a.FDate == secondDay && a.CountryName == dayPerson.CountryName).FirstOrDefault();
@@ -1172,8 +1184,8 @@ namespace PF.BLL.SQL
                         ///晴雨预报判断
                         /// 24小时
                         WeatherDictionary wd12 = wdList.Where(a => a.Code == dayPerson.TianQiCode12).FirstOrDefault();
-                        WeatherDictionary wd24 = wdList.Where(a => a.Code == dayPerson.TianQiCode12).FirstOrDefault();
-                        WeatherDictionary trueWd24 = (decimal)wd12.Code <= (decimal)wd24.Code ? wd12 : wd24;
+                        WeatherDictionary wd24 = wdList.Where(a => a.Code == dayPerson.TianQiCode24).FirstOrDefault();
+                        WeatherDictionary trueWd24 = (decimal)wd12.Priority <= (decimal)wd24.Priority ? wd12 : wd24;
 
 
 
@@ -1207,9 +1219,9 @@ namespace PF.BLL.SQL
                         }
                         ///晴雨预报判断
                         /// 48小时
-                        WeatherDictionary wd36 = wdList.Where(a => a.Code == dayPerson.TianQiCode12).FirstOrDefault();
-                        WeatherDictionary wd48 = wdList.Where(a => a.Code == dayPerson.TianQiCode12).FirstOrDefault();
-                        WeatherDictionary trueWd48 = (decimal)wd12.Code <= (decimal)wd24.Code ? wd12 : wd24;
+                        WeatherDictionary wd36 = wdList.Where(a => a.Code == dayPerson.TianQiCode36).FirstOrDefault();
+                        WeatherDictionary wd48 = wdList.Where(a => a.Code == dayPerson.TianQiCode48).FirstOrDefault();
+                        WeatherDictionary trueWd48 = (decimal)wd36.Priority <= (decimal)wd48.Priority ? wd36 : wd48;
 
 
 
@@ -1245,9 +1257,9 @@ namespace PF.BLL.SQL
 
                         ///晴雨预报判断
                         /// 72小时
-                        WeatherDictionary wd60 = wdList.Where(a => a.Code == dayPerson.TianQiCode12).FirstOrDefault();
-                        WeatherDictionary wd72 = wdList.Where(a => a.Code == dayPerson.TianQiCode12).FirstOrDefault();
-                        WeatherDictionary trueWd72 = (decimal)wd12.Code <= (decimal)wd24.Code ? wd12 : wd24;
+                        WeatherDictionary wd60 = wdList.Where(a => a.Code == dayPerson.TianQiCode60).FirstOrDefault();
+                        WeatherDictionary wd72 = wdList.Where(a => a.Code == dayPerson.TianQiCode72).FirstOrDefault();
+                        WeatherDictionary trueWd72 = (decimal)wd60.Priority <= (decimal)wd72.Priority ? wd60 : wd72;
 
 
 
@@ -1389,7 +1401,7 @@ namespace PF.BLL.SQL
                             else if (liveRain24 > 0.01 && liveRain24 < 50.0)
                             {
                                 //1
-                                scoreDay.Rainfall24 = 1;
+                                scoreDay.Rainfall24 = 0;
                                 scoreDay.Rainfall24Total = 1;
                             }
                             else // >=50.0
@@ -1506,7 +1518,7 @@ namespace PF.BLL.SQL
                             else if (liveRain48 > 0.01 && liveRain48 < 50.0)
                             {
                                 //1
-                                scoreDay.Rainfall48 = 1;
+                                scoreDay.Rainfall48 = 0;
                                 scoreDay.Rainfall48Total = 1;
                             }
                             else // >=50.0
@@ -1623,7 +1635,7 @@ namespace PF.BLL.SQL
                             else if (liveRain72 > 0.01 && liveRain72 < 50.0)
                             {
                                 //1
-                                scoreDay.Rainfall72 = 1;
+                                scoreDay.Rainfall72 = 0;
                                 scoreDay.Rainfall72Total = 1;
                             }
                             else // >=50.0

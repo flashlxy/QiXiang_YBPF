@@ -152,6 +152,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="LiveDatas\LiveDataImport.aspx" />
     <Content Include="R248\Rain08ToData.aspx" />
+    <Content Include="Score\MonthEarlier.aspx" />
     <Content Include="Score\ScoreMonth.aspx" />
     <Content Include="Score\ScoreDay.aspx" />
     <Content Include="Score\ScoreTest.aspx" />
@@ -213,6 +214,13 @@
     </Compile>
     <Compile Include="R248\Rain08ToData.aspx.designer.cs">
       <DependentUpon>Rain08ToData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Score\MonthEarlier.aspx.cs">
+      <DependentUpon>MonthEarlier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Score\MonthEarlier.aspx.designer.cs">
+      <DependentUpon>MonthEarlier.aspx</DependentUpon>
     </Compile>
     <Compile Include="Score\ScoreMonth.aspx.cs">
       <DependentUpon>ScoreMonth.aspx</DependentUpon>
