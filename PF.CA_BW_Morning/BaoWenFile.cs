@@ -18,9 +18,10 @@ namespace PF.CA_BW_Morning
             YbUsers_BLL ubll = new YbUsers_BLL();
 
 
-            var shijiandir = FileHelper.GetShareLastDirectory(@"\\172.18.226.48\新城镇报", "20*", "administrator", "ybk");
-
-            string path = @"\\172.18.226.48\新城镇报\" + shijiandir.Name + @"\早上6点00前";
+            //var shijiandir = FileHelper.GetShareLastDirectory(@"\\172.18.226.48\新城镇报", "20*", "administrator", "ybk");
+            //string path = @"\\172.18.226.48\新城镇报\" + shijiandir.Name + @"\早上6点00前";
+            var shijiandir = "201702";
+            string path = @"\\172.18.226.48\新城镇报\" + shijiandir + @"\早上6点00前";
 
             List<FileInfo> allFileList = FileHelper.GetShareFileInfos(path, "Z_SEVP_C_BEQD_*16812*", "administrator", "ybk");
 
@@ -88,7 +89,8 @@ namespace PF.CA_BW_Morning
                 }
             }
 
-            Console.WriteLine(shijiandir.Name);
+            //Console.WriteLine(shijiandir.Name);
+            Console.WriteLine(shijiandir);
             Console.WriteLine("早间报文导入成功，总数：" + total);
 
 

@@ -145,7 +145,7 @@ namespace PF.Web.YbUser
                 Remark = "来自集体"
             };
 
-            scBll.Add(exceptScoreDay, false);
+            scBll.Add(exceptScoreDay);
             Query();
 
             Response.Write("<script language=javascript defer>alert('添加成功！');</script>");
@@ -164,7 +164,7 @@ namespace PF.Web.YbUser
                 Repeater_YbUser_Morning.ItemCommand += new RepeaterCommandEventHandler(rpt_moring_ItemCommand);
 
                 Repeater Repeater_YbUser_Night = (Repeater)e.Item.FindControl("Repeater_YbUser_Night");
-                Repeater_YbUser_Morning.ItemCommand += new RepeaterCommandEventHandler(rpt_night_ItemCommand);
+                Repeater_YbUser_Night.ItemCommand += new RepeaterCommandEventHandler(rpt_night_ItemCommand);
 
             }
            

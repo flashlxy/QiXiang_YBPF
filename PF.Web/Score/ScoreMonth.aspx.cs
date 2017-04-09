@@ -248,6 +248,11 @@ namespace PF.Web.Score
 
             foreach (var user in allUsers)
             {
+                if (user.Key.YBUserName == "时晓曚")
+                {
+                    var ssd = user;
+                }
+
                 List<Score_Day> userList = dayList.Where(a => a.YBUserName == user.Key.YBUserName).ToList();
 
                 List<Score_Day> groupList = new List<Score_Day>();
@@ -342,11 +347,23 @@ namespace PF.Web.Score
                 {
                     Ts暴雨 = 0.00;
                 }
-                else
+                else if (rainstorm24_Total_Sum!=0&& rainstorm48_Total_Sum == 0)
                 {
-                    Ts暴雨 = Math.Round(rainstorm24 * 10 / 18 + rainstorm48 * 8 / 18 , 2);
+                    
+                    
+                    Ts暴雨 = Math.Round(rainstorm24 * 10 / 18  , 2);
                 }
-                
+                else if (rainstorm24_Total_Sum == 0 && rainstorm48_Total_Sum != 0)
+                {
+                    Ts暴雨 = Math.Round(rainstorm48 * 8 / 18, 2);
+
+                }
+                else if (rainstorm24_Total_Sum != 0 && rainstorm48_Total_Sum != 0)
+                {
+                    Ts暴雨 = Math.Round(rainstorm24 * 10 / 18 + rainstorm48 * 8 / 18, 2);
+
+                }
+
 
 
 
@@ -434,11 +451,18 @@ namespace PF.Web.Score
                 {
                     Ts暴雨_Group = 0.00;
                 }
-                else
+                else if (rainstorm24_Total_Sum_Group != 0 && rainstorm48_Total_Sum_Group == 0)
+                {
+                    Ts暴雨_Group = Math.Round(rainstorm24_Group * 10 / 18 , 2);
+                }
+                else if (rainstorm24_Total_Sum_Group == 0 && rainstorm48_Total_Sum_Group != 0)
+                {
+                    Ts暴雨_Group = Math.Round( rainstorm48_Group * 8 / 18, 2);
+                }
+                else if (rainstorm24_Total_Sum_Group != 0 && rainstorm48_Total_Sum_Group != 0)
                 {
                     Ts暴雨_Group = Math.Round(rainstorm24_Group * 10 / 18 + rainstorm48_Group * 8 / 18, 2);
                 }
-
 
 
 

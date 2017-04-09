@@ -52,7 +52,7 @@ namespace PF.BLL.SQL
 
                         DateTime currentDay = DateTime.Parse(((DateTime)dayPerson.YBDateTime).ToShortDateString());
 
-                        if (currentDay.Day == 28)
+                        if (currentDay.Day == 3)
                         {
                             var aaa = currentDay;
                         }
@@ -159,7 +159,7 @@ namespace PF.BLL.SQL
                         if (trueWd24.Priority < 11)
                         {
                             //如果有雨
-                            if ((double)liveRain24 <= 0.01)
+                            if ((double)liveRain24 >= 0.01)
                             {
                                 //1
                                 scoreDay.RainShine24 = 1;
@@ -196,7 +196,7 @@ namespace PF.BLL.SQL
                         if (trueWd48.Priority < 11)
                         {
                             //如果有雨
-                            if (liveRain48 <= 0.01)
+                            if (liveRain48 >= 0.01)
                             {
                                 //1
                                 scoreDay.RainShine48 = 1;
@@ -234,7 +234,7 @@ namespace PF.BLL.SQL
                         if (trueWd72.Priority < 11)
                         {
                             //如果有雨
-                            if ((double)liveRain72 <= 0.01)
+                            if ((double)liveRain72 >= 0.01)
                             {
                                 //1
                                 scoreDay.RainShine72 = 1;
@@ -1192,7 +1192,7 @@ namespace PF.BLL.SQL
                         if (trueWd24.Priority < 11)
                         {
                             //如果有雨
-                            if ((double)liveRain24 <= 0.01)
+                            if ((double)liveRain24 >= 0.01)
                             {
                                 //1
                                 scoreDay.RainShine24 = 1;
@@ -1229,7 +1229,7 @@ namespace PF.BLL.SQL
                         if (trueWd48.Priority < 11)
                         {
                             //如果有雨
-                            if (liveRain48 <= 0.01)
+                            if (liveRain48 >= 0.01)
                             {
                                 //1
                                 scoreDay.RainShine48 = 1;
@@ -1267,7 +1267,7 @@ namespace PF.BLL.SQL
                         if (trueWd72.Priority < 11)
                         {
                             //如果有雨
-                            if ((double)liveRain72 <= 0.01)
+                            if ((double)liveRain72 >= 0.01)
                             {
                                 //1
                                 scoreDay.RainShine72 = 1;
