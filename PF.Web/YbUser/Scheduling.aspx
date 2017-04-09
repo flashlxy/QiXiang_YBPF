@@ -81,14 +81,7 @@
                 <td>
                     <table class="table-query">
                         <tr>
-                            <td>预报时间
-                            </td>
-                            <td>
-                                <asp:DropDownList ID="DropDownList_YBTime" runat="server" Font-Size="14pt">
-                                    <asp:ListItem Text="08时" Value="08时"></asp:ListItem>
-                                    <asp:ListItem Text="20时" Value="20时" Selected="True"></asp:ListItem>
-                                </asp:DropDownList>
-                            </td>
+                          
 
                             <td>选择日期</td>
                             <td>
@@ -177,6 +170,7 @@
                                                     <li class='<%# Eval("YBUserName").ToString()=="集体"?"label_red":""%>'>
 
                                                         <%#Eval("Remark")==null?Eval("YBUserName"):Eval("YBUserName").ToString()+"  (手工补调)" %>      
+                                                        <asp:LinkButton ID="LinkButton_Delete" runat="server" CommandArgument='<%#Eval("ScoreID")+","+(Container as RepeaterItem).ItemIndex%>' CommandName="DeleteUser" OnClientClick="javascript:return confirm( '确定要删除吗？ ');">删除</asp:LinkButton>
 
                                                     </li>
 

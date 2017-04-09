@@ -89,21 +89,7 @@ namespace PF.Web.YbUser
             }
         }
 
-        void rpt_moring_ItemCommand(object source, RepeaterCommandEventArgs e)
-        {
-            if (e.CommandName == "DeleteUser")
-            {
-
-                string sid = e.CommandArgument.ToString().Split(',')[0].ToString();
-                Guid scoid = Guid.Parse(sid);
-                Score_Day_BLL bll = new Score_Day_BLL();
-                bll.Delete(a => a.ScoreID == scoid);
-
-                Query();
-
-                Response.Write("<script>alert('删除成功！')</script>");
-            }
-        }
+       
 
 
         public void InitUser()
@@ -177,32 +163,42 @@ namespace PF.Web.YbUser
                 Repeater Repeater_YbUser_Morning = (Repeater)e.Item.FindControl("Repeater_YbUser_Morning");
                 Repeater_YbUser_Morning.ItemCommand += new RepeaterCommandEventHandler(rpt_moring_ItemCommand);
 
-
+                Repeater Repeater_YbUser_Night = (Repeater)e.Item.FindControl("Repeater_YbUser_Night");
+                Repeater_YbUser_Morning.ItemCommand += new RepeaterCommandEventHandler(rpt_night_ItemCommand);
 
             }
            
         }
+        void rpt_moring_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            if (e.CommandName == "DeleteUser")
+            {
 
-        //protected void Repeater_YbUser_ItemCommand(object source, RepeaterCommandEventArgs e)
-        //{
+                string sid = e.CommandArgument.ToString().Split(',')[0].ToString();
+                Guid scoid = Guid.Parse(sid);
+                Score_Day_BLL bll = new Score_Day_BLL();
+                bll.Delete(a => a.ScoreID == scoid);
 
-        //}
+                Query();
 
-        //protected void Repeater_YbUser_ItemCreated(object sender, RepeaterItemEventArgs e)
-        //{
-        //    Repeater Repeater_YbUser_Morning = (Repeater)e.Item.FindControl("Repeater_YbUser_Morning");
-        //    Repeater_YbUser_Morning.ItemCommand += Repeater_YbUser_Morning_ItemCommand;
-        //}
+                Response.Write("<script>alert('删除成功！')</script>");
+            }
+        }
+        void rpt_night_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            if (e.CommandName == "DeleteUser")
+            {
 
-        //private void Repeater_YbUser_Morning_ItemCommand(object source, RepeaterCommandEventArgs e)
-        //{
-        //    if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
-        //    {
-        //        if (e.CommandName == "GetShiJuItem")
-        //        {
-        //            string fid = e.CommandArgument.ToString().Split(',')[0].ToString();
-        //        }
-        //    }
-        //}
+                string sid = e.CommandArgument.ToString().Split(',')[0].ToString();
+                Guid scoid = Guid.Parse(sid);
+                Score_Day_BLL bll = new Score_Day_BLL();
+                bll.Delete(a => a.ScoreID == scoid);
+
+                Query();
+
+                Response.Write("<script>alert('删除成功！')</script>");
+            }
+        }
+
     }
 }
