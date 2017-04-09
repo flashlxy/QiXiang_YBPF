@@ -118,13 +118,14 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>
-                                <asp:Button ID="Button1" CssClass="btn btn-query" runat="server" Text="导入20时温度(数据库)" BackColor="#FF3300" OnClick="Btn_Import_All_Click" />
+                         
+                         
+                                   <td>
+                                <asp:Button ID="Btn_Import_MonthEarlier" CssClass="btn btn-query" runat="server" Text="月初三天(数据库)" BackColor="#FF3300" OnClick="Btn_Import_MonthEarlier_Click"  />
                                 
                             </td>
                         </tr>
                     </table>
-
                 </td>
                 <td rowspan="2" style="vertical-align: top; padding: 25px; width: 300px;">
                     <fieldset>

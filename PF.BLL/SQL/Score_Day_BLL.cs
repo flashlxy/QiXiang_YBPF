@@ -7,11 +7,11 @@ using PF.ViewModels;
 
 namespace PF.BLL.SQL
 {
-  public  partial class Score_Day_BLL
+    public partial class Score_Day_BLL
     {
         public void Caculate20(DateTime startDate, DateTime endDate)
         {
-            
+
             dal.Delete(a => a.YBTime == "20时" && a.YBDate >= startDate && a.YBDate <= endDate);
 
             DateTime preDate = endDate.AddDays(2);
@@ -20,7 +20,7 @@ namespace PF.BLL.SQL
                 new LiveData_BLL().GetList(a => a.FDate >= startDate && a.FDate <= preDate && a.Category == "20时")
                     .ToList();
             BwYbs_BLL bwYbsBll = new BwYbs_BLL();
-            List<BwYbs> list = bwYbsBll.GetList(a => a.YBDateTime >= startDate && a.YBDateTime < endDate && a.YBType=="晚间报文").ToList();
+            List<BwYbs> list = bwYbsBll.GetList(a => a.YBDateTime >= startDate && a.YBDateTime < endDate && a.YBType == "晚间报文").ToList();
             List<WeatherDictionary> wdList = new WeatherDictionary_BLL().GetList(a => a.Type == "天气").ToList();
             TimeSpan timeSpan = endDate - startDate;//时间跨度
 
@@ -47,7 +47,7 @@ namespace PF.BLL.SQL
                     foreach (BwYbs dayPerson in dayPersonList)
                     {
 
-                        
+
 
 
                         DateTime currentDay = DateTime.Parse(((DateTime)dayPerson.YBDateTime).ToShortDateString());
@@ -167,7 +167,7 @@ namespace PF.BLL.SQL
                             else
                             {
                                 //0
-                                scoreDay.RainShine24 = 1;
+                                scoreDay.RainShine24 =0;
                             }
                         }
                         else
@@ -181,7 +181,7 @@ namespace PF.BLL.SQL
                             else
                             {
                                 //0
-                                scoreDay.RainShine24 = 1;
+                                scoreDay.RainShine24 = 0;
                             }
                         }
                         ///晴雨预报判断
@@ -204,7 +204,7 @@ namespace PF.BLL.SQL
                             else
                             {
                                 //0
-                                scoreDay.RainShine48 = 1;
+                                scoreDay.RainShine48 = 0;
                             }
                         }
                         else
@@ -218,7 +218,7 @@ namespace PF.BLL.SQL
                             else
                             {
                                 //0
-                                scoreDay.RainShine48 = 1;
+                                scoreDay.RainShine48 =0;
                             }
                         }
 
@@ -242,7 +242,7 @@ namespace PF.BLL.SQL
                             else
                             {
                                 //0
-                                scoreDay.RainShine72 = 1;
+                                scoreDay.RainShine72 = 0;
                             }
                         }
                         else
@@ -256,7 +256,7 @@ namespace PF.BLL.SQL
                             else
                             {
                                 //0
-                                scoreDay.RainShine72 = 1;
+                                scoreDay.RainShine72 =0;
                             }
                         }
                         #endregion
@@ -1051,7 +1051,7 @@ namespace PF.BLL.SQL
         public void Caculate08(DateTime startDate, DateTime endDate)
         {
 
-            dal.Delete(a =>a.YBTime=="08时"&& a.YBDate >= startDate && a.YBDate <= endDate);
+            dal.Delete(a => a.YBTime == "08时" && a.YBDate >= startDate && a.YBDate <= endDate);
 
             DateTime preDate = endDate.AddDays(2);
 
@@ -1200,7 +1200,7 @@ namespace PF.BLL.SQL
                             else
                             {
                                 //0
-                                scoreDay.RainShine24 = 1;
+                                scoreDay.RainShine24 = 0;
                             }
                         }
                         else
@@ -1214,7 +1214,7 @@ namespace PF.BLL.SQL
                             else
                             {
                                 //0
-                                scoreDay.RainShine24 = 1;
+                                scoreDay.RainShine24 = 0;
                             }
                         }
                         ///晴雨预报判断
@@ -1237,7 +1237,7 @@ namespace PF.BLL.SQL
                             else
                             {
                                 //0
-                                scoreDay.RainShine48 = 1;
+                                scoreDay.RainShine48 = 0;
                             }
                         }
                         else
@@ -1251,7 +1251,7 @@ namespace PF.BLL.SQL
                             else
                             {
                                 //0
-                                scoreDay.RainShine48 = 1;
+                                scoreDay.RainShine48 = 0;
                             }
                         }
 
@@ -1275,7 +1275,7 @@ namespace PF.BLL.SQL
                             else
                             {
                                 //0
-                                scoreDay.RainShine72 = 1;
+                                scoreDay.RainShine72 =0;
                             }
                         }
                         else
@@ -1289,7 +1289,7 @@ namespace PF.BLL.SQL
                             else
                             {
                                 //0
-                                scoreDay.RainShine72 = 1;
+                                scoreDay.RainShine72 = 0;
                             }
                         }
                         #endregion
@@ -2124,101 +2124,126 @@ namespace PF.BLL.SQL
                 DateTime currentDay = startDate.AddDays(i);
                 DateTime yesday = currentDay.AddDays(-1);
 
-                List<YBUsers_Name_ViewModel> nightNameDaylist =nightNameAlllist.Where(a => a.Date == yesday).Select(a=>new YBUsers_Name_ViewModel {YBUserID=a.YBUserID,YBUserName=a.YBUserName}).ToList();
+                List<YBUsers_Name_ViewModel> nightNameDaylist = nightNameAlllist.Where(a => a.Date == yesday).Select(a => new YBUsers_Name_ViewModel { YBUserID = a.YBUserID, YBUserName = a.YBUserName }).ToList();
                 List<YBUsers_Name_ViewModel> morningNameDaylist = morningNameAlllist.Where(a => a.Date == currentDay).Select(a => new YBUsers_Name_ViewModel { YBUserID = a.YBUserID, YBUserName = a.YBUserName }).ToList();
 
 
                 if (morningNameDaylist.Count() > 0)
                 {
-                    List<YBUsers_Name_ViewModel> exceptUsers =
-                        nightNameDaylist.Where(a => a.YBUserName != morningNameDaylist.FirstOrDefault().YBUserName)
-                            .ToList();
 
-                    foreach (var exceptUser in exceptUsers)
+                    try
+                    {
+                        List<YBUsers_Name_ViewModel> exceptUsers =
+                       nightNameDaylist.Where(a => a.YBUserName != morningNameDaylist.FirstOrDefault().YBUserName)
+                           .ToList();
+                        foreach (var exceptUser in exceptUsers)
+                        {
+
+                            if (exceptUser != null)
+                            {
+                                Score_Day groupScoreDay =
+                                    scBll.Get(a => a.YBTime == "08时" && a.YBDate == currentDay && a.YBUserName == "集体");
+                                Score_Day exceptScoreDay = new Score_Day()
+                                {
+                                    ScoreID = Guid.NewGuid(),
+                                    AllTotal = groupScoreDay.AllTotal,
+                                    CreateTime = DateTime.Now,
+                                    MaxTemp24 = groupScoreDay.MaxTemp24,
+                                    MaxTemp48 = groupScoreDay.MaxTemp48,
+                                    MaxTemp72 = groupScoreDay.MaxTemp72,
+                                    MinTemp24 = groupScoreDay.MinTemp24,
+                                    MinTemp48 = groupScoreDay.MinTemp48,
+                                    MinTemp72 = groupScoreDay.MinTemp72,
+                                    Rainfall24 = groupScoreDay.Rainfall24,
+                                    Rainfall24Total = groupScoreDay.Rainfall24Total,
+                                    Rainfall48 = groupScoreDay.Rainfall48,
+                                    Rainfall48Total = groupScoreDay.Rainfall48Total,
+                                    Rainfall72 = groupScoreDay.Rainfall72,
+                                    Rainfall72Total = groupScoreDay.Rainfall72Total,
+                                    RainShine24 = groupScoreDay.RainShine24,
+                                    RainShine48 = groupScoreDay.RainShine48,
+                                    RainShine72 = groupScoreDay.RainShine72,
+                                    Rainstorm24 = groupScoreDay.Rainstorm24,
+                                    Rainstorm24Total = groupScoreDay.Rainstorm24Total,
+                                    Rainstorm48 = groupScoreDay.Rainstorm48,
+                                    Rainstorm48Total = groupScoreDay.Rainstorm48Total,
+                                    YBDate = groupScoreDay.YBDate,
+                                    YBTime = groupScoreDay.YBTime,
+                                    YBUserID = exceptUser.YBUserID,
+                                    YBUserName = exceptUser.YBUserName,
+                                    Remark = "来自集体"
+                                };
+
+                                scBll.Add(exceptScoreDay, false);
+                            }
+
+                        }
+                    }
+                    catch (Exception ex)
                     {
 
-                        if (exceptUser != null)
-                        {
-                            Score_Day groupScoreDay =
-                                scBll.Get(a => a.YBTime == "08时" && a.YBDate == currentDay && a.YBUserName == "集体");
-                            Score_Day exceptScoreDay = new Score_Day()
-                            {
-                                ScoreID = Guid.NewGuid(),
-                                AllTotal = groupScoreDay.AllTotal,
-                                CreateTime = DateTime.Now,
-                                MaxTemp24 = groupScoreDay.MaxTemp24,
-                                MaxTemp48 = groupScoreDay.MaxTemp48,
-                                MaxTemp72 = groupScoreDay.MaxTemp72,
-                                MinTemp24 = groupScoreDay.MinTemp24,
-                                MinTemp48 = groupScoreDay.MinTemp48,
-                                MinTemp72 = groupScoreDay.MinTemp72,
-                                Rainfall24 = groupScoreDay.Rainfall24,
-                                Rainfall24Total = groupScoreDay.Rainfall24Total,
-                                Rainfall48 = groupScoreDay.Rainfall48,
-                                Rainfall48Total = groupScoreDay.Rainfall48Total,
-                                Rainfall72 = groupScoreDay.Rainfall72,
-                                Rainfall72Total = groupScoreDay.Rainfall72Total,
-                                RainShine24 = groupScoreDay.RainShine24,
-                                RainShine48 = groupScoreDay.RainShine48,
-                                RainShine72 = groupScoreDay.RainShine72,
-                                Rainstorm24 = groupScoreDay.Rainstorm24,
-                                Rainstorm24Total = groupScoreDay.Rainstorm24Total,
-                                Rainstorm48 = groupScoreDay.Rainstorm48,
-                                Rainstorm48Total = groupScoreDay.Rainstorm48Total,
-                                YBDate = groupScoreDay.YBDate,
-                                YBTime = groupScoreDay.YBTime,
-                                YBUserID = exceptUser.YBUserID,
-                                YBUserName = exceptUser.YBUserName,
-                                Remark = "来自集体"
-                            };
-
-                            scBll.Add(exceptScoreDay, false);
-                        }
 
                     }
+
+
+
+
                 }
                 else
                 {
                     foreach (var exceptUser in nightNameDaylist)
                     {
 
+
                         if (exceptUser != null)
                         {
-                            Score_Day groupScoreDay =
-                                scBll.Get(a => a.YBTime == "08时" && a.YBDate == currentDay && a.YBUserName == "集体");
-                            Score_Day exceptScoreDay = new Score_Day()
+                            try
                             {
-                                ScoreID = Guid.NewGuid(),
-                                AllTotal = groupScoreDay.AllTotal,
-                                CreateTime = DateTime.Now,
-                                MaxTemp24 = groupScoreDay.MaxTemp24,
-                                MaxTemp48 = groupScoreDay.MaxTemp48,
-                                MaxTemp72 = groupScoreDay.MaxTemp72,
-                                MinTemp24 = groupScoreDay.MinTemp24,
-                                MinTemp48 = groupScoreDay.MinTemp48,
-                                MinTemp72 = groupScoreDay.MinTemp72,
-                                Rainfall24 = groupScoreDay.Rainfall24,
-                                Rainfall24Total = groupScoreDay.Rainfall24Total,
-                                Rainfall48 = groupScoreDay.Rainfall48,
-                                Rainfall48Total = groupScoreDay.Rainfall48Total,
-                                Rainfall72 = groupScoreDay.Rainfall72,
-                                Rainfall72Total = groupScoreDay.Rainfall72Total,
-                                RainShine24 = groupScoreDay.RainShine24,
-                                RainShine48 = groupScoreDay.RainShine48,
-                                RainShine72 = groupScoreDay.RainShine72,
-                                Rainstorm24 = groupScoreDay.Rainstorm24,
-                                Rainstorm24Total = groupScoreDay.Rainstorm24Total,
-                                Rainstorm48 = groupScoreDay.Rainstorm48,
-                                Rainstorm48Total = groupScoreDay.Rainstorm48Total,
-                                YBDate = groupScoreDay.YBDate,
-                                YBTime = groupScoreDay.YBTime,
-                                YBUserID = exceptUser.YBUserID,
-                                YBUserName = exceptUser.YBUserName,
-                                Remark = "来自集体"
-                            };
+                                Score_Day groupScoreDay =
+                                    scBll.Get(a => a.YBTime == "08时" && a.YBDate == currentDay && a.YBUserName == "集体");
+                                Score_Day exceptScoreDay = new Score_Day()
+                                {
+                                    ScoreID = Guid.NewGuid(),
+                                    AllTotal = groupScoreDay.AllTotal,
+                                    CreateTime = DateTime.Now,
+                                    MaxTemp24 = groupScoreDay.MaxTemp24,
+                                    MaxTemp48 = groupScoreDay.MaxTemp48,
+                                    MaxTemp72 = groupScoreDay.MaxTemp72,
+                                    MinTemp24 = groupScoreDay.MinTemp24,
+                                    MinTemp48 = groupScoreDay.MinTemp48,
+                                    MinTemp72 = groupScoreDay.MinTemp72,
+                                    Rainfall24 = groupScoreDay.Rainfall24,
+                                    Rainfall24Total = groupScoreDay.Rainfall24Total,
+                                    Rainfall48 = groupScoreDay.Rainfall48,
+                                    Rainfall48Total = groupScoreDay.Rainfall48Total,
+                                    Rainfall72 = groupScoreDay.Rainfall72,
+                                    Rainfall72Total = groupScoreDay.Rainfall72Total,
+                                    RainShine24 = groupScoreDay.RainShine24,
+                                    RainShine48 = groupScoreDay.RainShine48,
+                                    RainShine72 = groupScoreDay.RainShine72,
+                                    Rainstorm24 = groupScoreDay.Rainstorm24,
+                                    Rainstorm24Total = groupScoreDay.Rainstorm24Total,
+                                    Rainstorm48 = groupScoreDay.Rainstorm48,
+                                    Rainstorm48Total = groupScoreDay.Rainstorm48Total,
+                                    YBDate = groupScoreDay.YBDate,
+                                    YBTime = groupScoreDay.YBTime,
+                                    YBUserID = exceptUser.YBUserID,
+                                    YBUserName = exceptUser.YBUserName,
+                                    Remark = "来自集体"
+                                };
 
-                            scBll.Add(exceptScoreDay, false);
+                                scBll.Add(exceptScoreDay, false);
+
+                            }
+                            catch (Exception ex)
+                            {
+
+
+                            }
                         }
+
+
+
 
                     }
                 }
@@ -2226,13 +2251,13 @@ namespace PF.BLL.SQL
 
                 //List<YBUsers_Name_ViewModel> exceptList = nightNameDaylist.Except(morningNameDaylist).ToList();
 
-                  //YBUsers_Name_ViewModel exceptUser = exceptList.FirstOrDefault();
-                 
-                
-                
+                //YBUsers_Name_ViewModel exceptUser = exceptList.FirstOrDefault();
+
+
+
 
             }
-            dal.Delete(a => a.YBTime == "08时" && a.YBDate >= startDate && a.YBDate < endDate&&a.Remark=="来自集体");
+            dal.Delete(a => a.YBTime == "08时" && a.YBDate >= startDate && a.YBDate < endDate && a.Remark == "来自集体");
 
 
             return scBll.SaveChange();

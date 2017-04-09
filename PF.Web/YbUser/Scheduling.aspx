@@ -62,6 +62,10 @@
             .table_ybuser tr:nth-child(2n) {
                 background-color: #fcf9d3;
             }
+
+        .auto-style1 {
+            height: 25px;
+        }
     </style>
 </head>
 <body>
@@ -151,7 +155,7 @@
                 <td>
                     <table class="table_ybuser">
 
-                        <asp:Repeater ID="Repeater_YbUser" runat="server" OnItemDataBound="Repeater_YbUser_ItemDataBound">
+                        <asp:Repeater ID="Repeater_YbUser" runat="server" OnItemDataBound="Repeater_YbUser_ItemDataBound" OnItemCreated="Repeater_YbUser_ItemCreated">
                             <HeaderTemplate>
                                 <tr>
                                     <th>日期</th>
@@ -195,8 +199,8 @@
                                                 <ItemTemplate>
                                                     <li class='<%# Eval("YBUserName").ToString()=="集体"?"label_red":""%>'>
                                                         <%--<%# DataBinder.Eval(Container.DataItem, "YBUserName") %>--%>
-                                                        <%#Eval("Remark")==null?Eval("YBUserName"):Eval("YBUserName").ToString()+"  (手工补调)" %>      
-                                                        <asp:LinkButton ID="LinkButton_Delete" runat="server" >删除</asp:LinkButton>    
+                                                        <%#Eval("Remark")==null?Eval("YBUserName"):Eval("YBUserName").ToString()+"  (手工补调)" %>
+                                                        <asp:LinkButton ID="LinkButton_Delete" runat="server" CommandArgument='<%#Eval("ScoreID")+","+(Container as RepeaterItem).ItemIndex%>' CommandName="DeleteUser" OnClientClick="javascript:return confirm( '确定要删除吗？ ');">删除</asp:LinkButton>
                                                     </li>
                                                 </ItemTemplate>
                                             </asp:Repeater>

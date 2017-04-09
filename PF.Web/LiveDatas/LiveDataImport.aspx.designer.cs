@@ -94,13 +94,13 @@ namespace PF.Web.LiveDatas {
         protected global::System.Web.UI.WebControls.Button Btn_Import_All;
         
         /// <summary>
-        /// Button1 控件。
+        /// Btn_Import_MonthEarlier 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button Btn_Import_MonthEarlier;
         
         /// <summary>
         /// Label_DataMiss 控件。

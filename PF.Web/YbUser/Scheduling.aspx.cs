@@ -83,8 +83,28 @@ namespace PF.Web.YbUser
 
                 Repeater_YbUser_Night.DataSource = nlist;
                 Repeater_YbUser_Night.DataBind();
+
+
+               
             }
         }
+
+        void rpt_moring_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            if (e.CommandName == "DeleteUser")
+            {
+
+                string sid = e.CommandArgument.ToString().Split(',')[0].ToString();
+                Guid scoid = Guid.Parse(sid);
+                Score_Day_BLL bll = new Score_Day_BLL();
+                bll.Delete(a => a.ScoreID == scoid);
+
+                Query();
+
+                Response.Write("<script>alert('删除成功！')</script>");
+            }
+        }
+
 
         public void InitUser()
         {
@@ -145,5 +165,44 @@ namespace PF.Web.YbUser
             Response.Write("<script language=javascript defer>alert('添加成功！');</script>");
 
         }
+
+        protected void Repeater_YbUser_ItemCreated(object sender, RepeaterItemEventArgs e)
+        {
+            if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem || e.Item.ItemType == ListItemType.SelectedItem)
+            {
+              
+
+
+
+                Repeater Repeater_YbUser_Morning = (Repeater)e.Item.FindControl("Repeater_YbUser_Morning");
+                Repeater_YbUser_Morning.ItemCommand += new RepeaterCommandEventHandler(rpt_moring_ItemCommand);
+
+
+
+            }
+           
+        }
+
+        //protected void Repeater_YbUser_ItemCommand(object source, RepeaterCommandEventArgs e)
+        //{
+
+        //}
+
+        //protected void Repeater_YbUser_ItemCreated(object sender, RepeaterItemEventArgs e)
+        //{
+        //    Repeater Repeater_YbUser_Morning = (Repeater)e.Item.FindControl("Repeater_YbUser_Morning");
+        //    Repeater_YbUser_Morning.ItemCommand += Repeater_YbUser_Morning_ItemCommand;
+        //}
+
+        //private void Repeater_YbUser_Morning_ItemCommand(object source, RepeaterCommandEventArgs e)
+        //{
+        //    if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
+        //    {
+        //        if (e.CommandName == "GetShiJuItem")
+        //        {
+        //            string fid = e.CommandArgument.ToString().Split(',')[0].ToString();
+        //        }
+        //    }
+        //}
     }
 }

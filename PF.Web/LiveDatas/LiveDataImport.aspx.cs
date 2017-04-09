@@ -152,5 +152,19 @@ namespace PF.Web.LiveDatas
             JavaScriptHelper.UnLoading();
 
         }
+
+        protected void Btn_Import_MonthEarlier_Click(object sender, EventArgs e)
+        {
+
+            JavaScriptHelper.Loading("大人请稍后，奴才正在拼命计算...");
+
+            DateTime date = DateTime.Parse(DropDownList_Year.SelectedItem.Value + "-" + DropDownList_Month.SelectedItem.Value + "-01");
+            LiveData_BLL bll = new LiveData_BLL();
+            StringBuilder message = new StringBuilder();
+            message.Append("1、" + bll.DataImportTemp08(date,3));
+            message.Append("2、" + bll.DataImportTemp20(date,3));
+            Label_DataMiss.Text = message.ToString();
+            JavaScriptHelper.UnLoading();
+        }
     }
 }
