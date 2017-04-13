@@ -6,6 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="2dfb4d599dc64d639f46cb6c389c8b9b" Name="Diagram1" ZoomLevel="39">
         <EntityTypeShape EntityType="OracleSAModel.DATAHOUR" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OracleSAModel.EARLY_WARNING_COUNTRIES" Width="1.5" PointX="3.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

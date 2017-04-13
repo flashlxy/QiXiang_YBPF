@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="OracleSAModel.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="10.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="OracleSAModel.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="10.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityType Name="DATAHOUR">
           <Key>
             <PropertyRef Name="FID" />
@@ -65,11 +65,31 @@
           <Property Name="ID" Type="number" Precision="38" Scale="0" />
           <Property Name="STATUS" Type="varchar2" MaxLength="4" />
         </EntityType>
+        <EntityType Name="EARLY_WARNING_COUNTRIES">
+          <Key>
+            <PropertyRef Name="FGUID" />
+          </Key>
+          <Property Name="PUBLISHTIME" Type="varchar2" MaxLength="30" Nullable="false" />
+          <Property Name="WARNING_CATAGRAY" Type="varchar2" MaxLength="20" />
+          <Property Name="WARNING_LEVEL" Type="varchar2" MaxLength="20" />
+          <Property Name="REGION_INFLUENCE" Type="varchar2" MaxLength="500" />
+          <Property Name="DURATION_INFLUENCE" Type="varchar2" MaxLength="20" />
+          <Property Name="WARNING_CONTENT" Type="varchar2" MaxLength="500" />
+          <Property Name="INSERTTIME" Type="date" />
+          <Property Name="COUNTRY" Type="varchar2" MaxLength="20" />
+          <Property Name="DOWNURL" Type="varchar2" MaxLength="200" />
+          <Property Name="ENDSERVICE" Type="varchar2" MaxLength="20" />
+          <Property Name="SERVERTIME" Type="date" />
+          <Property Name="QIANFAREN" Type="varchar2" MaxLength="20" />
+          <Property Name="ISNEW" Type="char" MaxLength="1" />
+          <Property Name="FID" Type="number" Precision="38" Scale="0" />
+          <Property Name="FGUID" Type="nvarchar2" MaxLength="100" Nullable="false" />
+        </EntityType>
         <EntityContainer Name="OracleSAModelStoreContainer">
           <EntitySet Name="DATAHOUR" EntityType="Self.DATAHOUR" Schema="SA" store:Type="Tables" />
+          <EntitySet Name="EARLY_WARNING_COUNTRIES" EntityType="Self.EARLY_WARNING_COUNTRIES" Schema="SA" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="OracleSAModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
@@ -135,7 +155,28 @@
         </EntityType>
         <EntityContainer Name="OracleSAEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="DATAHOUR" EntityType="Self.DATAHOUR" />
+          <EntitySet Name="EARLY_WARNING_COUNTRIES" EntityType="OracleSAModel.EARLY_WARNING_COUNTRIES" />
         </EntityContainer>
+        <EntityType Name="EARLY_WARNING_COUNTRIES">
+          <Key>
+            <PropertyRef Name="FGUID" />
+          </Key>
+          <Property Name="PUBLISHTIME" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="WARNING_CATAGRAY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="WARNING_LEVEL" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="REGION_INFLUENCE" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="DURATION_INFLUENCE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="WARNING_CONTENT" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="INSERTTIME" Type="DateTime" />
+          <Property Name="COUNTRY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DOWNURL" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ENDSERVICE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SERVERTIME" Type="DateTime" />
+          <Property Name="QIANFAREN" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ISNEW" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="FID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="FGUID" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -200,6 +241,27 @@
                 <ScalarProperty Name="BELONGTO" ColumnName="BELONGTO" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EARLY_WARNING_COUNTRIES">
+            <EntityTypeMapping TypeName="OracleSAModel.EARLY_WARNING_COUNTRIES">
+              <MappingFragment StoreEntitySet="EARLY_WARNING_COUNTRIES">
+                <ScalarProperty Name="FGUID" ColumnName="FGUID" />
+                <ScalarProperty Name="FID" ColumnName="FID" />
+                <ScalarProperty Name="ISNEW" ColumnName="ISNEW" />
+                <ScalarProperty Name="QIANFAREN" ColumnName="QIANFAREN" />
+                <ScalarProperty Name="SERVERTIME" ColumnName="SERVERTIME" />
+                <ScalarProperty Name="ENDSERVICE" ColumnName="ENDSERVICE" />
+                <ScalarProperty Name="DOWNURL" ColumnName="DOWNURL" />
+                <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+                <ScalarProperty Name="INSERTTIME" ColumnName="INSERTTIME" />
+                <ScalarProperty Name="WARNING_CONTENT" ColumnName="WARNING_CONTENT" />
+                <ScalarProperty Name="DURATION_INFLUENCE" ColumnName="DURATION_INFLUENCE" />
+                <ScalarProperty Name="REGION_INFLUENCE" ColumnName="REGION_INFLUENCE" />
+                <ScalarProperty Name="WARNING_LEVEL" ColumnName="WARNING_LEVEL" />
+                <ScalarProperty Name="WARNING_CATAGRAY" ColumnName="WARNING_CATAGRAY" />
+                <ScalarProperty Name="PUBLISHTIME" ColumnName="PUBLISHTIME" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

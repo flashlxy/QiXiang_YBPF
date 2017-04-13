@@ -50,6 +50,9 @@
     <Compile Include="Oracle\DATAHOUR.cs">
       <DependentUpon>OracleSAModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Oracle\EARLY_WARNING_COUNTRIES.cs">
+      <DependentUpon>OracleSAModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Oracle\OracleSAModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -9,4 +9,8 @@ namespace PF.DAL.Oracle
     {
 	   
     }
+	public partial class EARLY_WARNING_COUNTRIES_DAL : Base_DAL_OracleSA<EARLY_WARNING_COUNTRIES>
+    {
+	   
+    }
 }

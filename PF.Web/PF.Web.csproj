@@ -159,6 +159,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Data\预警信号检验\预警信号质量检验报表-2017年01月.docx" />
+    <Content Include="Warn\WarnImport.aspx" />
     <Content Include="YbUser\Scheduling.aspx" />
     <None Include="Properties\PublishProfiles\PFWeb.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
@@ -256,6 +257,13 @@
     </Compile>
     <Compile Include="Warn\WarnCheck.aspx.designer.cs">
       <DependentUpon>WarnCheck.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Warn\WarnImport.aspx.cs">
+      <DependentUpon>WarnImport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Warn\WarnImport.aspx.designer.cs">
+      <DependentUpon>WarnImport.aspx</DependentUpon>
     </Compile>
     <Compile Include="Warn\WarnStatistics.aspx.cs">
       <DependentUpon>WarnStatistics.aspx</DependentUpon>
