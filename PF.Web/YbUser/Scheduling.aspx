@@ -81,8 +81,6 @@
                 <td>
                     <table class="table-query">
                         <tr>
-                          
-
                             <td>选择日期</td>
                             <td>
                                 <asp:DropDownList ID="DropDownList_Year" runat="server" Font-Size="14pt">
@@ -103,7 +101,6 @@
                                     <asp:ListItem Text="11月" Value="11"></asp:ListItem>
                                     <asp:ListItem Text="12月" Value="12"></asp:ListItem>
                                 </asp:DropDownList>
-
                             </td>
 
                             <td>

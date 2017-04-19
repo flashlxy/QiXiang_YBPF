@@ -20,6 +20,7 @@ namespace PF.Models.SQL
             this.BwYbs = new HashSet<BwYbs>();
             this.Score_Day = new HashSet<Score_Day>();
             this.Score_Month = new HashSet<Score_Month>();
+            this.Scheduling = new HashSet<Scheduling>();
         }
     
         public System.Guid YBUserID { get; set; }
@@ -31,5 +32,6 @@ namespace PF.Models.SQL
         public virtual ICollection<BwYbs> BwYbs { get; set; }
         public virtual ICollection<Score_Day> Score_Day { get; set; }
         public virtual ICollection<Score_Month> Score_Month { get; set; }
+        public virtual ICollection<Scheduling> Scheduling { get; set; }
     }
 }

@@ -17,6 +17,10 @@ namespace PF.DAL.SQL
     {
 	   
     }
+	public partial class Scheduling_DAL : Base_DAL_YBPF<Scheduling>
+    {
+	   
+    }
 	public partial class Score_Day_DAL : Base_DAL_YBPF<Score_Day>
     {
 	   

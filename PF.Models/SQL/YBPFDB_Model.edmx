@@ -90,6 +90,17 @@
           <Property Name="Category" Type="nvarchar" MaxLength="20" />
           <Property Name="CreateTime" Type="datetime" />
         </EntityType>
+        <EntityType Name="Scheduling">
+          <Key>
+            <PropertyRef Name="SchedulingID" />
+          </Key>
+          <Property Name="SchedulingID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Date" Type="date" />
+          <Property Name="YBUserID" Type="uniqueidentifier" />
+          <Property Name="YBUserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreateTime" Type="datetime" />
+          <Property Name="Work" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="Score_Day">
           <Key>
             <PropertyRef Name="ScoreID" />
@@ -246,6 +257,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Scheduling_YbUsers">
+          <End Role="YbUsers" Type="Self.YbUsers" Multiplicity="0..1" />
+          <End Role="Scheduling" Type="Self.Scheduling" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="YbUsers">
+              <PropertyRef Name="YBUserID" />
+            </Principal>
+            <Dependent Role="Scheduling">
+              <PropertyRef Name="YBUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Score_Day_YbUsers">
           <End Role="YbUsers" Type="Self.YbUsers" Multiplicity="0..1" />
           <End Role="Score_Day" Type="Self.Score_Day" Multiplicity="*" />
@@ -274,6 +297,7 @@
           <EntitySet Name="BaoWens" EntityType="Self.BaoWens" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BwYbs" EntityType="Self.BwYbs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LiveData" EntityType="Self.LiveData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Scheduling" EntityType="Self.Scheduling" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Score_Day" EntityType="Self.Score_Day" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Score_Month" EntityType="Self.Score_Month" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
@@ -292,6 +316,10 @@
           <AssociationSet Name="FK_BWYB_YbUsers" Association="Self.FK_BWYB_YbUsers">
             <End Role="YbUsers" EntitySet="YbUsers" />
             <End Role="BwYbs" EntitySet="BwYbs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Scheduling_YbUsers" Association="Self.FK_Scheduling_YbUsers">
+            <End Role="YbUsers" EntitySet="YbUsers" />
+            <End Role="Scheduling" EntitySet="Scheduling" />
           </AssociationSet>
           <AssociationSet Name="FK_Score_Day_YbUsers" Association="Self.FK_Score_Day_YbUsers">
             <End Role="YbUsers" EntitySet="YbUsers" />
@@ -337,6 +365,11 @@
             <End Role="YbUsers" EntitySet="YbUsers" />
             <End Role="Score_Month" EntitySet="Score_Month" />
           </AssociationSet>
+          <EntitySet Name="Scheduling" EntityType="YBPFDB_Model.Scheduling" />
+          <AssociationSet Name="FK_Scheduling_YbUsers" Association="YBPFDB_Model.FK_Scheduling_YbUsers">
+            <End Role="YbUsers" EntitySet="YbUsers" />
+            <End Role="Scheduling" EntitySet="Scheduling" />
+          </AssociationSet>
           </EntityContainer>
         <EntityType Name="BaoWens">
           <Key>
@@ -376,6 +409,7 @@
           <NavigationProperty Name="Score_Month" Relationship="YBPFDB_Model.FK_Score_Month_YbUsers" FromRole="YbUsers" ToRole="Score_Month" />
           <Property Name="Position" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Order" Type="Int32" />
+          <NavigationProperty Name="Scheduling" Relationship="YBPFDB_Model.FK_Scheduling_YbUsers" FromRole="YbUsers" ToRole="Scheduling" />
         </EntityType>
         <Association Name="FK_BaoWen_YbUsers">
           <End Type="YBPFDB_Model.YbUsers" Role="YbUsers" Multiplicity="0..1" />
@@ -613,6 +647,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Scheduling">
+          <Key>
+            <PropertyRef Name="SchedulingID" />
+          </Key>
+          <Property Name="SchedulingID" Type="Guid" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="YBUserID" Type="Guid" />
+          <Property Name="YBUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="DateTime" Precision="3" />
+          <Property Name="Work" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="YbUsers" Relationship="YBPFDB_Model.FK_Scheduling_YbUsers" FromRole="Scheduling" ToRole="YbUsers" />
+        </EntityType>
+        <Association Name="FK_Scheduling_YbUsers">
+          <End Type="YBPFDB_Model.YbUsers" Role="YbUsers" Multiplicity="0..1" />
+          <End Type="YBPFDB_Model.Scheduling" Role="Scheduling" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="YbUsers">
+              <PropertyRef Name="YBUserID" />
+            </Principal>
+            <Dependent Role="Scheduling">
+              <PropertyRef Name="YBUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -831,6 +889,18 @@
                 <ScalarProperty Name="RainShine" ColumnName="RainShine" />
                 <ScalarProperty Name="YBUserName" ColumnName="YBUserName" />
                 <ScalarProperty Name="ScoreID" ColumnName="ScoreID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Scheduling">
+            <EntityTypeMapping TypeName="YBPFDB_Model.Scheduling">
+              <MappingFragment StoreEntitySet="Scheduling">
+                <ScalarProperty Name="Work" ColumnName="Work" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="YBUserName" ColumnName="YBUserName" />
+                <ScalarProperty Name="YBUserID" ColumnName="YBUserID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="SchedulingID" ColumnName="SchedulingID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

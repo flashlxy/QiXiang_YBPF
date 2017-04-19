@@ -14,6 +14,9 @@ namespace PF.BLL.SQL
 	public partial class LiveData_BLL : Base_BLL_YBPF<LiveData>
     {
     }
+	public partial class Scheduling_BLL : Base_BLL_YBPF<Scheduling>
+    {
+    }
 	public partial class Score_Day_BLL : Base_BLL_YBPF<Score_Day>
     {
     }
