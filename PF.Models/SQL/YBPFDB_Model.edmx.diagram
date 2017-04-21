@@ -22,6 +22,7 @@
         <AssociationConnector Association="YBPFDB_Model.FK_Score_Month_YbUsers" />
         <EntityTypeShape EntityType="YBPFDB_Model.Scheduling" Width="1.5" PointX="3" PointY="0.75" />
         <AssociationConnector Association="YBPFDB_Model.FK_Scheduling_YbUsers" />
+        <EntityTypeShape EntityType="YBPFDB_Model.File_Z" Width="1.5" PointX="9.375" PointY="5.75" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

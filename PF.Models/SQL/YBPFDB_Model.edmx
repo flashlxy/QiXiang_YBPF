@@ -76,6 +76,20 @@
           <Property Name="WindSpeName60" Type="nvarchar" MaxLength="20" />
           <Property Name="WindSpeName72" Type="nvarchar" MaxLength="20" />
         </EntityType>
+        <EntityType Name="File_Z">
+          <Key>
+            <PropertyRef Name="FileID" />
+          </Key>
+          <Property Name="FileID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Date" Type="date" />
+          <Property Name="CreateTime" Type="datetime" />
+          <Property Name="FileName" Type="nvarchar" MaxLength="200" />
+          <Property Name="FileContent" Type="nvarchar(max)" />
+          <Property Name="Twenty_Eight" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Eight_Twenty" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="CountryName" Type="nvarchar" MaxLength="20" />
+          <Property Name="CountryCode" Type="nvarchar" MaxLength="20" />
+        </EntityType>
         <EntityType Name="LiveData">
           <Key>
             <PropertyRef Name="LDID" />
@@ -296,6 +310,7 @@
         <EntityContainer Name="YBPFDB_ModelStoreContainer">
           <EntitySet Name="BaoWens" EntityType="Self.BaoWens" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BwYbs" EntityType="Self.BwYbs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="File_Z" EntityType="Self.File_Z" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LiveData" EntityType="Self.LiveData" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Scheduling" EntityType="Self.Scheduling" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Score_Day" EntityType="Self.Score_Day" Schema="dbo" store:Type="Tables" />
@@ -370,6 +385,7 @@
             <End Role="YbUsers" EntitySet="YbUsers" />
             <End Role="Scheduling" EntitySet="Scheduling" />
           </AssociationSet>
+          <EntitySet Name="File_Z" EntityType="YBPFDB_Model.File_Z" />
           </EntityContainer>
         <EntityType Name="BaoWens">
           <Key>
@@ -671,6 +687,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="File_Z">
+          <Key>
+            <PropertyRef Name="FileID" />
+          </Key>
+          <Property Name="FileID" Type="Guid" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="CreateTime" Type="DateTime" Precision="3" />
+          <Property Name="FileName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="FileContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Twenty_Eight" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Eight_Twenty" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="CountryName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CountryCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -901,6 +931,21 @@
                 <ScalarProperty Name="YBUserID" ColumnName="YBUserID" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="SchedulingID" ColumnName="SchedulingID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="File_Z">
+            <EntityTypeMapping TypeName="YBPFDB_Model.File_Z">
+              <MappingFragment StoreEntitySet="File_Z">
+                <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+                <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+                <ScalarProperty Name="Eight_Twenty" ColumnName="Eight_Twenty" />
+                <ScalarProperty Name="Twenty_Eight" ColumnName="Twenty_Eight" />
+                <ScalarProperty Name="FileContent" ColumnName="FileContent" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="FileID" ColumnName="FileID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

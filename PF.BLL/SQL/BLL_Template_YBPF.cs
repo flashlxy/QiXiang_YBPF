@@ -11,6 +11,9 @@ namespace PF.BLL.SQL
 	public partial class BwYbs_BLL : Base_BLL_YBPF<BwYbs>
     {
     }
+	public partial class File_Z_BLL : Base_BLL_YBPF<File_Z>
+    {
+    }
 	public partial class LiveData_BLL : Base_BLL_YBPF<LiveData>
     {
     }

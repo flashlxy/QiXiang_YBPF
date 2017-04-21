@@ -36,5 +36,6 @@ namespace PF.Models.SQL
         public DbSet<WarnStatistics> WarnStatistics { get; set; }
         public DbSet<Score_Month> Score_Month { get; set; }
         public DbSet<Scheduling> Scheduling { get; set; }
+        public DbSet<File_Z> File_Z { get; set; }
     }
 }

@@ -32,12 +32,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Ftp, Version=2.0.17017.1319, Culture=neutral, PublicKeyToken=6dc438ab78a525b3, processorArchitecture=MSIL">
       <HintPath>..\packages\Ftp.dll.2.0.17017.1319\lib\Net20\Ftp.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,13 +58,25 @@
     <Compile Include="ZFile.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PF.BLL\PF.BLL.csproj">
+      <Project>{d79a8546-a4a5-49fe-8615-3fac2ab6a3e4}</Project>
+      <Name>PF.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PF.Models\PF.Models.csproj">
+      <Project>{1700914c-816a-4a9b-8a31-fa0b13279aed}</Project>
+      <Name>PF.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PF.Utility\PF.Utility.csproj">
       <Project>{a9ac554d-2db3-4707-a57a-f1f8d214d0a6}</Project>
       <Name>PF.Utility</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

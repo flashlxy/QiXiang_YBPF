@@ -339,13 +339,20 @@
 		<col def="S0">ISDotNetInstallerArgsCommit</col>
 		<col def="S0">ISDotNetInstallerArgsUninstall</col>
 		<col def="S0">ISDotNetInstallerArgsRollback</col>
-		<row><td>Ftp.dll</td><td>{73EE3A67-F280-4BEC-9477-D9AA45D4DA6B}</td><td>INSTALLDIR</td><td>2</td><td/><td>ftp.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>EntityFramework.dll</td><td>{189EE2D1-8E3E-4390-85A2-F3E4089CE3F6}</td><td>INSTALLDIR</td><td>2</td><td/><td>entityframework.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>EntityFramework.resources.dll</td><td>{AAF03A36-30AD-4204-ABC0-550A77FBE05B}</td><td>ZH_HANS</td><td>2</td><td/><td>entityframework.resources.dl</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Ftp.dll</td><td>{E13C2497-DD36-4F92-8637-60F90B16A566}</td><td>INSTALLDIR</td><td>2</td><td/><td>ftp.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT</td><td>{FEFDE8CA-9309-4D39-960C-D79F3F77901E}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>ISX_DEFAULTCOMPONENT1</td><td>{0E0112A9-A7AA-4587-9183-6A199AE238BE}</td><td>ZH_HANS</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>IS_ININSTALL_SHORTCUT</td><td>{DB1EB60A-8D04-40B0-A268-4821236336F7}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>NetworkConnection.dll</td><td>{E73B5504-E4C6-4887-B8C4-CCD9F9EF3751}</td><td>INSTALLDIR</td><td>2</td><td/><td>networkconnection.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>PF.CA_LiveData_Rain.exe</td><td>{F0982590-A8F9-4105-8891-EEE757EE5AE2}</td><td>INSTALLDIR</td><td>2</td><td/><td>pf.ca_livedata_rain.exe</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>PF.CA_LiveData_Rain.vshost.exe</td><td>{B90D7011-1B56-47C2-8DB3-ED30C8AC33C3}</td><td>INSTALLDIR</td><td>2</td><td/><td>pf.ca_livedata_rain.vshost.e</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>PF.Utility.dll</td><td>{D78ACA04-DA52-4AD1-A53B-97B2D4C52092}</td><td>INSTALLDIR</td><td>2</td><td/><td>pf.utility.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>NetworkConnection.dll</td><td>{081B2780-C77D-42A9-95A8-964D875729A6}</td><td>INSTALLDIR</td><td>2</td><td/><td>networkconnection.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>PF.BLL.dll</td><td>{3B286B62-8597-4C3E-905A-E570E662257A}</td><td>INSTALLDIR</td><td>2</td><td/><td>pf.bll.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>PF.CA_LiveData_Rain.exe</td><td>{91172A3A-03FC-4428-ABAB-D7EF27532C9A}</td><td>INSTALLDIR</td><td>2</td><td/><td>pf.ca_livedata_rain.exe</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>PF.CA_LiveData_Rain.vshost.exe</td><td>{E58418FB-E386-4140-A171-3FEED8A1B391}</td><td>INSTALLDIR</td><td>2</td><td/><td>pf.ca_livedata_rain.vshost.e</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>PF.DAL.dll</td><td>{03E99BA3-2AEF-4AC7-85C0-D22224D1305F}</td><td>INSTALLDIR</td><td>2</td><td/><td>pf.dal.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>PF.Models.dll</td><td>{E736E73B-BA52-4537-95EE-57EBD2DCDB4F}</td><td>INSTALLDIR</td><td>2</td><td/><td>pf.models.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>PF.Utility.dll</td><td>{7E8473BE-7305-48FF-8A51-52CA097B9422}</td><td>INSTALLDIR</td><td>2</td><td/><td>pf.utility.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>PF.ViewModels.dll</td><td>{569DAE63-E464-4128-B59B-B0723FEBA8C3}</td><td>INSTALLDIR</td><td>2</td><td/><td>pf.viewmodels.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 	</table>
 
 	<table name="Condition">
@@ -1054,13 +1061,22 @@
 	<table name="CreateFolder">
 		<col key="yes" def="s72">Directory_</col>
 		<col key="yes" def="s72">Component_</col>
+		<row><td>INSTALLDIR</td><td>EntityFramework.dll</td></row>
+		<row><td>INSTALLDIR</td><td>EntityFramework.resources.dll</td></row>
 		<row><td>INSTALLDIR</td><td>Ftp.dll</td></row>
 		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT</td></row>
+		<row><td>INSTALLDIR</td><td>ISX_DEFAULTCOMPONENT1</td></row>
 		<row><td>INSTALLDIR</td><td>IS_ININSTALL_SHORTCUT</td></row>
 		<row><td>INSTALLDIR</td><td>NetworkConnection.dll</td></row>
+		<row><td>INSTALLDIR</td><td>PF.BLL.dll</td></row>
 		<row><td>INSTALLDIR</td><td>PF.CA_LiveData_Rain.exe</td></row>
 		<row><td>INSTALLDIR</td><td>PF.CA_LiveData_Rain.vshost.exe</td></row>
+		<row><td>INSTALLDIR</td><td>PF.DAL.dll</td></row>
+		<row><td>INSTALLDIR</td><td>PF.Models.dll</td></row>
 		<row><td>INSTALLDIR</td><td>PF.Utility.dll</td></row>
+		<row><td>INSTALLDIR</td><td>PF.ViewModels.dll</td></row>
+		<row><td>ZH_HANS</td><td>EntityFramework.resources.dll</td></row>
+		<row><td>ZH_HANS</td><td>ISX_DEFAULTCOMPONENT1</td></row>
 	</table>
 
 	<table name="CustomAction">
@@ -1180,6 +1196,7 @@
 		<row><td>USERPROFILE</td><td>TARGETDIR</td><td>.:USERPR~1|UserProfile</td><td/><td>0</td><td/></row>
 		<row><td>WindowsFolder</td><td>TARGETDIR</td><td>.:Windows</td><td/><td>0</td><td/></row>
 		<row><td>WindowsVolume</td><td>TARGETDIR</td><td>.:WinRoot</td><td/><td>0</td><td/></row>
+		<row><td>ZH_HANS</td><td>INSTALLDIR</td><td>zh-Hans</td><td/><td>0</td><td/></row>
 		<row><td>company_name</td><td>ProgramMenuFolder</td><td>刘延瑞</td><td/><td>1</td><td/></row>
 		<row><td>product_name</td><td>company_name</td><td>Z文件~1|Z文件入库</td><td/><td>1</td><td/></row>
 	</table>
@@ -1873,13 +1890,20 @@
 	<table name="FeatureComponents">
 		<col key="yes" def="s38">Feature_</col>
 		<col key="yes" def="s72">Component_</col>
+		<row><td>AlwaysInstall</td><td>EntityFramework.dll</td></row>
+		<row><td>AlwaysInstall</td><td>EntityFramework.resources.dll</td></row>
 		<row><td>AlwaysInstall</td><td>Ftp.dll</td></row>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT</td></row>
+		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT1</td></row>
 		<row><td>AlwaysInstall</td><td>IS_ININSTALL_SHORTCUT</td></row>
 		<row><td>AlwaysInstall</td><td>NetworkConnection.dll</td></row>
+		<row><td>AlwaysInstall</td><td>PF.BLL.dll</td></row>
 		<row><td>AlwaysInstall</td><td>PF.CA_LiveData_Rain.exe</td></row>
 		<row><td>AlwaysInstall</td><td>PF.CA_LiveData_Rain.vshost.exe</td></row>
+		<row><td>AlwaysInstall</td><td>PF.DAL.dll</td></row>
+		<row><td>AlwaysInstall</td><td>PF.Models.dll</td></row>
 		<row><td>AlwaysInstall</td><td>PF.Utility.dll</td></row>
+		<row><td>AlwaysInstall</td><td>PF.ViewModels.dll</td></row>
 	</table>
 
 	<table name="File">
@@ -1894,15 +1918,28 @@
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I4">ISAttributes</col>
 		<col def="S72">ISComponentSubFolder_</col>
+		<row><td>entityframework.dll</td><td>EntityFramework.dll</td><td>ENTITY~1.DLL|EntityFramework.dll</td><td>0</td><td/><td/><td/><td>1</td><td>E:\Work\Company\青岛预报预警检验系统\Code\QiXiang_YBPF\PF.CA_LiveData_Rain\bin\Debug\EntityFramework.dll</td><td>1</td><td/></row>
+		<row><td>entityframework.resources.dl</td><td>EntityFramework.resources.dll</td><td>ENTITY~1.DLL|EntityFramework.resources.dll</td><td>0</td><td/><td/><td/><td>1</td><td>E:\Work\Company\青岛预报预警检验系统\Code\QiXiang_YBPF\PF.CA_LiveData_Rain\bin\Debug\zh-Hans\EntityFramework.resources.dll</td><td>1</td><td/></row>
+		<row><td>entityframework.xml</td><td>ISX_DEFAULTCOMPONENT</td><td>ENTITY~1.XML|EntityFramework.xml</td><td>0</td><td/><td/><td/><td>1</td><td>E:\Work\Company\青岛预报预警检验系统\Code\QiXiang_YBPF\PF.CA_LiveData_Rain\bin\Debug\EntityFramework.xml</td><td>1</td><td/></row>
 		<row><td>ftp.dll</td><td>Ftp.dll</td><td>Ftp.dll</td><td>0</td><td/><td/><td/><td>1</td><td>E:\Work\Company\青岛预报预警检验系统\Code\QiXiang_YBPF\PF.CA_LiveData_Rain\bin\Debug\Ftp.dll</td><td>1</td><td/></row>
 		<row><td>ftp.xml</td><td>ISX_DEFAULTCOMPONENT</td><td>Ftp.xml</td><td>0</td><td/><td/><td/><td>1</td><td>E:\Work\Company\青岛预报预警检验系统\Code\QiXiang_YBPF\PF.CA_LiveData_Rain\bin\Debug\Ftp.xml</td><td>1</td><td/></row>
 		<row><td>networkconnection.dll</td><td>NetworkConnection.dll</td><td>NETWOR~1.DLL|NetworkConnection.dll</td><td>0</td><td/><td/><td/><td>1</td><td>E:\Work\Company\青岛预报预警检验系统\Code\QiXiang_YBPF\PF.CA_LiveData_Rain\bin\Debug\NetworkConnection.dll</td><td>1</td><td/></row>
+		<row><td>pf.bll.dll</td><td>PF.BLL.dll</td><td>PFBLL~1.DLL|PF.BLL.dll</td><td>0</td><td/><td/><td/><td>1</td><td>E:\Work\Company\青岛预报预警检验系统\Code\QiXiang_YBPF\PF.CA_LiveData_Rain\bin\Debug\PF.BLL.dll</td><td>1</td><td/></row>
+		<row><td>pf.bll.pdb</td><td>ISX_DEFAULTCOMPONENT</td><td>PFBLL~1.PDB|PF.BLL.pdb</td><td>0</td><td/><td/><td/><td>1</td><td>E:\Work\Company\青岛预报预警检验系统\Code\QiXiang_YBPF\PF.CA_LiveData_Rain\bin\Debug\PF.BLL.pdb</td><td>1</td><td/></row>
 		<row><td>pf.ca_livedata_rain.exe</td><td>PF.CA_LiveData_Rain.exe</td><td>PFCA_L~1.EXE|PF.CA_LiveData_Rain.exe</td><td>0</td><td/><td/><td/><td>1</td><td>E:\Work\Company\青岛预报预警检验系统\Code\QiXiang_YBPF\PF.CA_LiveData_Rain\bin\Debug\PF.CA_LiveData_Rain.exe</td><td>1</td><td/></row>
+		<row><td>pf.ca_livedata_rain.exe.conf</td><td>ISX_DEFAULTCOMPONENT</td><td>PFCA_L~1.CON|PF.CA_LiveData_Rain.exe.config</td><td>0</td><td/><td/><td/><td>1</td><td>E:\Work\Company\青岛预报预警检验系统\Code\QiXiang_YBPF\PF.CA_LiveData_Rain\bin\Debug\PF.CA_LiveData_Rain.exe.config</td><td>1</td><td/></row>
 		<row><td>pf.ca_livedata_rain.pdb</td><td>ISX_DEFAULTCOMPONENT</td><td>PFCA_L~1.PDB|PF.CA_LiveData_Rain.pdb</td><td>0</td><td/><td/><td/><td>1</td><td>E:\Work\Company\青岛预报预警检验系统\Code\QiXiang_YBPF\PF.CA_LiveData_Rain\bin\Debug\PF.CA_LiveData_Rain.pdb</td><td>1</td><td/></row>
 		<row><td>pf.ca_livedata_rain.vshost.e</td><td>PF.CA_LiveData_Rain.vshost.exe</td><td>PFCA_L~1.EXE|PF.CA_LiveData_Rain.vshost.exe</td><td>0</td><td/><td/><td/><td>1</td><td>E:\Work\Company\青岛预报预警检验系统\Code\QiXiang_YBPF\PF.CA_LiveData_Rain\bin\Debug\PF.CA_LiveData_Rain.vshost.exe</td><td>1</td><td/></row>
-		<row><td>pf.ca_livedata_rain.vshost.e1</td><td>ISX_DEFAULTCOMPONENT</td><td>PFCA_L~1.MAN|PF.CA_LiveData_Rain.vshost.exe.manifest</td><td>0</td><td/><td/><td/><td>1</td><td>E:\Work\Company\青岛预报预警检验系统\Code\QiXiang_YBPF\PF.CA_LiveData_Rain\bin\Debug\PF.CA_LiveData_Rain.vshost.exe.manifest</td><td>1</td><td/></row>
+		<row><td>pf.ca_livedata_rain.vshost.e1</td><td>ISX_DEFAULTCOMPONENT</td><td>PFCA_L~1.CON|PF.CA_LiveData_Rain.vshost.exe.config</td><td>0</td><td/><td/><td/><td>1</td><td>E:\Work\Company\青岛预报预警检验系统\Code\QiXiang_YBPF\PF.CA_LiveData_Rain\bin\Debug\PF.CA_LiveData_Rain.vshost.exe.config</td><td>1</td><td/></row>
+		<row><td>pf.ca_livedata_rain.vshost.e2</td><td>ISX_DEFAULTCOMPONENT</td><td>PFCA_L~1.MAN|PF.CA_LiveData_Rain.vshost.exe.manifest</td><td>0</td><td/><td/><td/><td>1</td><td>E:\Work\Company\青岛预报预警检验系统\Code\QiXiang_YBPF\PF.CA_LiveData_Rain\bin\Debug\PF.CA_LiveData_Rain.vshost.exe.manifest</td><td>1</td><td/></row>
+		<row><td>pf.dal.dll</td><td>PF.DAL.dll</td><td>PFDAL~1.DLL|PF.DAL.dll</td><td>0</td><td/><td/><td/><td>1</td><td>E:\Work\Company\青岛预报预警检验系统\Code\QiXiang_YBPF\PF.CA_LiveData_Rain\bin\Debug\PF.DAL.dll</td><td>1</td><td/></row>
+		<row><td>pf.dal.pdb</td><td>ISX_DEFAULTCOMPONENT</td><td>PFDAL~1.PDB|PF.DAL.pdb</td><td>0</td><td/><td/><td/><td>1</td><td>E:\Work\Company\青岛预报预警检验系统\Code\QiXiang_YBPF\PF.CA_LiveData_Rain\bin\Debug\PF.DAL.pdb</td><td>1</td><td/></row>
+		<row><td>pf.models.dll</td><td>PF.Models.dll</td><td>PFMODE~1.DLL|PF.Models.dll</td><td>0</td><td/><td/><td/><td>1</td><td>E:\Work\Company\青岛预报预警检验系统\Code\QiXiang_YBPF\PF.CA_LiveData_Rain\bin\Debug\PF.Models.dll</td><td>1</td><td/></row>
+		<row><td>pf.models.pdb</td><td>ISX_DEFAULTCOMPONENT</td><td>PFMODE~1.PDB|PF.Models.pdb</td><td>0</td><td/><td/><td/><td>1</td><td>E:\Work\Company\青岛预报预警检验系统\Code\QiXiang_YBPF\PF.CA_LiveData_Rain\bin\Debug\PF.Models.pdb</td><td>1</td><td/></row>
 		<row><td>pf.utility.dll</td><td>PF.Utility.dll</td><td>PFUTIL~1.DLL|PF.Utility.dll</td><td>0</td><td/><td/><td/><td>1</td><td>E:\Work\Company\青岛预报预警检验系统\Code\QiXiang_YBPF\PF.CA_LiveData_Rain\bin\Debug\PF.Utility.dll</td><td>1</td><td/></row>
 		<row><td>pf.utility.pdb</td><td>ISX_DEFAULTCOMPONENT</td><td>PFUTIL~1.PDB|PF.Utility.pdb</td><td>0</td><td/><td/><td/><td>1</td><td>E:\Work\Company\青岛预报预警检验系统\Code\QiXiang_YBPF\PF.CA_LiveData_Rain\bin\Debug\PF.Utility.pdb</td><td>1</td><td/></row>
+		<row><td>pf.viewmodels.dll</td><td>PF.ViewModels.dll</td><td>PFVIEW~1.DLL|PF.ViewModels.dll</td><td>0</td><td/><td/><td/><td>1</td><td>E:\Work\Company\青岛预报预警检验系统\Code\QiXiang_YBPF\PF.CA_LiveData_Rain\bin\Debug\PF.ViewModels.dll</td><td>1</td><td/></row>
+		<row><td>pf.viewmodels.pdb</td><td>ISX_DEFAULTCOMPONENT</td><td>PFVIEW~1.PDB|PF.ViewModels.pdb</td><td>0</td><td/><td/><td/><td>1</td><td>E:\Work\Company\青岛预报预警检验系统\Code\QiXiang_YBPF\PF.CA_LiveData_Rain\bin\Debug\PF.ViewModels.pdb</td><td>1</td><td/></row>
 	</table>
 
 	<table name="FileSFPCatalog">
@@ -2046,13 +2083,20 @@
 		<col def="S0">FTPLocation</col>
 		<col def="S0">HTTPLocation</col>
 		<col def="S0">Miscellaneous</col>
-		<row><td>Ftp.dll</td><td/><td/><td>_221FA18B_B23D_4DE4_B5BB_A1453101C589_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>EntityFramework.dll</td><td/><td/><td>_23C03EB0_2552_4BBB_B15C_C3B916D3BD1A_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>EntityFramework.resources.dll</td><td/><td/><td>_348768EB_1DC8_4B0F_9819_4085EF8F7B2E_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Ftp.dll</td><td/><td/><td>_62B451F2_63AD_42B9_8B24_DAC7DB25A43B_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT</td><td/><td/><td>_4B7A259F_2C91_4287_8FCD_D7163C61535F_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>ISX_DEFAULTCOMPONENT1</td><td/><td/><td>_18D10A39_02EE_440F_AF5A_585E96154DE3_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>IS_ININSTALL_SHORTCUT</td><td/><td/><td>_9804BB2D_A811_437C_9517_3D9A8C19B644_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>NetworkConnection.dll</td><td/><td/><td>_B58804E0_FC53_4E60_B778_9AB43E91D94E_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>PF.CA_LiveData_Rain.exe</td><td/><td/><td>_2AF42A14_A38B_43E9_B228_8D1D52487C19_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>PF.CA_LiveData_Rain.vshost.exe</td><td/><td/><td>_AED5B4E9_5B8C_4DC4_AC9E_FF3A4153BFF3_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>PF.Utility.dll</td><td/><td/><td>_1402D6C2_11E4_4938_AE14_CE9D3D85C0D0_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>NetworkConnection.dll</td><td/><td/><td>_FF193286_B530_4205_935F_983496B52A15_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>PF.BLL.dll</td><td/><td/><td>_0C3B6F1D_A599_4D48_9379_8AA2D962FE94_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>PF.CA_LiveData_Rain.exe</td><td/><td/><td>_3C6FF5C9_732D_4155_8445_22F5CAE9E5B1_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>PF.CA_LiveData_Rain.vshost.exe</td><td/><td/><td>_ADB23535_21A2_4E70_AA32_8C96E536FC4F_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>PF.DAL.dll</td><td/><td/><td>_377DADAB_643F_4E88_B9ED_1A1F05EAF8E9_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>PF.Models.dll</td><td/><td/><td>_8F6DD269_1123_498F_897F_EE94D17C4572_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>PF.Utility.dll</td><td/><td/><td>_804231F8_4E69_452F_BEEA_3ADF57E413B5_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>PF.ViewModels.dll</td><td/><td/><td>_693EA9A4_B0EE_4220_9CA9_B718D7E34FBF_FILTER</td><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="ISCustomActionReference">
@@ -3456,6 +3500,10 @@
 		<row><td>IDS_SHORTCUT_DISPLAY_NAME1</td><td>2052</td><td>Z文件入库</td><td>0</td><td/><td>1378192843</td></row>
 		<row><td>IDS_SHORTCUT_DISPLAY_NAME2</td><td>2052</td><td>LAUNCH~1.EXE|Launch PF.CA_LiveData_Rain.vshost.exe</td><td>0</td><td/><td>1378192843</td></row>
 		<row><td>IDS_SHORTCUT_DISPLAY_NAME3</td><td>2052</td><td>卸载 Z文件入库</td><td>0</td><td/><td>1378192843</td></row>
+		<row><td>IDS_SHORTCUT_DISPLAY_NAME4</td><td>1033</td><td/><td>0</td><td/><td>-1440399891</td></row>
+		<row><td>IDS_SHORTCUT_DISPLAY_NAME4</td><td>2052</td><td>Z文件入库</td><td>0</td><td/><td>-1440412147</td></row>
+		<row><td>IDS_SHORTCUT_DISPLAY_NAME5</td><td>1033</td><td/><td>0</td><td/><td>-1440399891</td></row>
+		<row><td>IDS_SHORTCUT_DISPLAY_NAME5</td><td>2052</td><td>LAUNCH~1.EXE|Launch PF.CA_LiveData_Rain.vshost.exe</td><td>0</td><td/><td>-1440399891</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO</td><td>2052</td><td>从以下服务器列表中选择要连接的数据库服务器。</td><td>0</td><td/><td>1378192843</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO_DB</td><td>2052</td><td>从以下的编录名称列表中，选择您希望将其作为目标的数据库编录。</td><td>0</td><td/><td>1378192843</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO_TEMPLATE</td><td>2052</td><td>[IS_SQLBROWSE_INTRO]</td><td>0</td><td/><td>1378192843</td></row>
@@ -3862,6 +3910,7 @@
 		<col def="I2">ISIconIndex</col>
 		<row><td>ARPPRODUCTICON.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\setupicon.ico</td><td>0</td></row>
 		<row><td>PF.CA_LiveData_Rai_97AB433934344B1F8243E8C3F6242C0C.exe</td><td/><td>E:\Work\Company\青岛预报预警检验系统\Data\rain.ico</td><td>0</td></row>
+		<row><td>PF.CA_LiveData_Rai_A921613AA4494A259D08ECD964794162.exe</td><td/><td>C:\Users\LYR\Downloads\www.ico.la_6cdf88a0ded2cae2d51cbdb07b5be947_128X128.ico</td><td>0</td></row>
 		<row><td>Shortcut_72FA333B5CB44F04B3962D28CAFE9B5A.exe</td><td/><td>D:\SoftWare\InstallShield\2015LE\Redist\Language Independent\OS Independent\uninstall.ico</td><td>0</td></row>
 	</table>
 
@@ -4444,8 +4493,6 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="L255">FileName</col>
 		<col def="s72">DirProperty</col>
 		<col def="i2">InstallMode</col>
-		<row><td>FileKey1</td><td>PF.CA_LiveData_Rain.exe</td><td/><td>company_name</td><td>2</td></row>
-		<row><td>FileKey2</td><td>PF.CA_LiveData_Rain.exe</td><td/><td>product_name</td><td>2</td></row>
 		<row><td>PF.CA_LiveData_Rain.exe</td><td>PF.CA_LiveData_Rain.exe</td><td/><td>product_name</td><td>2</td></row>
 		<row><td>Shortcut</td><td>IS_ININSTALL_SHORTCUT</td><td/><td>product_name</td><td>2</td></row>
 	</table>
@@ -4533,7 +4580,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="S255">ISComments</col>
 		<col def="S255">ISShortcutName</col>
 		<col def="I4">ISAttributes</col>
-		<row><td>PF.CA_LiveData_Rain.exe</td><td>product_name</td><td>##IDS_SHORTCUT_DISPLAY_NAME1##</td><td>PF.CA_LiveData_Rain.exe</td><td>AlwaysInstall</td><td/><td/><td/><td>PF.CA_LiveData_Rai_97AB433934344B1F8243E8C3F6242C0C.exe</td><td>0</td><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>PF.CA_LiveData_Rain.exe</td><td>product_name</td><td>##IDS_SHORTCUT_DISPLAY_NAME4##</td><td>PF.CA_LiveData_Rain.exe</td><td>AlwaysInstall</td><td/><td/><td/><td>PF.CA_LiveData_Rai_A921613AA4494A259D08ECD964794162.exe</td><td>0</td><td>1</td><td>INSTALLDIR</td><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>Shortcut</td><td>product_name</td><td>##IDS_SHORTCUT_DISPLAY_NAME3##</td><td>IS_ININSTALL_SHORTCUT</td><td>[SystemFolder]msiexec.exe</td><td>/x {98473100-96BD-44BB-BFB1-7ED48475F639}</td><td/><td/><td>Shortcut_72FA333B5CB44F04B3962D28CAFE9B5A.exe</td><td>0</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 	</table>
 

@@ -11,6 +11,7 @@ namespace PF.CA_LiveData_Rain
         {
             ZFile zfile = new ZFile();
             zfile.Copy();
+            //Console.ReadLine();
         }
     }
 }
