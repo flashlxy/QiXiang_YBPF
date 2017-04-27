@@ -21,11 +21,11 @@ namespace PF.CA_LiveData
 
 
 
-            DateTime.Now.AddDays(-1).ToString("yyyyMMdd");
+            DateTime.Now.AddMonths(-1).ToString("yyyyMMdd");
 
 
-            DateTime startTime = DateTime.ParseExact(DateTime.Now.AddDays(-1).ToString("yyyyMMdd")+ "08", "yyyyMMddHH", CultureInfo.InvariantCulture);
-            DateTime endTime = startTime.AddDays(1);
+            DateTime startTime = DateTime.ParseExact(DateTime.Now.AddDays(-5).ToString("yyyyMMdd")+ "08", "yyyyMMddHH", CultureInfo.InvariantCulture);
+            DateTime endTime = startTime.AddDays(4);
 
             TimeSpan ts = endTime - startTime;
             for (int i = 0; i < ts.Days; i++)
@@ -88,8 +88,8 @@ namespace PF.CA_LiveData
             DateTime.Now.AddDays(-1).ToString("yyyyMMdd");
 
 
-            DateTime startTime = DateTime.ParseExact(DateTime.Now.AddDays(-1).ToString("yyyyMMdd") + "20", "yyyyMMddHH", CultureInfo.InvariantCulture);
-            DateTime endTime = startTime.AddDays(1);
+            DateTime startTime = DateTime.ParseExact(DateTime.Now.AddDays(-5).ToString("yyyyMMdd") + "20", "yyyyMMddHH", CultureInfo.InvariantCulture);
+            DateTime endTime = startTime.AddDays(4);
 
             TimeSpan ts = endTime - startTime;
             for (int i = 0; i < ts.Days; i++)

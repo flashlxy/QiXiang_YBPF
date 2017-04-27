@@ -162,6 +162,7 @@
     <Content Include="Warn\WarnImport.aspx" />
     <Content Include="YbUser\Scheduling.aspx" />
     <Content Include="YbUser\YbUserScheduling.aspx" />
+    <Content Include="ZFile\ZFileCopy.aspx" />
     <None Include="Properties\PublishProfiles\PFWeb.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
@@ -286,6 +287,13 @@
     </Compile>
     <Compile Include="YbUser\YbUserScheduling.aspx.designer.cs">
       <DependentUpon>YbUserScheduling.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ZFile\ZFileCopy.aspx.cs">
+      <DependentUpon>ZFileCopy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ZFile\ZFileCopy.aspx.designer.cs">
+      <DependentUpon>ZFileCopy.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

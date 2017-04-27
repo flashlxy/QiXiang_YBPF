@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using Limilabs.FTP.Client;
 using PF.BLL.SQL;
 using PF.Models.SQL;
 using PF.Utility;
 
-namespace PF.CA_LiveData_Rain
+namespace PF.CA_LiveData
 {
     public class ZFile
     {
@@ -243,7 +244,7 @@ namespace PF.CA_LiveData_Rain
                     lbll.Add(liveData);
                 }
 
-                Console.WriteLine("成功计算20时：" + fileZ.CountryName+ fileZ.Date.ToString());
+                Console.WriteLine("成功计算20时：" + fileZ.CountryName + fileZ.Date.ToString());
 
             }
         }
@@ -257,7 +258,7 @@ namespace PF.CA_LiveData_Rain
 
             DateTime newDay = (DateTime)zlist.Max(a => a.Date);
 
-            List<File_Z> prelist = zlist.Where(a => a.Date != newDay).OrderBy(a=>a.Date).ToList();
+            List<File_Z> prelist = zlist.Where(a => a.Date != newDay).OrderBy(a => a.Date).ToList();
 
 
             foreach (File_Z fileZ in prelist)

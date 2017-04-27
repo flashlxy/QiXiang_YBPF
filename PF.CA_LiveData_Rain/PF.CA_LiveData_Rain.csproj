@@ -36,8 +36,8 @@
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Ftp, Version=2.0.17017.1319, Culture=neutral, PublicKeyToken=6dc438ab78a525b3, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ftp.dll.2.0.17017.1319\lib\Net20\Ftp.dll</HintPath>
+    <Reference Include="Ftp, Version=2.0.17107.1333, Culture=neutral, PublicKeyToken=6dc438ab78a525b3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ftp.dll.2.0.17107.1333\lib\Net20\Ftp.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
