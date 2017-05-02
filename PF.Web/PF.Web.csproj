@@ -159,6 +159,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Data\预警信号检验\预警信号质量检验报表-2017年01月.docx" />
+    <Content Include="Test\WebForm1.aspx" />
     <Content Include="Warn\WarnImport.aspx" />
     <Content Include="YbUser\Scheduling.aspx" />
     <Content Include="YbUser\YbUserScheduling.aspx" />
@@ -252,6 +253,13 @@
     </Compile>
     <Compile Include="Temp\Temp08.aspx.designer.cs">
       <DependentUpon>Temp08.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Warn\WarnCheck.aspx.cs">
       <DependentUpon>WarnCheck.aspx</DependentUpon>

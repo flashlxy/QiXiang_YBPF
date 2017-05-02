@@ -13,4 +13,8 @@ namespace PF.DAL.Oracle
     {
 	   
     }
+	public partial class YTHPT_WEATHER_DICTIONARY_DAL : Base_DAL_OracleSA<YTHPT_WEATHER_DICTIONARY>
+    {
+	   
+    }
 }

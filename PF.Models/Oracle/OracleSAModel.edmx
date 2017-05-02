@@ -85,9 +85,20 @@
           <Property Name="FID" Type="number" Precision="38" Scale="0" />
           <Property Name="FGUID" Type="nvarchar2" MaxLength="100" Nullable="false" />
         </EntityType>
+        <EntityType Name="YTHPT_WEATHER_DICTIONARY">
+          <Key>
+            <PropertyRef Name="FID" />
+          </Key>
+          <Property Name="FID" Type="nvarchar2" MaxLength="64" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar2" MaxLength="20" />
+          <Property Name="CODE" Type="nvarchar2" MaxLength="20" />
+          <Property Name="CATEGORY" Type="nvarchar2" MaxLength="20" />
+          <Property Name="CREATETIME" Type="date" />
+        </EntityType>
         <EntityContainer Name="OracleSAModelStoreContainer">
           <EntitySet Name="DATAHOUR" EntityType="Self.DATAHOUR" Schema="SA" store:Type="Tables" />
           <EntitySet Name="EARLY_WARNING_COUNTRIES" EntityType="Self.EARLY_WARNING_COUNTRIES" Schema="SA" store:Type="Tables" />
+          <EntitySet Name="YTHPT_WEATHER_DICTIONARY" EntityType="Self.YTHPT_WEATHER_DICTIONARY" Schema="SA" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -156,6 +167,7 @@
         <EntityContainer Name="OracleSAEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="DATAHOUR" EntityType="Self.DATAHOUR" />
           <EntitySet Name="EARLY_WARNING_COUNTRIES" EntityType="OracleSAModel.EARLY_WARNING_COUNTRIES" />
+          <EntitySet Name="YTHPT_WEATHER_DICTIONARY" EntityType="OracleSAModel.YTHPT_WEATHER_DICTIONARY" />
         </EntityContainer>
         <EntityType Name="EARLY_WARNING_COUNTRIES">
           <Key>
@@ -176,6 +188,16 @@
           <Property Name="ISNEW" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
           <Property Name="FID" Type="Decimal" Precision="38" Scale="0" />
           <Property Name="FGUID" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="YTHPT_WEATHER_DICTIONARY">
+          <Key>
+            <PropertyRef Name="FID" />
+          </Key>
+          <Property Name="FID" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CATEGORY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CREATETIME" Type="DateTime" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -262,6 +284,17 @@
                 <ScalarProperty Name="WARNING_LEVEL" ColumnName="WARNING_LEVEL" />
                 <ScalarProperty Name="WARNING_CATAGRAY" ColumnName="WARNING_CATAGRAY" />
                 <ScalarProperty Name="PUBLISHTIME" ColumnName="PUBLISHTIME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="YTHPT_WEATHER_DICTIONARY">
+            <EntityTypeMapping TypeName="OracleSAModel.YTHPT_WEATHER_DICTIONARY">
+              <MappingFragment StoreEntitySet="YTHPT_WEATHER_DICTIONARY">
+                <ScalarProperty Name="CREATETIME" ColumnName="CREATETIME" />
+                <ScalarProperty Name="CATEGORY" ColumnName="CATEGORY" />
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="FID" ColumnName="FID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

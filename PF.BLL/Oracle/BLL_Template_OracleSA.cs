@@ -11,4 +11,7 @@ namespace PF.BLL.Oracle
 	public partial class EARLY_WARNING_COUNTRIES_BLL : Base_BLL_OracleSA<EARLY_WARNING_COUNTRIES>
     {
     }
+	public partial class YTHPT_WEATHER_DICTIONARY_BLL : Base_BLL_OracleSA<YTHPT_WEATHER_DICTIONARY>
+    {
+    }
 }

@@ -68,6 +68,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>OracleSAModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Oracle\YTHPT_WEATHER_DICTIONARY.cs">
+      <DependentUpon>OracleSAModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQL\BaoWens.cs">
       <DependentUpon>YBPFDB_Model.tt</DependentUpon>
