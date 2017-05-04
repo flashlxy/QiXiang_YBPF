@@ -93,12 +93,12 @@ namespace PF.Web.Score
                 if (DropDownList_YBTime.SelectedItem.Value == "08时")
                 {
 
-                    bll.Caculate08(startTime, endTime);
+                    bll.Caculate08_ByYbUser(startTime, endTime);
                 }
                 else
                 {
 
-                    bll.Caculate20(startTime, endTime);
+                    bll.Caculate20_ByYbUser(startTime, endTime);
                 }
                 JavaScriptHelper.UnLoading();
 
