@@ -104,7 +104,7 @@
                             </td>
                             <td>
                                 <asp:Button ID="Button_Calculate" CssClass="btn-query" runat="server" Text="计算" OnClick="Button_Calculate_Click"  />
-                                <asp:Button ID="Button_Add08" CssClass="btn-query" runat="server" Text="补充预报员"  BackColor="#FF6600" OnClick="Button_Add08_Click" />
+                                <%--<asp:Button ID="Button_Add08" CssClass="btn-query" runat="server" Text="补充预报员"  BackColor="#FF6600" OnClick="Button_Add08_Click" />--%>
 
                             </td>
                         </tr>

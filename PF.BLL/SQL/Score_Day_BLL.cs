@@ -4515,7 +4515,7 @@ namespace PF.BLL.SQL
             Scheduling_BLL schbll = new Scheduling_BLL();
             DateTime start_Yestoday = startDate.AddDays(-1);
             DateTime end_Yestoday = endDate.AddDays(-1);
-            List<Scheduling> schedulingList = schbll.GetList(a => a.Date >= start_Yestoday && a.Date < end_Yestoday).ToList();
+            List<Scheduling> schedulingList = schbll.GetList(a => a.Date >= start_Yestoday && a.Date < end_Yestoday&&a.Work!="首席").ToList();
 
 
 
