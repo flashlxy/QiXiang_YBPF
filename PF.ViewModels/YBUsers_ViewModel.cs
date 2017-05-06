@@ -5,8 +5,9 @@ using System.Text;
 
 namespace PF.ViewModels
 {
-    class YBUsers_ViewModel
+    public class YBUsers_ViewModel
     {
+        public string YBUserName { get; set; }
     }
 
     public class YBUsers_Date_ViewModel

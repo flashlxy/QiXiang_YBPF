@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaoWen_Check_ViewModel.cs" />
     <Compile Include="LiveData_Check.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="YBUsers_ViewModel.cs" />

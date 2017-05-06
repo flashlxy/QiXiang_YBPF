@@ -114,6 +114,7 @@
           <Property Name="YBUserName" Type="nvarchar" MaxLength="50" />
           <Property Name="CreateTime" Type="datetime" />
           <Property Name="Work" Type="nvarchar" MaxLength="50" />
+          <Property Name="Order" Type="int" />
         </EntityType>
         <EntityType Name="Score_Day">
           <Key>
@@ -674,6 +675,7 @@
           <Property Name="CreateTime" Type="DateTime" Precision="3" />
           <Property Name="Work" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="YbUsers" Relationship="YBPFDB_Model.FK_Scheduling_YbUsers" FromRole="Scheduling" ToRole="YbUsers" />
+          <Property Name="Order" Type="Int32" />
         </EntityType>
         <Association Name="FK_Scheduling_YbUsers">
           <End Type="YBPFDB_Model.YbUsers" Role="YbUsers" Multiplicity="0..1" />
@@ -925,6 +927,7 @@
           <EntitySetMapping Name="Scheduling">
             <EntityTypeMapping TypeName="YBPFDB_Model.Scheduling">
               <MappingFragment StoreEntitySet="Scheduling">
+                <ScalarProperty Name="Order" ColumnName="Order" />
                 <ScalarProperty Name="Work" ColumnName="Work" />
                 <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
                 <ScalarProperty Name="YBUserName" ColumnName="YBUserName" />
