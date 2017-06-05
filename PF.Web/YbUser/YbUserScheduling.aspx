@@ -32,9 +32,21 @@
                 background-color: #ff6a00;
                 cursor: pointer;
             }
+
+           .day_head {
+               float: left;
+               /*border: 1px solid #808080;*/
+               margin:1px;
+               width: 150px;
+             
+               text-align: center;
+               padding:5px 0;
+           }
+
          .day_item {
              float: left;
-             border: 1px solid #ff6a00;
+             /*border: 1px solid #808080;*/
+             margin:1px;
              width: 150px;
              /*height: 100px;*/
              padding: 0;
@@ -45,8 +57,18 @@
             border-collapse: collapse;
             border: none;
         }
+
+        .table_item_workday {
+            background-color:rgba(0, 148, 255, 0.51);
+            
+        }
+        .table_item_weekday {
+            background-color:rgba(255, 106, 0,0.5);
+            
+        }
+
         .table_item th {
-            background-color:rgba(6, 150, 132, 0.31);
+            /*background-color:rgba(6, 150, 132, 0.31);*/
         }
         
         .table_item th, .table_item td{
@@ -55,11 +77,25 @@
             vertical-align: middle;
             text-align: center;
         }
+
+        .workday {
+            background-color:rgba(0, 148, 255, 0.51);
+            /*color: white;*/
+            
+        }
+           .weekday {
+               background-color:rgba(255, 106, 0,0.5);
+               /*color: white;*/
+            
+           }
+           .notcurrentmonth {
+               visibility:hidden;
+           }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
+        <div style="max-width: 1100px; margin: 0 auto;min-width:1100px;">
                <table class="table-query">
                         <tr>
                             <td>选择日期</td>
@@ -93,12 +129,24 @@
 
                     </table>
             <br/>
+        </div>
+            
+        <div style="max-width: 1100px; margin: 0 auto;min-width:1100px;">
+            
+            <div class="day_head workday">星期一</div>
+            <div class="day_head workday">星期二</div>
+            <div class="day_head workday">星期三</div>
+            <div class="day_head workday">星期四</div>
+            <div class="day_head workday">星期五</div>
+            <div class="day_head weekday">星期六</div>
+            <div class="day_head weekday">星期日</div>
+
             <asp:Repeater ID="RepeaterScheduling" runat="server" OnItemDataBound="RepeaterScheduling_ItemDataBound">
                 <ItemTemplate>
                     <div class="day_item">
-                        <table class="table_item">
+                        <table class="table_item <%#int.Parse(Eval("Week").ToString())>5?"table_item_weekday":"table_item_workday" %> <%#bool.Parse(Eval("IsCurrentMonth").ToString())==true?"currentmonth":"notcurrentmonth" %>">
                             <tr>
-                                <th colspan="2">
+                                <th colspan="2" class="<%#int.Parse(Eval("Week").ToString())>5?"weekday":"workday" %>">
                                     <asp:HiddenField ID="HiddenField_DayTime" runat="server" Value='<%#Eval("DayTimeString") %>' />
                                     <%#Eval("DayTimeString") %></th>
                             </tr>

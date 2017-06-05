@@ -116,6 +116,15 @@
           <Property Name="Work" Type="nvarchar" MaxLength="50" />
           <Property Name="Order" Type="int" />
         </EntityType>
+        <EntityType Name="Scheduling_Description">
+          <Key>
+            <PropertyRef Name="SchDesID" />
+          </Key>
+          <Property Name="SchDesID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Year" Type="int" />
+          <Property Name="Month" Type="int" />
+          <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
         <EntityType Name="Score_Day">
           <Key>
             <PropertyRef Name="ScoreID" />
@@ -314,6 +323,7 @@
           <EntitySet Name="File_Z" EntityType="Self.File_Z" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LiveData" EntityType="Self.LiveData" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Scheduling" EntityType="Self.Scheduling" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Scheduling_Description" EntityType="Self.Scheduling_Description" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Score_Day" EntityType="Self.Score_Day" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Score_Month" EntityType="Self.Score_Month" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
@@ -387,6 +397,7 @@
             <End Role="Scheduling" EntitySet="Scheduling" />
           </AssociationSet>
           <EntitySet Name="File_Z" EntityType="YBPFDB_Model.File_Z" />
+          <EntitySet Name="Scheduling_Description" EntityType="YBPFDB_Model.Scheduling_Description" />
           </EntityContainer>
         <EntityType Name="BaoWens">
           <Key>
@@ -703,6 +714,15 @@
           <Property Name="CountryName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="CountryCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="Scheduling_Description">
+          <Key>
+            <PropertyRef Name="SchDesID" />
+          </Key>
+          <Property Name="SchDesID" Type="Guid" Nullable="false" />
+          <Property Name="Year" Type="Int32" />
+          <Property Name="Month" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -949,6 +969,16 @@
                 <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="FileID" ColumnName="FileID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Scheduling_Description">
+            <EntityTypeMapping TypeName="YBPFDB_Model.Scheduling_Description">
+              <MappingFragment StoreEntitySet="Scheduling_Description">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Month" ColumnName="Month" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="SchDesID" ColumnName="SchDesID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

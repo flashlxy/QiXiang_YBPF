@@ -45,10 +45,35 @@ namespace PF.Web.YbUser
                 DayScheduling ds = new DayScheduling()
                 {
                     DayTime = firstDay.AddDays(i),
-                    DayTimeString = firstDay.AddDays(i).ToShortDateString()
+                    DayTimeString = firstDay.AddDays(i).ToString("yyyy-MM-dd"),
+                    //Week = firstDay.AddDays(i).DayOfWeek.ToString("d"),
+                    Week= GetWeekNumber(firstDay.AddDays(i).DayOfWeek.ToString()),
+                    IsCurrentMonth=true
+
                 };
                 list.Add(ds);
             }
+
+            DayScheduling firstDayScheduling = list.FirstOrDefault();
+
+            int needDay = firstDayScheduling.Week - 1;
+            for (int i = 1; i <= needDay; i++)
+            {
+                DayScheduling ds = new DayScheduling()
+                {
+                    DayTime = firstDayScheduling.DayTime.AddDays(-i),
+                    DayTimeString = firstDayScheduling.DayTime.AddDays(-i).ToString("yyyy-MM-dd"),
+                    //Week = firstDay.AddDays(i).DayOfWeek.ToString("d"),
+                    Week = GetWeekNumber(firstDayScheduling.DayTime.AddDays(-i).DayOfWeek.ToString()),
+                    IsCurrentMonth = false
+
+                };
+                list.Add(ds);
+            }
+
+
+            list = list.OrderBy(a => a.DayTime).ToList();
+
 
             RepeaterScheduling.DataSource = list;
             RepeaterScheduling.DataBind();
@@ -333,13 +358,76 @@ namespace PF.Web.YbUser
         {
             InitDay();
         }
+        public int GetWeekNumber(string weekName)
+        {
+            int week=1;
+            switch (weekName)
+            {
+                case "Sunday":
+                    week = 7;
+                    break;
+                case "Monday":
+                    week = 1;
+                    break;
+                case "Tuesday":
+                    week = 2;
+                    break;
+                case "Wednesday":
+                    week =3;
+                    break;
+                case "Thursday":
+                    week = 4;
+                    break;
+                case "Friday":
+                    week = 5;
+                    break;
+                case "Saturday":
+                    week = 6;
+                    break;
+            }
+            return week;
+
+        }
+        //public string GetWeekNumber(string weekName)
+        //{
+        //    string week;
+        //    switch (weekName)
+        //    {
+        //        case "Sunday":
+        //            week = "星期日";
+        //            break;
+        //        case "Monday":
+        //            week = "星期一";
+        //            break;
+        //        case "Tuesday":
+        //            week = "星期二";
+        //            break;
+        //        case "Wednesday":
+        //            week = "星期三";
+        //            break;
+        //        case "Thursday":
+        //            week = "星期四";
+        //            break;
+        //        case "Friday":
+        //            week = "星期五";
+        //            break;
+        //        case "Saturday":
+        //            week = "星期五";
+        //            break;
+        //            return week;
+        //    }
+        //}
     }
     public class DayScheduling
     {
+        public int Week { get; set; }
+        public bool IsCurrentMonth { get; set; }
         public DateTime DayTime { get; set; }
         public string DayTimeString { get; set; }
         public string User1 { get; set; }
         public string User2 { get; set; }
         public string User3 { get; set; }
     }
+
+
 }

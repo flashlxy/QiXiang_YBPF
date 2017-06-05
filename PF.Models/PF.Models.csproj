@@ -87,6 +87,9 @@
     <Compile Include="SQL\Scheduling.cs">
       <DependentUpon>YBPFDB_Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="SQL\Scheduling_Description.cs">
+      <DependentUpon>YBPFDB_Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="SQL\Score_Day.cs">
       <DependentUpon>YBPFDB_Model.tt</DependentUpon>
     </Compile>

@@ -37,5 +37,6 @@ namespace PF.Models.SQL
         public DbSet<Score_Month> Score_Month { get; set; }
         public DbSet<Scheduling> Scheduling { get; set; }
         public DbSet<File_Z> File_Z { get; set; }
+        public DbSet<Scheduling_Description> Scheduling_Description { get; set; }
     }
 }
