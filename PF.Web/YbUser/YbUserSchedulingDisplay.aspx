@@ -100,7 +100,7 @@
         }
 
         .lable_user {
-            font-size:25px;
+            font-size:30px;
         }
     </style>
 </head>
@@ -200,8 +200,8 @@
                    
                     <table class="table_today" style=" color: white;" >
                         <tr>
-                            <td colspan="2">
-                                <asp:Label ID="Label_Today_Title" runat="server" Text=""></asp:Label>
+                            <td colspan="2" style="font-size:30px;">
+                                今日值班
                                 
                             </td>
                         </tr>
@@ -213,27 +213,43 @@
                             </td>
                         </tr>
                         <tr>
-                            <td >
-                                首席 
+                            <td colspan="2">
+                                <asp:Label ID="Label_Today_Date" runat="server" Text=""></asp:Label>
+                                
                             </td>
-                            <td style="text-align:left">
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <asp:Label ID="Label_Today_Week" runat="server" Text=""></asp:Label>
+                                
+                            </td>
+                        </tr>
+             
+                        <tr>
+                        
+                            <td style="text-align:right">
                                 <asp:Label ID="Label_ShouXi_Today" CssClass="lable_user" runat="server" Text=""></asp:Label>
                             </td>
+                            <td  style="text-align:left; color: #eee;">
+                                （首席）
+                            </td>
                         </tr>
                         <tr>
-                            <td>
-                                领班
-                            </td>
-                            <td style="text-align:left">
+                          
+                            <td style="text-align:right">
                                 <asp:Label ID="Label_LingBan_Today" CssClass="lable_user" runat="server" Text=""></asp:Label>
                             </td>
+                            <td  style="text-align: left; color: #eee;">
+                                （领班）
+                            </td>
                         </tr>
                         <tr>
-                            <td>
-                                值班 
-                            </td>
-                            <td style="text-align:left">
+                          
+                            <td style="text-align:right">
                                 <asp:Label ID="Label_ZhiBan_Today" CssClass="lable_user" runat="server" Text=""></asp:Label>
+                            </td>
+                            <td  style="text-align:left; color: #eee;">
+                                （值班）
                             </td>
                         </tr>
                     </table>

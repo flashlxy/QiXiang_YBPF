@@ -258,7 +258,8 @@ namespace PF.Web.YbUser
 
 
          string xingqi=   GetWeekNumberZh(today.DayOfWeek.ToString());
-            Label_Today_Title.Text = today.ToString("yyyy年MM月dd日") + "  " + xingqi;
+            Label_Today_Date.Text = today.ToString("yyyy年MM月dd日") ;
+            Label_Today_Week.Text = xingqi;
             Label_Today_day.Text = today.Day.ToString();
 
             List<PF.Models.SQL.Scheduling> list = bll.GetList(a => a.Date == today).ToList();

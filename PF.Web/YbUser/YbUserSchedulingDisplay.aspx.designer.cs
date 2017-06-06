@@ -58,15 +58,6 @@ namespace PF.Web.YbUser {
         protected global::System.Web.UI.WebControls.Repeater RepeaterScheduling;
         
         /// <summary>
-        /// Label_Today_Title 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label_Today_Title;
-        
-        /// <summary>
         /// Label_Today_day 控件。
         /// </summary>
         /// <remarks>
@@ -74,6 +65,24 @@ namespace PF.Web.YbUser {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label_Today_day;
+        
+        /// <summary>
+        /// Label_Today_Date 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_Today_Date;
+        
+        /// <summary>
+        /// Label_Today_Week 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_Today_Week;
         
         /// <summary>
         /// Label_ShouXi_Today 控件。
