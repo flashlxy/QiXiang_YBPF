@@ -107,9 +107,9 @@
 <body>
     <form id="form1" runat="server">
 
-        <table style="margin: 0 auto;">
+        <table style="margin: 0 auto; border-collapse: collapse;">
             <tr>
-                <td >
+                <td  style="padding:10px 0;">
                     <table class="table-query">
                         <tr>
                             <td>预报值班表</td>
@@ -145,7 +145,7 @@
                
             </tr>
             <tr>
-                <td style="width:860px;" >
+                <td style="width:860px; border: 2px solid #5BADFF;" >
                     <div style="max-width: 860px; margin: 0 auto; min-width: 860px;">
 
                         <div class="day_head workday">星期一</div>
@@ -196,9 +196,9 @@
                         </asp:Repeater>
                     </div>
                 </td>
-                <td rowspan="2" style="vertical-align: top;" >
+                <td  style="vertical-align: top;background-color: #5BADFF; border: 2px solid #5BADFF;" >
                    
-                    <table class="table_today" style="background-color: #5BADFF; color: white;" >
+                    <table class="table_today" style=" color: white;" >
                         <tr>
                             <td colspan="2">
                                 <asp:Label ID="Label_Today_Title" runat="server" Text=""></asp:Label>
@@ -241,8 +241,8 @@
             </tr>
             <tr>
 
-                <td >
-                    <div style="width: 860px; border: 1px dashed #ff6a00;padding:15px 0;margin-top:15px; ">
+                <td  colspan="2">
+                    <div style="width: 100%; border: 1px dashed #ff6a00;padding:15px 0;margin-top:15px; ">
                         <label style="color: #ff6a00; font-size: 18px; margin: 15px;">排班说明</label><br />
                         <asp:Label ID="Label_Description" runat="server" Font-Size="10pt" ForeColor="#666666" CssClass="Label_Description"></asp:Label>
 
