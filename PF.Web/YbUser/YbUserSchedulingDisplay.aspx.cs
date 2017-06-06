@@ -21,6 +21,7 @@ namespace PF.Web.YbUser
                 InitDateTime();
                 InitDay();
                 GetDescription();
+                InitTodayScheduling();
             }
         }
 
@@ -249,36 +250,83 @@ namespace PF.Web.YbUser
             }
         }
 
-       
-        //public string GetWeekNumber(string weekName)
-        //{
-        //    string week;
-        //    switch (weekName)
-        //    {
-        //        case "Sunday":
-        //            week = "星期日";
-        //            break;
-        //        case "Monday":
-        //            week = "星期一";
-        //            break;
-        //        case "Tuesday":
-        //            week = "星期二";
-        //            break;
-        //        case "Wednesday":
-        //            week = "星期三";
-        //            break;
-        //        case "Thursday":
-        //            week = "星期四";
-        //            break;
-        //        case "Friday":
-        //            week = "星期五";
-        //            break;
-        //        case "Saturday":
-        //            week = "星期五";
-        //            break;
-        //            return week;
-        //    }
-        //}
+        public void InitTodayScheduling()
+        {
+            Scheduling_BLL bll = new Scheduling_BLL();
+            DateTime today = DateTime.Parse(DateTime.Now.ToShortDateString());
+
+
+
+         string xingqi=   GetWeekNumberZh(today.DayOfWeek.ToString());
+            Label_Today_Title.Text = today.ToString("yyyy年MM月dd日") + "  " + xingqi;
+            Label_Today_day.Text = today.Day.ToString();
+
+            List<PF.Models.SQL.Scheduling> list = bll.GetList(a => a.Date == today).ToList();
+
+
+            PF.Models.SQL.Scheduling shouxi= list.Where(a => a.Work == "首席").FirstOrDefault();
+            if (shouxi != null)
+            {
+                Label_ShouXi_Today.Text = shouxi.YBUserName;
+            }
+            else
+            {
+                Label_ShouXi_Today.Text = string.Empty;
+            }
+            PF.Models.SQL.Scheduling lingban= list.Where(a => a.Work == "领班").FirstOrDefault();
+            if (lingban != null)
+            {
+                Label_LingBan_Today.Text = lingban.YBUserName;
+            }
+            else
+            {
+                Label_LingBan_Today.Text = string.Empty;
+            }
+            PF.Models.SQL.Scheduling zhiban= list.Where(a => a.Work == "值班").FirstOrDefault();
+            if (zhiban != null)
+            {
+                Label_ZhiBan_Today.Text = zhiban.YBUserName;
+            }
+            else
+            {
+                Label_ZhiBan_Today.Text = string.Empty;
+            }
+
+
+
+
+        }
+
+        public string GetWeekNumberZh(string weekName)
+        {
+            string week=string.Empty;
+            switch (weekName)
+            {
+                case "Sunday":
+                    week = "星期日";
+                    break;
+                case "Monday":
+                    week = "星期一";
+                    break;
+                case "Tuesday":
+                    week = "星期二";
+                    break;
+                case "Wednesday":
+                    week = "星期三";
+                    break;
+                case "Thursday":
+                    week = "星期四";
+                    break;
+                case "Friday":
+                    week = "星期五";
+                    break;
+                case "Saturday":
+                    week = "星期五";
+                    break;
+                    
+            }
+            return week;
+        }
     }
   
 
