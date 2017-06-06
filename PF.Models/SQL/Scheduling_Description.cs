@@ -18,5 +18,7 @@ namespace PF.Models.SQL
         public Nullable<int> Year { get; set; }
         public Nullable<int> Month { get; set; }
         public string Description { get; set; }
+        public Nullable<System.DateTime> CreateTime { get; set; }
+        public Nullable<System.DateTime> UpdateTime { get; set; }
     }
 }

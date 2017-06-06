@@ -10,7 +10,7 @@
 namespace PF.Web.YbUser {
     
     
-    public partial class YbUserScheduling {
+    public partial class YbUserSchedulingDisplay {
         
         /// <summary>
         /// form1 控件。
@@ -58,21 +58,12 @@ namespace PF.Web.YbUser {
         protected global::System.Web.UI.WebControls.Repeater RepeaterScheduling;
         
         /// <summary>
-        /// TextBox_Description 控件。
+        /// Label_Description 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_Description;
-        
-        /// <summary>
-        /// Button_SaveDescription 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button_SaveDescription;
+        protected global::System.Web.UI.WebControls.Label Label_Description;
     }
 }

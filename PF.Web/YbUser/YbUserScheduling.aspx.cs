@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using PF.BLL.SQL;
+using PF.Models.SQL;
+using PF.ViewModels;
 
 namespace PF.Web.YbUser
 {
@@ -16,7 +18,47 @@ namespace PF.Web.YbUser
         {
             if (!IsPostBack)
             {
+                InitDateTime();
                 InitDay();
+                GetDescription();
+            }
+        }
+
+
+        public void InitDateTime()
+        {
+            int startYear = 2016;
+
+            int countYear = DateTime.Now.Year - startYear;
+
+            for (int i = 0; i <= countYear; i++)
+            {
+                int cYear = startYear + i;
+                ListItem li = new ListItem() { Text= cYear.ToString()+"年",Value=cYear.ToString()};
+                DropDownList_Year.Items.Add(li);
+            }
+
+            foreach (ListItem item in DropDownList_Year.Items)
+            {
+                if (item.Value == DateTime.Now.ToString("yyyy"))
+                {
+                    item.Selected = true;
+                }
+                else
+                {
+                    item.Selected = false;
+                }
+            }
+            foreach (ListItem item in DropDownList_Month.Items)
+            {
+                if (item.Value == DateTime.Now.ToString("MM"))
+                {
+                    item.Selected = true;
+                }
+                else
+                {
+                    item.Selected = false;
+                }
             }
         }
 
@@ -34,7 +76,7 @@ namespace PF.Web.YbUser
             sclist = scbll.GetList(a => a.Date >= firstDay && a.Date < endDay).ToList();
 
 
-            List<DayScheduling> list = new List<DayScheduling>();
+            List<Day_Scheduling_ViewModel> list = new List<Day_Scheduling_ViewModel>();
             for (int i = 0; i < ts.Days; i++)
             {
                 // DateTime dt = firstDay.AddDays(i);
@@ -42,7 +84,7 @@ namespace PF.Web.YbUser
 
 
 
-                DayScheduling ds = new DayScheduling()
+                Day_Scheduling_ViewModel ds = new Day_Scheduling_ViewModel()
                 {
                     DayTime = firstDay.AddDays(i),
                     DayTimeString = firstDay.AddDays(i).ToString("yyyy-MM-dd"),
@@ -54,12 +96,12 @@ namespace PF.Web.YbUser
                 list.Add(ds);
             }
 
-            DayScheduling firstDayScheduling = list.FirstOrDefault();
+            Day_Scheduling_ViewModel firstDayScheduling = list.FirstOrDefault();
 
             int needDay = firstDayScheduling.Week - 1;
             for (int i = 1; i <= needDay; i++)
             {
-                DayScheduling ds = new DayScheduling()
+                Day_Scheduling_ViewModel ds = new Day_Scheduling_ViewModel()
                 {
                     DayTime = firstDayScheduling.DayTime.AddDays(-i),
                     DayTimeString = firstDayScheduling.DayTime.AddDays(-i).ToString("yyyy-MM-dd"),
@@ -86,7 +128,7 @@ namespace PF.Web.YbUser
             if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
             {
                 //找到分类Repeater关联的数据项 
-                DayScheduling dsv = (DayScheduling)e.Item.DataItem;
+                Day_Scheduling_ViewModel dsv = (Day_Scheduling_ViewModel)e.Item.DataItem;
 
                 DropDownList DropDownList_ShouXi = (DropDownList)e.Item.FindControl("DropDownList_ShouXi");
                 DropDownList DropDownList_LingBan = (DropDownList)e.Item.FindControl("DropDownList_LingBan");
@@ -357,6 +399,8 @@ namespace PF.Web.YbUser
         protected void Button_Query_Click(object sender, EventArgs e)
         {
             InitDay();
+            GetDescription();
+
         }
         public int GetWeekNumber(string weekName)
         {
@@ -388,6 +432,53 @@ namespace PF.Web.YbUser
             return week;
 
         }
+
+
+        public void GetDescription()
+        {
+            int year =int.Parse( DropDownList_Year.SelectedItem.Value);
+            int month = int.Parse(DropDownList_Month.SelectedItem.Value);
+            Scheduling_Description_BLL bll = new Scheduling_Description_BLL();
+            Scheduling_Description model= bll.Get(a => a.Year == year && a.Month == month);
+            if (model != null)
+            {
+                TextBox_Description.Text = model.Description;
+            }
+            else
+            {
+                TextBox_Description.Text = "";
+            }
+        }
+
+        protected void Button_SaveDescription_Click(object sender, EventArgs e)
+        {
+            int year = int.Parse(DropDownList_Year.SelectedItem.Value);
+            int month = int.Parse(DropDownList_Month.SelectedItem.Value);
+            Scheduling_Description_BLL bll = new Scheduling_Description_BLL();
+            Scheduling_Description model = bll.Get(a => a.Year == year && a.Month == month);
+            if (model == null)
+            {
+                model = new Scheduling_Description()
+                {
+                    SchDesID = Guid.NewGuid(),
+                    Year = year,
+                    Month = month,
+                    Description = TextBox_Description.Text.Trim(),
+                    CreateTime=DateTime.Now,
+                    UpdateTime=DateTime.Now
+
+                };
+                bll.Add(model);
+            }
+            else
+            {
+                model.Description = TextBox_Description.Text.Trim();
+                model.UpdateTime = DateTime.Now;
+
+                bll.Update(model);
+            }
+            Response.Write("<script language=javascript defer>alert('保存成功！');</script>");
+        }
         //public string GetWeekNumber(string weekName)
         //{
         //    string week;
@@ -418,16 +509,7 @@ namespace PF.Web.YbUser
         //    }
         //}
     }
-    public class DayScheduling
-    {
-        public int Week { get; set; }
-        public bool IsCurrentMonth { get; set; }
-        public DateTime DayTime { get; set; }
-        public string DayTimeString { get; set; }
-        public string User1 { get; set; }
-        public string User2 { get; set; }
-        public string User3 { get; set; }
-    }
+   
 
 
 }

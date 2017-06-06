@@ -20,6 +20,9 @@ namespace PF.BLL.SQL
 	public partial class Scheduling_BLL : Base_BLL_YBPF<Scheduling>
     {
     }
+	public partial class Scheduling_Description_BLL : Base_BLL_YBPF<Scheduling_Description>
+    {
+    }
 	public partial class Score_Day_BLL : Base_BLL_YBPF<Score_Day>
     {
     }

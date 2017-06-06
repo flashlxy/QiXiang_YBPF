@@ -13,11 +13,19 @@ namespace PF.DAL.SQL
     {
 	   
     }
+	public partial class File_Z_DAL : Base_DAL_YBPF<File_Z>
+    {
+	   
+    }
 	public partial class LiveData_DAL : Base_DAL_YBPF<LiveData>
     {
 	   
     }
 	public partial class Scheduling_DAL : Base_DAL_YBPF<Scheduling>
+    {
+	   
+    }
+	public partial class Scheduling_Description_DAL : Base_DAL_YBPF<Scheduling_Description>
     {
 	   
     }

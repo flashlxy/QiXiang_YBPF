@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="YbUserScheduling.aspx.cs" Inherits="PF.Web.YbUser.YbUserScheduling" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="YbUserSchedulingDisplay.aspx.cs" Inherits="PF.Web.YbUser.YbUserSchedulingDisplay" %>
 
 <!DOCTYPE html>
 
@@ -7,8 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
     <style type="text/css">
-           .table-query {
-           
+        .table-query {
             border-collapse: collapse;
         }
 
@@ -33,45 +32,44 @@
                 cursor: pointer;
             }
 
-           .day_head {
-               float: left;
-               /*border: 1px solid #808080;*/
-               margin:1px;
-               width: 120px;
-             
-               text-align: center;
-               padding:5px 0;
-           }
+        .day_head {
+            float: left;
+            /*border: 1px solid #808080;*/
+            margin: 1px;
+            width: 120px;
+            text-align: center;
+            padding: 5px 0;
+        }
 
-         .day_item {
-             float: left;
-             /*border: 1px solid #808080;*/
-             margin:1px;
-             width: 120px;
-             /*height: 100px;*/
-             padding: 0;
-         }
+        .day_item {
+            float: left;
+            /*border: 1px solid #808080;*/
+            margin: 1px;
+            width: 120px;
+            /*height: 100px;*/
+            padding: 0;
+        }
+
         .table_item {
-            margin:0;
-            width:100%;
+            margin: 0;
+            width: 100%;
             border-collapse: collapse;
             border: none;
         }
 
         .table_item_workday {
-            background-color:rgba(0, 148, 255, 0.51);
-            
+            background-color: rgba(0, 148, 255, 0.51);
         }
+
         .table_item_weekday {
-            background-color:rgba(255, 106, 0,0.5);
-            
+            background-color: rgba(255, 106, 0,0.5);
         }
 
         .table_item th {
             /*background-color:rgba(6, 150, 132, 0.31);*/
         }
-        
-        .table_item th, .table_item td{
+
+        .table_item th, .table_item td {
             padding: 3px;
             font-size: 12px;
             vertical-align: middle;
@@ -79,37 +77,35 @@
         }
 
         .workday {
-            background-color:rgba(0, 148, 255, 0.51);
+            background-color: rgba(0, 148, 255, 0.51);
             /*color: white;*/
-            
         }
-           .weekday {
-               background-color:rgba(255, 106, 0,0.5);
-               /*color: white;*/
-            
-           }
-           .notcurrentmonth {
-               visibility:hidden;
-           }
 
-           .txt_description {
-               width:100%;
-               height:300px;
-           }
+        .weekday {
+            background-color: rgba(255, 106, 0,0.5);
+            /*color: white;*/
+        }
+
+        .notcurrentmonth {
+            visibility: hidden;
+        }
+
+        .Label_Description {
+           margin:15px;
+        }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-    
-        <table style=" margin: 0 auto;">
+
+        <table style="margin: 0 auto;">
             <tr>
-                <td>
+                <td >
                     <table class="table-query">
                         <tr>
-                            <td>选择日期</td>
+                            <td>预报值班表</td>
                             <td>
                                 <asp:DropDownList ID="DropDownList_Year" runat="server" Font-Size="14pt">
-                                  
                                 </asp:DropDownList>
                                 <asp:DropDownList ID="DropDownList_Month" runat="server" Font-Size="14pt">
                                     <asp:ListItem Text="01月" Value="01"></asp:ListItem>
@@ -138,9 +134,9 @@
                 </td>
             </tr>
             <tr>
-                <td style="width:865px;">
-                    <div style="max-width: 860px; margin: 0 auto;min-width:850px; ">
-            
+                <td style="width:860px;" >
+                    <div style="max-width: 860px; margin: 0 auto; min-width: 860px;">
+
                         <div class="day_head workday">星期一</div>
                         <div class="day_head workday">星期二</div>
                         <div class="day_head workday">星期三</div>
@@ -160,40 +156,56 @@
                                         </tr>
                                         <tr>
                                             <td>首席</td>
-                                            <td><asp:DropDownList ID="DropDownList_ShouXi" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownList_ShouXi_SelectedIndexChanged"></asp:DropDownList></td>
+                                            <td>
+                                                <asp:Label ID="Label_ShouXi" runat="server" Text=""></asp:Label>
+
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>领班</td>
-                                            <td><asp:DropDownList ID="DropDownList_LingBan" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownList_LingBan_SelectedIndexChanged"></asp:DropDownList></td>
+                                            <td>
+                                                <asp:Label ID="Label_LingBan" runat="server" Text=""></asp:Label>
+
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>值班</td>
-                                            <td><asp:DropDownList ID="DropDownList_ZhiBan" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownList_ZhiBan_SelectedIndexChanged"></asp:DropDownList></td>
+                                            <td>
+                                                <asp:Label ID="Label_ZhiBan" runat="server" Text=""></asp:Label>
+
+                                            </td>
                                         </tr>
                                     </table>
 
 
-                      
-                      
+
+
                                 </div>
                             </ItemTemplate>
                         </asp:Repeater>
                     </div>
                 </td>
-                <td style="vertical-align: top;width:300px;">
-                    
-                        <h3 style="color:#ff6a00;">排班说明</h3>
-                        <asp:TextBox ID="TextBox_Description" runat="server" CssClass="txt_description" TextMode="MultiLine"></asp:TextBox>
-                                <asp:Button ID="Button_SaveDescription" CssClass="btn-query" runat="server" Text="保存说明" OnClick="Button_SaveDescription_Click"  />
-                  
+
+            </tr>
+            <tr>
+
+                <td >
+                    <div style="width: 860px; border: 1px dashed #ff6a00;padding:15px 0;margin-top:15px; ">
+                        <label style="color: #ff6a00; font-size: 18px; margin: 15px;">排班说明</label><br />
+                        <asp:Label ID="Label_Description" runat="server" Font-Size="10pt" ForeColor="#666666" CssClass="Label_Description"></asp:Label>
+
+                    </div>
+
+
                 </td>
+
             </tr>
         </table>
-        
 
-      
-        
-      
+
+
+
+
     </form>
 </body>
 </html>

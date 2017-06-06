@@ -124,6 +124,8 @@
           <Property Name="Year" Type="int" />
           <Property Name="Month" Type="int" />
           <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="CreateTime" Type="datetime" />
+          <Property Name="UpdateTime" Type="datetime" />
         </EntityType>
         <EntityType Name="Score_Day">
           <Key>
@@ -722,6 +724,8 @@
           <Property Name="Year" Type="Int32" />
           <Property Name="Month" Type="Int32" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTime" Type="DateTime" Precision="3" />
+          <Property Name="UpdateTime" Type="DateTime" Precision="3" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -975,6 +979,8 @@
           <EntitySetMapping Name="Scheduling_Description">
             <EntityTypeMapping TypeName="YBPFDB_Model.Scheduling_Description">
               <MappingFragment StoreEntitySet="Scheduling_Description">
+                <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Month" ColumnName="Month" />
                 <ScalarProperty Name="Year" ColumnName="Year" />
