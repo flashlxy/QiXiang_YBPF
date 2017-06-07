@@ -6,18 +6,22 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
+    
     <style type="text/css">
-        .table-query {
-            border-collapse: collapse;
+        * {
+            font-family: 'Microsoft YaHei UI';
         }
+         .table-query {
+             border-collapse: collapse;
+         }
 
-            .table-query td {
-                padding: 10px 40px;
-                border: 1px solid #808080;
-                text-align: center;
-                font-size: 18px;
-                background-color: #d3f3fc;
-            }
+        .table-query td {
+            padding: 10px 40px;
+            border: 1px solid #808080;
+            text-align: center;
+            font-size: 18px;
+            background-color: #d3f3fc;
+        }
 
         .btn-query {
             border: none;
@@ -27,16 +31,16 @@
             border-radius: 10px;
         }
 
-            .btn-query:hover {
-                background-color: #ff6a00;
-                cursor: pointer;
-            }
+        .btn-query:hover {
+            background-color: #ff6a00;
+            cursor: pointer;
+        }
 
         .day_head {
             float: left;
             /*border: 1px solid #808080;*/
             margin: 1px;
-            width: 120px;
+            width: 118px;
             text-align: center;
             padding: 5px 0;
         }
@@ -44,7 +48,7 @@
         .day_item {
             float: left;
             /*border: 1px solid #808080;*/
-            margin: 1px;
+            /*margin: 1px;*/
             width: 120px;
             /*height: 100px;*/
             padding: 0;
@@ -58,11 +62,15 @@
         }
 
         .table_item_workday {
-            background-color: rgba(0, 148, 255, 0.51);
+            /*background-color: rgba(0, 148, 255, 0.51);*/
+            background-color: rgba(178, 189, 197, 0.51);
+            
         }
 
         .table_item_weekday {
-            background-color: rgba(255, 106, 0,0.5);
+            /*background-color: rgba(255, 106, 0,0.5);*/
+            background-color:rgba(226, 150, 96, 0.5);
+            
         }
 
         .table_item th {
@@ -74,6 +82,7 @@
             font-size: 12px;
             vertical-align: middle;
             text-align: center;
+            border:1px solid #eee;
         }
 
         .workday {
@@ -91,7 +100,7 @@
         }
 
         .Label_Description {
-           margin:15px;
+            margin:15px;
         }
 
         .table_today  td{
@@ -101,6 +110,7 @@
 
         .lable_user {
             font-size:30px;
+            text-shadow:2px 2px 2px #333;
         }
     </style>
 </head>
@@ -145,8 +155,8 @@
                
             </tr>
             <tr>
-                <td style="width:860px; border: 2px solid #5BADFF;" >
-                    <div style="max-width: 860px; margin: 0 auto; min-width: 860px;">
+                <td style="width:840px; border: 2px solid #5BADFF;" >
+                    <div style="max-width: 840px; margin: 0 auto; min-width: 840px;">
 
                         <div class="day_head workday">星期一</div>
                         <div class="day_head workday">星期二</div>
@@ -186,7 +196,7 @@
 
                                             </td>
                                         </tr>
-                                        <tr style="color:red;">
+                                        <tr style="color: red;">
                                             <td>连线</td>
                                             <td>
                                                 <asp:Label ID="Label_LianXian" runat="server" Text=""></asp:Label>
@@ -203,7 +213,7 @@
                         </asp:Repeater>
                     </div>
                 </td>
-                <td  style="vertical-align: top;background-color: #5BADFF; border: 2px solid #5BADFF;" >
+                <td  style="vertical-align: top;background-color: #5BADFF; border: 2px solid #5BADFF;max-width:206px;  min-width:206px;" >
                    
                     <table class="table_today" style=" color: white;" >
                         <tr>
@@ -261,10 +271,10 @@
                         </tr>
                         <tr>
                           
-                            <td style="text-align: center;color: red; ">
+                            <td style="text-align: center; ">
                                 <asp:Label ID="Label_LianXian_Today" CssClass="lable_user" runat="server" Text=""></asp:Label>
                             </td>
-                            <td  style="text-align:left; color: red;">
+                            <td  style="text-align:left; ">
                                 （连线）
                             </td>
                         </tr>
