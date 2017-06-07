@@ -124,7 +124,7 @@ namespace PF.Web.YbUser
         protected void RepeaterScheduling_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
             YbUsers_BLL ubll = new YbUsers_BLL();
-            List<PF.Models.SQL.YbUsers> users = ubll.GetList(a=>a.Work=="预报").OrderBy(a=>a.Order).ToList();
+            List<PF.Models.SQL.YbUsers> users = ubll.GetList(a=>a.Work=="预报"&&a.Position!="挂职"&&a.YBUserName!="集体").OrderBy(a=>a.Order).ToList();
             List<PF.Models.SQL.YbUsers> users_LianXian = ubll.GetList(a=>a.Work=="连线").OrderBy(a=>a.Order).ToList();
             if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
             {
