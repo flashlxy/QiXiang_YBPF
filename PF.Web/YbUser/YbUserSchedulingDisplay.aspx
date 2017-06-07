@@ -70,7 +70,7 @@
         }
 
         .table_item th, .table_item td {
-            padding: 3px;
+            padding: 2px 3px;
             font-size: 12px;
             vertical-align: middle;
             text-align: center;
@@ -186,6 +186,13 @@
 
                                             </td>
                                         </tr>
+                                        <tr>
+                                            <td>连线</td>
+                                            <td>
+                                                <asp:Label ID="Label_LianXian" runat="server" Text=""></asp:Label>
+
+                                            </td>
+                                        </tr>
                                     </table>
 
 
@@ -227,7 +234,7 @@
              
                         <tr>
                         
-                            <td style="text-align:right">
+                            <td style="text-align:center">
                                 <asp:Label ID="Label_ShouXi_Today" CssClass="lable_user" runat="server" Text=""></asp:Label>
                             </td>
                             <td  style="text-align:left; color: #eee;">
@@ -236,7 +243,7 @@
                         </tr>
                         <tr>
                           
-                            <td style="text-align:right">
+                            <td style="text-align:center">
                                 <asp:Label ID="Label_LingBan_Today" CssClass="lable_user" runat="server" Text=""></asp:Label>
                             </td>
                             <td  style="text-align: left; color: #eee;">
@@ -245,11 +252,20 @@
                         </tr>
                         <tr>
                           
-                            <td style="text-align:right">
+                            <td style="text-align:center">
                                 <asp:Label ID="Label_ZhiBan_Today" CssClass="lable_user" runat="server" Text=""></asp:Label>
                             </td>
                             <td  style="text-align:left; color: #eee;">
                                 （值班）
+                            </td>
+                        </tr>
+                        <tr>
+                          
+                            <td style="text-align:center">
+                                <asp:Label ID="Label_LianXian_Today" CssClass="lable_user" runat="server" Text=""></asp:Label>
+                            </td>
+                            <td  style="text-align:left; color: #eee;">
+                                （连线）
                             </td>
                         </tr>
                     </table>

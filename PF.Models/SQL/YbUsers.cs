@@ -27,6 +27,8 @@ namespace PF.Models.SQL
         public string YBUserName { get; set; }
         public string Position { get; set; }
         public Nullable<int> Order { get; set; }
+        public string Work { get; set; }
+        public Nullable<System.DateTime> CreateTime { get; set; }
     
         public virtual ICollection<BaoWens> BaoWens { get; set; }
         public virtual ICollection<BwYbs> BwYbs { get; set; }

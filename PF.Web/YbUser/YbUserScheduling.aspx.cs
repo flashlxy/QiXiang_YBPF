@@ -124,7 +124,8 @@ namespace PF.Web.YbUser
         protected void RepeaterScheduling_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
             YbUsers_BLL ubll = new YbUsers_BLL();
-            List<PF.Models.SQL.YbUsers> users = ubll.GetList().ToList();
+            List<PF.Models.SQL.YbUsers> users = ubll.GetList(a=>a.Work=="预报").OrderBy(a=>a.Order).ToList();
+            List<PF.Models.SQL.YbUsers> users_LianXian = ubll.GetList(a=>a.Work=="连线").OrderBy(a=>a.Order).ToList();
             if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
             {
                 //找到分类Repeater关联的数据项 
@@ -133,14 +134,17 @@ namespace PF.Web.YbUser
                 DropDownList DropDownList_ShouXi = (DropDownList)e.Item.FindControl("DropDownList_ShouXi");
                 DropDownList DropDownList_LingBan = (DropDownList)e.Item.FindControl("DropDownList_LingBan");
                 DropDownList DropDownList_ZhiBan = (DropDownList)e.Item.FindControl("DropDownList_ZhiBan");
+                DropDownList DropDownList_LianXian = (DropDownList)e.Item.FindControl("DropDownList_LianXian");
 
 
                 ListItem lino1 = new ListItem() { Text = "   ", Value = "未选择" };
                 ListItem lino2 = new ListItem() { Text = "   ", Value = "未选择" };
                 ListItem lino3 = new ListItem() { Text = "   ", Value = "未选择" };
+                ListItem lino4 = new ListItem() { Text = "   ", Value = "未选择" };
                 DropDownList_ShouXi.Items.Add(lino1);
                 DropDownList_LingBan.Items.Add(lino2);
                 DropDownList_ZhiBan.Items.Add(lino3);
+                DropDownList_LianXian.Items.Add(lino4);
 
 
                 foreach (var ybUser in users)
@@ -152,8 +156,14 @@ namespace PF.Web.YbUser
                     DropDownList_LingBan.Items.Add(li2);
                     DropDownList_ZhiBan.Items.Add(li3);
                 }
+                foreach (var ybUser in users_LianXian)
+                {
+                  
+                    ListItem li4 = new ListItem() { Text = ybUser.YBUserName, Value = ybUser.YBUserID.ToString() };
+                   
+                    DropDownList_LianXian.Items.Add(li4);
+                }
 
-              
 
 
 
@@ -248,7 +258,34 @@ namespace PF.Web.YbUser
                 }
 
 
+                PF.Models.SQL.Scheduling lianxian = sclist.Where(a => a.Date == dt && a.Work == "连线").FirstOrDefault();
 
+                foreach (ListItem li in DropDownList_LianXian.Items)
+                {
+                    if (lianxian != null)
+                    {
+
+                        if (li.Text == lianxian.YBUserName)
+                        {
+                            li.Selected = true;
+                        }
+                        else
+                        {
+                            li.Selected = false;
+                        }
+                    }
+                    else
+                    {
+                        if (li.Value == "未选择")
+                        {
+                            li.Selected = true;
+                        }
+                        else
+                        {
+                            li.Selected = false;
+                        }
+                    }
+                }
 
 
 
@@ -395,7 +432,48 @@ namespace PF.Web.YbUser
                 }
             }
         }
+        protected void DropDownList_LianXian_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DropDownList drd = sender as DropDownList;
+            Repeater rps = drd.Parent.Parent as Repeater;
+            int n = ((RepeaterItem)drd.Parent).ItemIndex;
+            HiddenField hid = (HiddenField)(rps.Items[n].FindControl("HiddenField_DayTime"));
+            string daystring = hid.Value;
+            DateTime dt = DateTime.Parse(daystring);
+            DropDownList ddl = (DropDownList)(rps.Items[n].FindControl("DropDownList_LianXian"));
 
+
+            PF.BLL.SQL.Scheduling_BLL scbll = new Scheduling_BLL();
+            if (ddl.SelectedItem.Value == "未选择")
+            {
+                scbll.Delete(a => a.Date == dt && a.Work == "连线");
+            }
+            else
+            {
+                PF.Models.SQL.Scheduling sc = scbll.Get(a => a.Date == dt && a.Work == "连线");
+                if (sc == null)
+                {
+                    sc = new Models.SQL.Scheduling()
+                    {
+                        SchedulingID = Guid.NewGuid(),
+                        CreateTime = DateTime.Now,
+                        Date = dt,
+                        Work = "连线",
+                        YBUserID = Guid.Parse(ddl.SelectedItem.Value),
+                        YBUserName = ddl.SelectedItem.Text,
+
+                    };
+                    scbll.Add(sc);
+                }
+                else
+                {
+                    sc.YBUserID = Guid.Parse(ddl.SelectedItem.Value);
+                    sc.YBUserName = ddl.SelectedItem.Text;
+                    sc.CreateTime = DateTime.Now;
+                    scbll.Update(sc);
+                }
+            }
+        }
         protected void Button_Query_Click(object sender, EventArgs e)
         {
             InitDay();

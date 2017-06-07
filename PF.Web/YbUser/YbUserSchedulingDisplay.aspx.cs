@@ -135,8 +135,9 @@ namespace PF.Web.YbUser
                 Label Label_ShouXi = (Label)e.Item.FindControl("Label_ShouXi");
                 Label Label_LingBan = (Label)e.Item.FindControl("Label_LingBan");
                 Label Label_ZhiBan = (Label)e.Item.FindControl("Label_ZhiBan");
+                Label Label_LianXian = (Label)e.Item.FindControl("Label_LianXian");
 
-              
+
 
 
 
@@ -189,7 +190,19 @@ namespace PF.Web.YbUser
                     Label_LingBan.Text = string.Empty;
 
                 }
+                PF.Models.SQL.Scheduling lianxian = sclist.Where(a => a.Date == dt && a.Work == "连线").FirstOrDefault();
 
+                if (lianxian != null)
+                {
+                    Label_LianXian.Text = lianxian.YBUserName;
+
+
+                }
+                else
+                {
+                    Label_LianXian.Text = string.Empty;
+
+                }
 
 
             }
@@ -293,7 +306,15 @@ namespace PF.Web.YbUser
                 Label_ZhiBan_Today.Text = string.Empty;
             }
 
-
+            PF.Models.SQL.Scheduling lianxian = list.Where(a => a.Work == "连线").FirstOrDefault();
+            if (lianxian != null)
+            {
+                Label_LianXian_Today.Text = lianxian.YBUserName;
+            }
+            else
+            {
+                Label_LianXian_Today.Text = string.Empty;
+            }
 
 
         }

@@ -170,6 +170,10 @@
                                             <td>值班</td>
                                             <td><asp:DropDownList ID="DropDownList_ZhiBan" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownList_ZhiBan_SelectedIndexChanged"></asp:DropDownList></td>
                                         </tr>
+                                        <tr>
+                                            <td>连线</td>
+                                            <td><asp:DropDownList ID="DropDownList_LianXian" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownList_LianXian_SelectedIndexChanged"></asp:DropDownList></td>
+                                        </tr>
                                     </table>
 
 
