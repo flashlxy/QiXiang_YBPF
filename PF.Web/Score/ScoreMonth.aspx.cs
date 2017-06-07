@@ -204,7 +204,7 @@ namespace PF.Web.Score
             }).ToList();
 
 
-            List<YbUsers> ulist = new YbUsers_BLL().GetList().ToList();
+            List<YbUsers> ulist = new YbUsers_BLL().GetList(a=>a.Work=="预报").ToList();
             Score_Month_BLL bll = new Score_Month_BLL();
             foreach (var item in vlist)
             {

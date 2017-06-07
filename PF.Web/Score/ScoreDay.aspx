@@ -76,11 +76,10 @@
                             <td>选择日期</td>
                             <td>
                                 <asp:DropDownList ID="DropDownList_Year" runat="server" Font-Size="14pt">
-                                    <asp:ListItem Text="2016年" Value="2016"></asp:ListItem>
-                                    <asp:ListItem Text="2017年" Value="2017" Selected="True"></asp:ListItem>
+                                   
                                 </asp:DropDownList>
                                 <asp:DropDownList ID="DropDownList_Month" runat="server" Font-Size="14pt">
-                                    <asp:ListItem Text="01月" Value="01" Selected="True"></asp:ListItem>
+                                    <asp:ListItem Text="01月" Value="01" ></asp:ListItem>
                                     <asp:ListItem Text="02月" Value="02"></asp:ListItem>
                                     <asp:ListItem Text="03月" Value="03"></asp:ListItem>
                                     <asp:ListItem Text="04月" Value="04"></asp:ListItem>

@@ -17,17 +17,48 @@ namespace PF.Web.Score
         {
             if (!IsPostBack)
             {
+                InitDateTime();
                 InitYBUser();
 
 
             }
         }
-        public void Init()
+        public void InitDateTime()
         {
-            Score_Day_BLL bll = new Score_Day_BLL();
-            
-        }
+            int startYear = 2016;
 
+            int countYear = DateTime.Now.Year - startYear;
+
+            for (int i = 0; i <= countYear; i++)
+            {
+                int cYear = startYear + i;
+                ListItem li = new ListItem() { Text = cYear.ToString() + "年", Value = cYear.ToString() };
+                DropDownList_Year.Items.Add(li);
+            }
+
+            foreach (ListItem item in DropDownList_Year.Items)
+            {
+                if (item.Value == DateTime.Now.ToString("yyyy"))
+                {
+                    item.Selected = true;
+                }
+                else
+                {
+                    item.Selected = false;
+                }
+            }
+            foreach (ListItem item in DropDownList_Month.Items)
+            {
+                if (item.Value == DateTime.Now.ToString("MM"))
+                {
+                    item.Selected = true;
+                }
+                else
+                {
+                    item.Selected = false;
+                }
+            }
+        }
         protected void Button_Query_Click(object sender, EventArgs e)
         {
             BindData();
@@ -66,7 +97,7 @@ namespace PF.Web.Score
         public void InitYBUser()
         {
             YbUsers_BLL bll = new YbUsers_BLL();
-            List<YbUsers> ulist = bll.GetList().ToList();
+            List<YbUsers> ulist = bll.GetList(a=>a.Work=="预报").OrderBy(a=>a.Order).ToList();
             ListItem allli = new ListItem() { Text = "全部", Value = "全部",Selected=true };
             DropDownList_YBUser.Items.Add(allli);
 

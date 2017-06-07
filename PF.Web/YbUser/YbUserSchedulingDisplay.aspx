@@ -186,7 +186,7 @@
 
                                             </td>
                                         </tr>
-                                        <tr>
+                                        <tr style="color:red;">
                                             <td>连线</td>
                                             <td>
                                                 <asp:Label ID="Label_LianXian" runat="server" Text=""></asp:Label>
@@ -261,10 +261,10 @@
                         </tr>
                         <tr>
                           
-                            <td style="text-align:center">
+                            <td style="text-align: center;color: red; ">
                                 <asp:Label ID="Label_LianXian_Today" CssClass="lable_user" runat="server" Text=""></asp:Label>
                             </td>
-                            <td  style="text-align:left; color: #eee;">
+                            <td  style="text-align:left; color: red;">
                                 （连线）
                             </td>
                         </tr>

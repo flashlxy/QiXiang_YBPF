@@ -214,7 +214,7 @@ namespace PF.Web.Score
 
 
 
-                List<Scheduling> schListNight = sbll.GetList(a => a.Date == date).OrderBy(a => a.Order).ToList();
+                List<Scheduling> schListNight = sbll.GetList(a => a.Date == date&&a.Work!="连线").OrderBy(a => a.Order).ToList();
 
                 List<BaoWen_Check_ViewModel> bcvListNight = new List<BaoWen_Check_ViewModel>();
 

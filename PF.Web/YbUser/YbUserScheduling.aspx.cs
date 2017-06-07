@@ -331,6 +331,7 @@ namespace PF.Web.YbUser
                         Work = "首席",
                         YBUserID = Guid.Parse(ddl.SelectedItem.Value),
                         YBUserName = ddl.SelectedItem.Text,
+                        Order=1
 
                     };
                     scbll.Add(sc);
@@ -376,7 +377,7 @@ namespace PF.Web.YbUser
                         Work = "领班",
                         YBUserID = Guid.Parse(ddl.SelectedItem.Value),
                         YBUserName = ddl.SelectedItem.Text,
-
+                        Order=2
                     };
                     scbll.Add(sc);
                 }
@@ -419,7 +420,7 @@ namespace PF.Web.YbUser
                         Work = "值班",
                         YBUserID = Guid.Parse(ddl.SelectedItem.Value),
                         YBUserName = ddl.SelectedItem.Text,
-
+                        Order=3
                     };
                     scbll.Add(sc);
                 }
@@ -461,6 +462,7 @@ namespace PF.Web.YbUser
                         Work = "连线",
                         YBUserID = Guid.Parse(ddl.SelectedItem.Value),
                         YBUserName = ddl.SelectedItem.Text,
+                        Order=4
 
                     };
                     scbll.Add(sc);

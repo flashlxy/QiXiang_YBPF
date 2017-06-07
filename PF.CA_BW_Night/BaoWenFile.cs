@@ -58,13 +58,18 @@ namespace PF.CA_BW_Night
 
                         }
 
-                        YbUsers user = ubll.Get(a => a.YBUserName == baowen.YBUserName);
+                        YbUsers user = ubll.Get(a => a.YBUserName == baowen.YBUserName && a.Work == "预报");
                         if (user == null)
                         {
+                            int order = (int)ubll.GetList(a => a.Work == "预报").Max(a => a.Order) + 1;
                             YbUsers newuser = new YbUsers
                             {
                                 YBUserID = Guid.NewGuid(),
-                                YBUserName = baowen.YBUserName
+                                YBUserName = baowen.YBUserName,
+                                Work = "预报",
+                                Position = "预报员",
+                                CreateTime = DateTime.Now,
+                                Order=order
                             };
                             baowen.YBUserID = newuser.YBUserID;
                             ubll.Add(newuser);

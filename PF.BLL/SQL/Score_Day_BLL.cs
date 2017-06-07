@@ -2305,7 +2305,7 @@ namespace PF.BLL.SQL
             
 
             Scheduling_BLL schbll = new Scheduling_BLL();
-            List<Scheduling> schedulingList = schbll.GetList(a => a.Date >= startDate && a.Date < endDate).ToList();
+            List<Scheduling> schedulingList = schbll.GetList(a => a.Date >= startDate && a.Date < endDate&&a.Work!="连线").ToList();
 
             TimeSpan timeSpan = endDate - startDate;//时间跨度
 
@@ -4515,7 +4515,7 @@ namespace PF.BLL.SQL
             Scheduling_BLL schbll = new Scheduling_BLL();
             DateTime start_Yestoday = startDate.AddDays(-1);
             DateTime end_Yestoday = endDate.AddDays(-1);
-            List<Scheduling> schedulingList = schbll.GetList(a => a.Date >= start_Yestoday && a.Date < end_Yestoday&&a.Work!="首席").ToList();
+            List<Scheduling> schedulingList = schbll.GetList(a => a.Date >= start_Yestoday && a.Date < end_Yestoday&&a.Work!="首席"&&a.Work!="连线").ToList();
 
 
 

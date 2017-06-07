@@ -153,10 +153,8 @@
     <Content Include="LiveDatas\LiveDataImport.aspx" />
     <Content Include="R248\Rain08ToData.aspx" />
     <Content Include="Score\DataCheck.aspx" />
-    <Content Include="Score\MonthEarlier.aspx" />
     <Content Include="Score\ScoreMonth.aspx" />
     <Content Include="Score\ScoreDay.aspx" />
-    <Content Include="Score\ScoreTest.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Data\预警信号检验\预警信号质量检验报表-2017年01月.docx" />
@@ -228,13 +226,6 @@
     <Compile Include="Score\DataCheck.aspx.designer.cs">
       <DependentUpon>DataCheck.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Score\MonthEarlier.aspx.cs">
-      <DependentUpon>MonthEarlier.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Score\MonthEarlier.aspx.designer.cs">
-      <DependentUpon>MonthEarlier.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Score\ScoreMonth.aspx.cs">
       <DependentUpon>ScoreMonth.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -248,13 +239,6 @@
     </Compile>
     <Compile Include="Score\ScoreDay.aspx.designer.cs">
       <DependentUpon>ScoreDay.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Score\ScoreTest.aspx.cs">
-      <DependentUpon>ScoreTest.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Score\ScoreTest.aspx.designer.cs">
-      <DependentUpon>ScoreTest.aspx</DependentUpon>
     </Compile>
     <Compile Include="Temp\Temp08.aspx.cs">
       <DependentUpon>Temp08.aspx</DependentUpon>
