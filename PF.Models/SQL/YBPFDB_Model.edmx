@@ -205,6 +205,18 @@
           <Property Name="Accuracy" Type="nvarchar" MaxLength="50" />
           <Property Name="Remark" Type="nvarchar(max)" />
         </EntityType>
+        <EntityType Name="WarnInfo">
+          <Key>
+            <PropertyRef Name="InfoID" />
+          </Key>
+          <Property Name="InfoID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Content" Type="nvarchar(max)" />
+          <Property Name="WarnCategory" Type="nvarchar" MaxLength="20" />
+          <Property Name="WarnLevel" Type="nvarchar" MaxLength="20" />
+          <Property Name="Country" Type="nvarchar" MaxLength="20" />
+          <Property Name="ReleaseTime" Type="datetime" />
+          <Property Name="CreateTime" Type="datetime" />
+        </EntityType>
         <EntityType Name="WarnStatistics">
           <Key>
             <PropertyRef Name="StatisticsID" />
@@ -332,6 +344,7 @@
           <EntitySet Name="Score_Month" EntityType="Self.Score_Month" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WarnCheck" EntityType="Self.WarnCheck" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WarnInfo" EntityType="Self.WarnInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WarnStatistics" EntityType="Self.WarnStatistics" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WeatherDictionary" EntityType="Self.WeatherDictionary" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="YbUsers" EntityType="Self.YbUsers" Schema="dbo" store:Type="Tables" />
@@ -402,6 +415,7 @@
           </AssociationSet>
           <EntitySet Name="File_Z" EntityType="YBPFDB_Model.File_Z" />
           <EntitySet Name="Scheduling_Description" EntityType="YBPFDB_Model.Scheduling_Description" />
+          <EntitySet Name="WarnInfo" EntityType="YBPFDB_Model.WarnInfo" />
           </EntityContainer>
         <EntityType Name="BaoWens">
           <Key>
@@ -731,6 +745,18 @@
           <Property Name="CreateTime" Type="DateTime" Precision="3" />
           <Property Name="UpdateTime" Type="DateTime" Precision="3" />
         </EntityType>
+        <EntityType Name="WarnInfo">
+          <Key>
+            <PropertyRef Name="InfoID" />
+          </Key>
+          <Property Name="InfoID" Type="Guid" Nullable="false" />
+          <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WarnCategory" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="WarnLevel" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ReleaseTime" Type="DateTime" Precision="3" />
+          <Property Name="CreateTime" Type="DateTime" Precision="3" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -991,6 +1017,19 @@
                 <ScalarProperty Name="Month" ColumnName="Month" />
                 <ScalarProperty Name="Year" ColumnName="Year" />
                 <ScalarProperty Name="SchDesID" ColumnName="SchDesID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WarnInfo">
+            <EntityTypeMapping TypeName="YBPFDB_Model.WarnInfo">
+              <MappingFragment StoreEntitySet="WarnInfo">
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="ReleaseTime" ColumnName="ReleaseTime" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="WarnLevel" ColumnName="WarnLevel" />
+                <ScalarProperty Name="WarnCategory" ColumnName="WarnCategory" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="InfoID" ColumnName="InfoID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

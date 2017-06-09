@@ -85,7 +85,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <dx:ASPxPageControl ID="ASPxPageControl1" runat="server" ActiveTabIndex="0" Theme="Material">
+        <dx:ASPxPageControl ID="ASPxPageControl1" runat="server" ActiveTabIndex="3" Theme="Material">
             <TabPages>
                 <dx:TabPage Text="报文校验">
                     <ContentCollection>
@@ -375,6 +375,59 @@
                                         </td>
                                       
                                     
+                                </tr>
+                            </table>
+                        </dx:ContentControl>
+                    </ContentCollection>
+                </dx:TabPage>
+                <dx:TabPage Text="预警信号">
+                    <ContentCollection>
+                        <dx:ContentControl runat="server">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <table class="table-query" style="width: 100%;">
+                                            <tr>
+                                                <td>预报日期</td>
+                                                <td>
+                                                    <asp:DropDownList ID="DropDownList_Year_Warn" runat="server" Font-Size="14pt">
+                                                        <asp:ListItem Text="2016年" Value="2016"></asp:ListItem>
+                                                        <asp:ListItem Text="2017年" Value="2017" Selected="True"></asp:ListItem>
+                                                    </asp:DropDownList>
+                                                    <asp:DropDownList ID="DropDownList_Month_Warn" runat="server" Font-Size="14pt">
+                                                        <asp:ListItem Text="01月" Value="01" Selected="True"></asp:ListItem>
+                                                        <asp:ListItem Text="02月" Value="02"></asp:ListItem>
+                                                        <asp:ListItem Text="03月" Value="03"></asp:ListItem>
+                                                        <asp:ListItem Text="04月" Value="04"></asp:ListItem>
+                                                        <asp:ListItem Text="05月" Value="05"></asp:ListItem>
+                                                        <asp:ListItem Text="06月" Value="06"></asp:ListItem>
+                                                        <asp:ListItem Text="07月" Value="07"></asp:ListItem>
+                                                        <asp:ListItem Text="08月" Value="08"></asp:ListItem>
+                                                        <asp:ListItem Text="09月" Value="09"></asp:ListItem>
+                                                        <asp:ListItem Text="10月" Value="10"></asp:ListItem>
+                                                        <asp:ListItem Text="11月" Value="11"></asp:ListItem>
+                                                        <asp:ListItem Text="12月" Value="12"></asp:ListItem>
+                                                    </asp:DropDownList>
+
+                                                </td>
+
+
+                                                <td>
+                                                    <asp:Button ID="Btn_DataImport_Warn" CssClass="btn btn-query" runat="server" Text="数据导入" OnClick="Btn_DataImport_Warn_Click" />
+                                                </td>
+                                                <td>
+                                                    <asp:Button ID="Btn_DataCheck_Warn" CssClass="btn btn-query" runat="server" Text="数据校验" OnClick="Btn_DataCheck_Warn_Click" />
+                                                </td>
+                                            </tr>
+
+
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <asp:GridView ID="GridView_Warn" runat="server"></asp:GridView> 
+                                    </td>
                                 </tr>
                             </table>
                         </dx:ContentControl>

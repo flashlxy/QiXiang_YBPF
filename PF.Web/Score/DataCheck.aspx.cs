@@ -284,5 +284,15 @@ namespace PF.Web.Score
             GridView_LiveData.DataBind();
 
         }
+
+        protected void Btn_DataImport_Warn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Btn_DataCheck_Warn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

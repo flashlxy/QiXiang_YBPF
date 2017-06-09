@@ -24,6 +24,7 @@
         <AssociationConnector Association="YBPFDB_Model.FK_Scheduling_YbUsers" />
         <EntityTypeShape EntityType="YBPFDB_Model.File_Z" Width="1.5" PointX="9.375" PointY="5.75" />
         <EntityTypeShape EntityType="YBPFDB_Model.Scheduling_Description" Width="1.5" PointX="9.375" PointY="9.75" />
+        <EntityTypeShape EntityType="YBPFDB_Model.WarnInfo" Width="1.5" PointX="11.375" PointY="0.75" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
