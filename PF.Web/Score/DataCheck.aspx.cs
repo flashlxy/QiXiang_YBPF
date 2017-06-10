@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using PF.BLL.Oracle;
 using PF.BLL.SQL;
+using PF.Models.Oracle;
 using PF.Models.SQL;
 using PF.Utility;
 using PF.ViewModels;
@@ -287,12 +290,49 @@ namespace PF.Web.Score
 
         protected void Btn_DataImport_Warn_Click(object sender, EventArgs e)
         {
+            DateTime startTime = DateTime.Parse(DDL_Year_Warn.SelectedItem.Value + "-" + DDL_Month_Warn.SelectedItem.Value + "-01");
+            DateTime endTime = startTime.AddMonths(1);
+            EARLY_WARNING_COUNTRIES_BLL ebll = new EARLY_WARNING_COUNTRIES_BLL();
+            List<EARLY_WARNING_COUNTRIES> elist =
+                ebll.GetList(
+                    a => a.COUNTRY == "青岛" && !a.WARNING_CONTENT.Contains("解除") && !a.WARNING_CONTENT.Contains("继续发布") && a.INSERTTIME >= startTime && a.INSERTTIME < endTime).OrderBy(a => a.INSERTTIME).ToList();
 
+            WarnCheck_BLL wbll = new WarnCheck_BLL();
+            wbll.Delete(a => a.ReleaseTime >= startTime && a.ReleaseTime < endTime);
+            foreach (var warningCountries in elist)
+            {
+                DateTime da = DateTime.ParseExact(warningCountries.PUBLISHTIME, "yyyy年MM月dd日HH时mm分", CultureInfo.InvariantCulture);
+                
+                WarnCheck wc = new WarnCheck()
+                {
+                    CheckID = Guid.NewGuid(),
+                    ReleaseTime = da,
+                    WarningCategory = warningCountries.WARNING_CATAGRAY,
+                    WarningLevel = warningCountries.WARNING_LEVEL.Substring(0, 2)
+
+                };
+
+
+                wbll.Add(wc);
+
+            }
+            QueryWarnInfo();
+            Response.Write("<script language=javascript defer>alert('导入成功！');</script>");
+        }
+
+        public void QueryWarnInfo()
+        {
+            DateTime startTime = DateTime.Parse(DDL_Year_Warn.SelectedItem.Value + "-" + DDL_Month_Warn.SelectedItem.Value + "-01");
+            DateTime endTime = startTime.AddMonths(1);
+         WarnCheck_BLL wbll = new WarnCheck_BLL();
+            List<WarnCheck> list= wbll.GetList(a => a.ReleaseTime >= startTime && a.ReleaseTime < endTime).OrderBy(a=>a.ReleaseTime).ToList();
+            GridView_Warn.DataSource = list;
+            GridView_Warn.DataBind();
         }
 
         protected void Btn_DataCheck_Warn_Click(object sender, EventArgs e)
         {
-
+            QueryWarnInfo();
         }
     }
 }

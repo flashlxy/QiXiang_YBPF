@@ -45,6 +45,10 @@ namespace PF.DAL.SQL
     {
 	   
     }
+	public partial class WarnCheck_Station_DAL : Base_DAL_YBPF<WarnCheck_Station>
+    {
+	   
+    }
 	public partial class WarnInfo_DAL : Base_DAL_YBPF<WarnInfo>
     {
 	   

@@ -35,6 +35,9 @@ namespace PF.BLL.SQL
 	public partial class WarnCheck_BLL : Base_BLL_YBPF<WarnCheck>
     {
     }
+	public partial class WarnCheck_Station_BLL : Base_BLL_YBPF<WarnCheck_Station>
+    {
+    }
 	public partial class WarnInfo_BLL : Base_BLL_YBPF<WarnInfo>
     {
     }

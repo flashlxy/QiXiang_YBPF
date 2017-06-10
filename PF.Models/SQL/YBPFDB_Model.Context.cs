@@ -39,5 +39,6 @@ namespace PF.Models.SQL
         public DbSet<File_Z> File_Z { get; set; }
         public DbSet<Scheduling_Description> Scheduling_Description { get; set; }
         public DbSet<WarnInfo> WarnInfo { get; set; }
+        public DbSet<WarnCheck_Station> WarnCheck_Station { get; set; }
     }
 }

@@ -46,6 +46,26 @@ namespace PF.Web.Warn
             GridView_List.DataBind();
         }
 
-       
+        protected void Button_Caculate_Click(object sender, EventArgs e)
+        {
+            WarnCheck_BLL bll = new WarnCheck_BLL();
+            DateTime startTime = DateTime.Parse(DropDownList_Year.SelectedItem.Value + "-" + DropDownList_Month.SelectedItem.Value + "-01");
+            DateTime endTime = startTime.AddMonths(1);
+
+
+            List<PF.Models.SQL.WarnCheck> list = bll.GetList(a => a.ReleaseTime >= startTime && a.ReleaseTime < endTime).ToList();
+            if (DropDownList_WarnCategory.SelectedItem.Value != "全部")
+            {
+                list = list.Where(a => a.WarningCategory == DropDownList_WarnCategory.SelectedItem.Value).ToList();
+            }
+            if (DropDownList_WarnLevel.SelectedItem.Value != "全部")
+            {
+                list = list.Where(a => a.WarningLevel == DropDownList_WarnLevel.SelectedItem.Value).ToList();
+            }
+            foreach (Models.SQL.WarnCheck warn in list)
+            {
+                //if()
+            }
+        }
     }
 }

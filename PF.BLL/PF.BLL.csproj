@@ -57,6 +57,7 @@
     </Compile>
     <Compile Include="SQL\LiveData_BLL.cs" />
     <Compile Include="SQL\Score_Day_BLL.cs" />
+    <Compile Include="SQL\WarnCheck_BLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Oracle\BLL_Template_OracleSA.tt">

@@ -390,11 +390,11 @@
                                             <tr>
                                                 <td>预报日期</td>
                                                 <td>
-                                                    <asp:DropDownList ID="DropDownList_Year_Warn" runat="server" Font-Size="14pt">
+                                                    <asp:DropDownList ID="DDL_Year_Warn" runat="server" Font-Size="14pt">
                                                         <asp:ListItem Text="2016年" Value="2016"></asp:ListItem>
                                                         <asp:ListItem Text="2017年" Value="2017" Selected="True"></asp:ListItem>
                                                     </asp:DropDownList>
-                                                    <asp:DropDownList ID="DropDownList_Month_Warn" runat="server" Font-Size="14pt">
+                                                    <asp:DropDownList ID="DDL_Month_Warn" runat="server" Font-Size="14pt">
                                                         <asp:ListItem Text="01月" Value="01" Selected="True"></asp:ListItem>
                                                         <asp:ListItem Text="02月" Value="02"></asp:ListItem>
                                                         <asp:ListItem Text="03月" Value="03"></asp:ListItem>
@@ -426,7 +426,13 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <asp:GridView ID="GridView_Warn" runat="server"></asp:GridView> 
+                                        <asp:GridView ID="GridView_Warn"  CssClass="data_table" runat="server" AutoGenerateColumns="False">
+                                            <Columns>
+                                                <asp:BoundField DataField="ReleaseTime" DataFormatString="{0:yyyy-MM-dd HH:mm}" HeaderText="发布时间" />
+                                                <asp:BoundField DataField="WarningCategory" HeaderText="预警类型" />
+                                                <asp:BoundField DataField="WarningLevel" HeaderText="预警级别" />
+                                            </Columns>
+                                        </asp:GridView> 
                                     </td>
                                 </tr>
                             </table>
