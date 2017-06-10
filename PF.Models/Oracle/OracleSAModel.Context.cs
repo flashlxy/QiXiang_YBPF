@@ -28,5 +28,6 @@ namespace PF.Models.Oracle
         public DbSet<DATAHOUR> DATAHOUR { get; set; }
         public DbSet<EARLY_WARNING_COUNTRIES> EARLY_WARNING_COUNTRIES { get; set; }
         public DbSet<YTHPT_WEATHER_DICTIONARY> YTHPT_WEATHER_DICTIONARY { get; set; }
+        public DbSet<DATAMINUTE> DATAMINUTE { get; set; }
     }
 }

@@ -65,6 +65,68 @@
           <Property Name="ID" Type="number" Precision="38" Scale="0" />
           <Property Name="STATUS" Type="varchar2" MaxLength="4" />
         </EntityType>
+        <EntityType Name="DATAMINUTE">
+          <Key>
+            <PropertyRef Name="FID" />
+          </Key>
+          <Property Name="FID" Type="raw" MaxLength="16" Nullable="false" />
+          <Property Name="STAID" Type="number" Precision="5" Scale="0" Nullable="false" />
+          <Property Name="STANAME" Type="varchar2" MaxLength="20" Nullable="false" />
+          <Property Name="FDATE" Type="date" Nullable="false" />
+          <Property Name="DWDIRECTION" Type="number" Precision="5" Scale="0" />
+          <Property Name="DWSPEED" Type="float" Precision="126" Scale="0" />
+          <Property Name="TWDIRECTION" Type="number" Precision="5" Scale="0" />
+          <Property Name="TWSPEED" Type="float" Precision="126" Scale="0" />
+          <Property Name="MAXWDIRECTION" Type="number" Precision="5" Scale="0" />
+          <Property Name="MAXWSPEED" Type="float" Precision="126" Scale="0" />
+          <Property Name="MAXWSPEEDTIME" Type="date" />
+          <Property Name="INSDIRECTION" Type="number" Precision="5" Scale="0" />
+          <Property Name="INSSPEED" Type="float" Precision="126" Scale="0" />
+          <Property Name="MAXDIRECTION" Type="number" Precision="5" Scale="0" />
+          <Property Name="MAXSPEED" Type="float" Precision="126" Scale="0" />
+          <Property Name="MAXSPEEDTIME" Type="date" />
+          <Property Name="HRAIN" Type="float" Precision="126" Scale="0" />
+          <Property Name="MAXMRAIN" Type="float" Precision="126" Scale="0" />
+          <Property Name="MAXMRAINTIME" Type="date" />
+          <Property Name="TEMPERATURE" Type="float" Precision="126" Scale="0" />
+          <Property Name="MAXTEMP" Type="float" Precision="126" Scale="0" />
+          <Property Name="MAXTEMPTIME" Type="date" />
+          <Property Name="MINTEMP" Type="float" Precision="126" Scale="0" />
+          <Property Name="MINTEMPTIME" Type="date" />
+          <Property Name="HUMTEMP" Type="float" Precision="126" Scale="0" />
+          <Property Name="HUMCAP" Type="number" Precision="5" Scale="0" />
+          <Property Name="COMHUM" Type="number" Precision="5" Scale="0" />
+          <Property Name="MINCOMHUM" Type="number" Precision="5" Scale="0" />
+          <Property Name="MINCOMHUMTIME" Type="date" />
+          <Property Name="WATPRE" Type="float" Precision="126" Scale="0" />
+          <Property Name="DEWTEMP" Type="float" Precision="126" Scale="0" />
+          <Property Name="STAPRES" Type="float" Precision="126" Scale="0" />
+          <Property Name="MAXSTAPRES" Type="float" Precision="126" Scale="0" />
+          <Property Name="MAXSTAPRESTIME" Type="date" />
+          <Property Name="MINSTAPRES" Type="float" Precision="126" Scale="0" />
+          <Property Name="MINSTAPRESTIME" Type="date" />
+          <Property Name="SURTEMP" Type="float" Precision="126" Scale="0" />
+          <Property Name="MAXSURTEMP" Type="float" Precision="126" Scale="0" />
+          <Property Name="MAXSURTEMPTIME" Type="date" />
+          <Property Name="MINSURTEMP" Type="float" Precision="126" Scale="0" />
+          <Property Name="MINSURTEMPTIME" Type="date" />
+          <Property Name="GTEMP5" Type="float" Precision="126" Scale="0" />
+          <Property Name="GTEMP10" Type="float" Precision="126" Scale="0" />
+          <Property Name="GTEMP15" Type="float" Precision="126" Scale="0" />
+          <Property Name="GTEMP20" Type="float" Precision="126" Scale="0" />
+          <Property Name="GTEMP40" Type="float" Precision="126" Scale="0" />
+          <Property Name="GTEMP80" Type="float" Precision="126" Scale="0" />
+          <Property Name="GTEMP160" Type="float" Precision="126" Scale="0" />
+          <Property Name="GTEMP320" Type="float" Precision="126" Scale="0" />
+          <Property Name="EVAPORATION" Type="float" Precision="126" Scale="0" />
+          <Property Name="SUNLIGHT" Type="number" Precision="5" Scale="0" />
+          <Property Name="OTHERNAME" Type="varchar2" MaxLength="20" />
+          <Property Name="BELONGTO" Type="varchar2" MaxLength="20" />
+          <Property Name="VISIBILITY" Type="number" Precision="5" Scale="0" />
+          <Property Name="MINVISIBILITY" Type="number" Precision="5" Scale="0" />
+          <Property Name="MINVISIBILITYTIME" Type="date" />
+          <Property Name="SID" Type="number" Precision="38" Scale="0" />
+        </EntityType>
         <EntityType Name="EARLY_WARNING_COUNTRIES">
           <Key>
             <PropertyRef Name="FGUID" />
@@ -97,6 +159,7 @@
         </EntityType>
         <EntityContainer Name="OracleSAModelStoreContainer">
           <EntitySet Name="DATAHOUR" EntityType="Self.DATAHOUR" Schema="SA" store:Type="Tables" />
+          <EntitySet Name="DATAMINUTE" EntityType="Self.DATAMINUTE" Schema="SA" store:Type="Tables" />
           <EntitySet Name="EARLY_WARNING_COUNTRIES" EntityType="Self.EARLY_WARNING_COUNTRIES" Schema="SA" store:Type="Tables" />
           <EntitySet Name="YTHPT_WEATHER_DICTIONARY" EntityType="Self.YTHPT_WEATHER_DICTIONARY" Schema="SA" store:Type="Tables" />
         </EntityContainer>
@@ -168,6 +231,7 @@
           <EntitySet Name="DATAHOUR" EntityType="Self.DATAHOUR" />
           <EntitySet Name="EARLY_WARNING_COUNTRIES" EntityType="OracleSAModel.EARLY_WARNING_COUNTRIES" />
           <EntitySet Name="YTHPT_WEATHER_DICTIONARY" EntityType="OracleSAModel.YTHPT_WEATHER_DICTIONARY" />
+          <EntitySet Name="DATAMINUTE" EntityType="OracleSAModel.DATAMINUTE" />
         </EntityContainer>
         <EntityType Name="EARLY_WARNING_COUNTRIES">
           <Key>
@@ -198,6 +262,68 @@
           <Property Name="CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="CATEGORY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="CREATETIME" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="DATAMINUTE">
+          <Key>
+            <PropertyRef Name="FID" />
+          </Key>
+          <Property Name="FID" Type="Guid" Nullable="false" />
+          <Property Name="STAID" Type="Int16" Nullable="false" />
+          <Property Name="STANAME" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FDATE" Type="DateTime" Nullable="false" />
+          <Property Name="DWDIRECTION" Type="Int16" />
+          <Property Name="DWSPEED" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="TWDIRECTION" Type="Int16" />
+          <Property Name="TWSPEED" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="MAXWDIRECTION" Type="Int16" />
+          <Property Name="MAXWSPEED" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="MAXWSPEEDTIME" Type="DateTime" />
+          <Property Name="INSDIRECTION" Type="Int16" />
+          <Property Name="INSSPEED" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="MAXDIRECTION" Type="Int16" />
+          <Property Name="MAXSPEED" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="MAXSPEEDTIME" Type="DateTime" />
+          <Property Name="HRAIN" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="MAXMRAIN" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="MAXMRAINTIME" Type="DateTime" />
+          <Property Name="TEMPERATURE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="MAXTEMP" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="MAXTEMPTIME" Type="DateTime" />
+          <Property Name="MINTEMP" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="MINTEMPTIME" Type="DateTime" />
+          <Property Name="HUMTEMP" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="HUMCAP" Type="Int16" />
+          <Property Name="COMHUM" Type="Int16" />
+          <Property Name="MINCOMHUM" Type="Int16" />
+          <Property Name="MINCOMHUMTIME" Type="DateTime" />
+          <Property Name="WATPRE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="DEWTEMP" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="STAPRES" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="MAXSTAPRES" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="MAXSTAPRESTIME" Type="DateTime" />
+          <Property Name="MINSTAPRES" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="MINSTAPRESTIME" Type="DateTime" />
+          <Property Name="SURTEMP" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="MAXSURTEMP" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="MAXSURTEMPTIME" Type="DateTime" />
+          <Property Name="MINSURTEMP" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="MINSURTEMPTIME" Type="DateTime" />
+          <Property Name="GTEMP5" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="GTEMP10" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="GTEMP15" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="GTEMP20" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="GTEMP40" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="GTEMP80" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="GTEMP160" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="GTEMP320" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="EVAPORATION" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="SUNLIGHT" Type="Int16" />
+          <Property Name="OTHERNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="BELONGTO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="VISIBILITY" Type="Int16" />
+          <Property Name="MINVISIBILITY" Type="Int16" />
+          <Property Name="MINVISIBILITYTIME" Type="DateTime" />
+          <Property Name="SID" Type="Decimal" Precision="38" Scale="0" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -294,6 +420,69 @@
                 <ScalarProperty Name="CATEGORY" ColumnName="CATEGORY" />
                 <ScalarProperty Name="CODE" ColumnName="CODE" />
                 <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="FID" ColumnName="FID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DATAMINUTE">
+            <EntityTypeMapping TypeName="OracleSAModel.DATAMINUTE">
+              <MappingFragment StoreEntitySet="DATAMINUTE">
+                <ScalarProperty Name="SID" ColumnName="SID" />
+                <ScalarProperty Name="MINVISIBILITYTIME" ColumnName="MINVISIBILITYTIME" />
+                <ScalarProperty Name="MINVISIBILITY" ColumnName="MINVISIBILITY" />
+                <ScalarProperty Name="VISIBILITY" ColumnName="VISIBILITY" />
+                <ScalarProperty Name="BELONGTO" ColumnName="BELONGTO" />
+                <ScalarProperty Name="OTHERNAME" ColumnName="OTHERNAME" />
+                <ScalarProperty Name="SUNLIGHT" ColumnName="SUNLIGHT" />
+                <ScalarProperty Name="EVAPORATION" ColumnName="EVAPORATION" />
+                <ScalarProperty Name="GTEMP320" ColumnName="GTEMP320" />
+                <ScalarProperty Name="GTEMP160" ColumnName="GTEMP160" />
+                <ScalarProperty Name="GTEMP80" ColumnName="GTEMP80" />
+                <ScalarProperty Name="GTEMP40" ColumnName="GTEMP40" />
+                <ScalarProperty Name="GTEMP20" ColumnName="GTEMP20" />
+                <ScalarProperty Name="GTEMP15" ColumnName="GTEMP15" />
+                <ScalarProperty Name="GTEMP10" ColumnName="GTEMP10" />
+                <ScalarProperty Name="GTEMP5" ColumnName="GTEMP5" />
+                <ScalarProperty Name="MINSURTEMPTIME" ColumnName="MINSURTEMPTIME" />
+                <ScalarProperty Name="MINSURTEMP" ColumnName="MINSURTEMP" />
+                <ScalarProperty Name="MAXSURTEMPTIME" ColumnName="MAXSURTEMPTIME" />
+                <ScalarProperty Name="MAXSURTEMP" ColumnName="MAXSURTEMP" />
+                <ScalarProperty Name="SURTEMP" ColumnName="SURTEMP" />
+                <ScalarProperty Name="MINSTAPRESTIME" ColumnName="MINSTAPRESTIME" />
+                <ScalarProperty Name="MINSTAPRES" ColumnName="MINSTAPRES" />
+                <ScalarProperty Name="MAXSTAPRESTIME" ColumnName="MAXSTAPRESTIME" />
+                <ScalarProperty Name="MAXSTAPRES" ColumnName="MAXSTAPRES" />
+                <ScalarProperty Name="STAPRES" ColumnName="STAPRES" />
+                <ScalarProperty Name="DEWTEMP" ColumnName="DEWTEMP" />
+                <ScalarProperty Name="WATPRE" ColumnName="WATPRE" />
+                <ScalarProperty Name="MINCOMHUMTIME" ColumnName="MINCOMHUMTIME" />
+                <ScalarProperty Name="MINCOMHUM" ColumnName="MINCOMHUM" />
+                <ScalarProperty Name="COMHUM" ColumnName="COMHUM" />
+                <ScalarProperty Name="HUMCAP" ColumnName="HUMCAP" />
+                <ScalarProperty Name="HUMTEMP" ColumnName="HUMTEMP" />
+                <ScalarProperty Name="MINTEMPTIME" ColumnName="MINTEMPTIME" />
+                <ScalarProperty Name="MINTEMP" ColumnName="MINTEMP" />
+                <ScalarProperty Name="MAXTEMPTIME" ColumnName="MAXTEMPTIME" />
+                <ScalarProperty Name="MAXTEMP" ColumnName="MAXTEMP" />
+                <ScalarProperty Name="TEMPERATURE" ColumnName="TEMPERATURE" />
+                <ScalarProperty Name="MAXMRAINTIME" ColumnName="MAXMRAINTIME" />
+                <ScalarProperty Name="MAXMRAIN" ColumnName="MAXMRAIN" />
+                <ScalarProperty Name="HRAIN" ColumnName="HRAIN" />
+                <ScalarProperty Name="MAXSPEEDTIME" ColumnName="MAXSPEEDTIME" />
+                <ScalarProperty Name="MAXSPEED" ColumnName="MAXSPEED" />
+                <ScalarProperty Name="MAXDIRECTION" ColumnName="MAXDIRECTION" />
+                <ScalarProperty Name="INSSPEED" ColumnName="INSSPEED" />
+                <ScalarProperty Name="INSDIRECTION" ColumnName="INSDIRECTION" />
+                <ScalarProperty Name="MAXWSPEEDTIME" ColumnName="MAXWSPEEDTIME" />
+                <ScalarProperty Name="MAXWSPEED" ColumnName="MAXWSPEED" />
+                <ScalarProperty Name="MAXWDIRECTION" ColumnName="MAXWDIRECTION" />
+                <ScalarProperty Name="TWSPEED" ColumnName="TWSPEED" />
+                <ScalarProperty Name="TWDIRECTION" ColumnName="TWDIRECTION" />
+                <ScalarProperty Name="DWSPEED" ColumnName="DWSPEED" />
+                <ScalarProperty Name="DWDIRECTION" ColumnName="DWDIRECTION" />
+                <ScalarProperty Name="FDATE" ColumnName="FDATE" />
+                <ScalarProperty Name="STANAME" ColumnName="STANAME" />
+                <ScalarProperty Name="STAID" ColumnName="STAID" />
                 <ScalarProperty Name="FID" ColumnName="FID" />
               </MappingFragment>
             </EntityTypeMapping>

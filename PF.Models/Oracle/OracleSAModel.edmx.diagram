@@ -8,6 +8,7 @@
         <EntityTypeShape EntityType="OracleSAModel.DATAHOUR" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="OracleSAModel.EARLY_WARNING_COUNTRIES" Width="1.5" PointX="3.375" PointY="0.75" />
         <EntityTypeShape EntityType="OracleSAModel.YTHPT_WEATHER_DICTIONARY" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="OracleSAModel.DATAMINUTE" Width="1.5" PointX="5.375" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
