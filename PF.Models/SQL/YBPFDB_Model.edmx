@@ -204,6 +204,8 @@
           <Property Name="ReachSpendMinute" Type="int" />
           <Property Name="Accuracy" Type="nvarchar" MaxLength="50" />
           <Property Name="Remark" Type="nvarchar(max)" />
+          <Property Name="ReachStation" Type="nvarchar" MaxLength="20" />
+          <Property Name="ReachValue" Type="decimal" Precision="18" Scale="2" />
         </EntityType>
         <EntityType Name="WarnCheck_Station">
           <Key>
@@ -639,6 +641,8 @@
           <Property Name="ReachSpendMinute" Type="Int32" />
           <Property Name="Accuracy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ReachStation" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ReachValue" Type="Decimal" Precision="18" Scale="2" />
         </EntityType>
         <Association Name="FK_Score_Day_YbUsers">
           <End Type="YBPFDB_Model.YbUsers" Role="YbUsers" Multiplicity="0..1" />
@@ -950,6 +954,8 @@
           <EntitySetMapping Name="WarnCheck">
             <EntityTypeMapping TypeName="YBPFDB_Model.WarnCheck">
               <MappingFragment StoreEntitySet="WarnCheck">
+                <ScalarProperty Name="ReachValue" ColumnName="ReachValue" />
+                <ScalarProperty Name="ReachStation" ColumnName="ReachStation" />
                 <ScalarProperty Name="Remark" ColumnName="Remark" />
                 <ScalarProperty Name="Accuracy" ColumnName="Accuracy" />
                 <ScalarProperty Name="ReachSpendMinute" ColumnName="ReachSpendMinute" />

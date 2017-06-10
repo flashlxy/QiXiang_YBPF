@@ -142,6 +142,8 @@
                             <asp:BoundField DataField="ReachTime" HeaderText="最早达到预警级别时间" />
                             <asp:BoundField DataField="ReachSpendMinute" HeaderText="提前量（分钟）" />
                             <asp:BoundField DataField="Accuracy" HeaderText="准确性" />
+                            <asp:BoundField DataField="ReachStation" HeaderText="最早达到预警站点" />
+                            <asp:BoundField DataField="ReachValue" HeaderText="最早到达数值" />
                         </Columns>
                     </asp:GridView>
 

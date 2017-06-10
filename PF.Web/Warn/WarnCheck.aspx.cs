@@ -9,6 +9,8 @@ using PF.BLL.SQL;
 using Aspose.Words;
 using System.Drawing;
 using Aspose.Words.Tables;
+using PF.Models.Oracle;
+using PF.ViewModels;
 
 namespace PF.Web.Warn
 {
@@ -64,8 +66,34 @@ namespace PF.Web.Warn
             }
             foreach (Models.SQL.WarnCheck warn in list)
             {
-                //if()
+                if (warn.WarningCategory == "大风")
+                {
+                    WarnCheck_ReachStation_ViewModel vm= bll.Caculate_Wind(warn);
+                    if (vm != null)
+                    {
+                        warn.ReachTime = vm.DateTime;
+                        TimeSpan ts = vm.DateTime - (DateTime) warn.ReleaseTime;
+                        warn.ReachSpendMinute = (int) Math.Round(ts.TotalMinutes, 0);
+                        warn.Accuracy = "正确";
+                        warn.ReachStation = vm.StationName;
+                        warn.ReachValue = vm.Value;
+
+                    }
+                    else
+                    {
+                        warn.ReachSpendMinute = null;
+                        
+                        warn.ReachStation =null;
+                        warn.ReachValue = null;
+                        warn.Accuracy = "错误";
+                    }
+                    bll.Update(warn);
+                }
+                 
             }
+            BindData();
+
+
         }
     }
 }

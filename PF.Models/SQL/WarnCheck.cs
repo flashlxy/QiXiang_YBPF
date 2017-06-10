@@ -22,5 +22,7 @@ namespace PF.Models.SQL
         public Nullable<int> ReachSpendMinute { get; set; }
         public string Accuracy { get; set; }
         public string Remark { get; set; }
+        public string ReachStation { get; set; }
+        public Nullable<decimal> ReachValue { get; set; }
     }
 }
