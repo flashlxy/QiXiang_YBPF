@@ -71,9 +71,23 @@ namespace PF.Web.Warn
                     WarnCheck_ReachStation_ViewModel vm= bll.Caculate_Wind(warn);
                     if (vm != null)
                     {
-                        warn.ReachTime = vm.DateTime;
                         TimeSpan ts = vm.DateTime - (DateTime) warn.ReleaseTime;
-                        warn.ReachSpendMinute = (int) Math.Round(ts.TotalMinutes, 0);
+
+                        int spanminute = (int) Math.Round(ts.TotalMinutes, 0);
+                        if (spanminute > 0)
+                        {
+                            warn.ReachTime = vm.DateTime;
+                            warn.ReachSpendMinute = spanminute;
+
+                        }
+                        else
+                        {
+                            warn.ReachTime =warn.ReleaseTime;
+                            warn.ReachSpendMinute =0 ;
+
+                        }
+
+
                         warn.Accuracy = "正确";
                         warn.ReachStation = vm.StationName;
                         warn.ReachValue = vm.Value;
@@ -85,11 +99,47 @@ namespace PF.Web.Warn
                         
                         warn.ReachStation =null;
                         warn.ReachValue = null;
-                        warn.Accuracy = "错误";
+                        warn.Accuracy = "空报";
+                    }
+                    bll.Update(warn);
+                }else if ( warn.WarningCategory == "大雾")
+                {
+                    WarnCheck_ReachStation_ViewModel vm = bll.Caculate_Visibility(warn);
+                    if (vm != null)
+                    {
+                        TimeSpan ts = vm.DateTime - (DateTime)warn.ReleaseTime;
+
+                        int spanminute = (int)Math.Round(ts.TotalMinutes, 0);
+                        if (spanminute > 0)
+                        {
+                            warn.ReachTime = vm.DateTime;
+                            warn.ReachSpendMinute = spanminute;
+
+                        }
+                        else
+                        {
+                            warn.ReachTime = warn.ReleaseTime;
+                            warn.ReachSpendMinute = 0;
+
+                        }
+
+
+                        warn.Accuracy = "正确";
+                        warn.ReachStation = vm.StationName;
+                        warn.ReachValue = vm.Value;
+
+                    }
+                    else
+                    {
+                        warn.ReachSpendMinute = null;
+
+                        warn.ReachStation = null;
+                        warn.ReachValue = null;
+                        warn.Accuracy = "空报";
                     }
                     bll.Update(warn);
                 }
-                 
+
             }
             BindData();
 

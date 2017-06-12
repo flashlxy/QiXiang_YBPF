@@ -292,10 +292,13 @@ namespace PF.Web.Score
         {
             DateTime startTime = DateTime.Parse(DDL_Year_Warn.SelectedItem.Value + "-" + DDL_Month_Warn.SelectedItem.Value + "-01");
             DateTime endTime = startTime.AddMonths(1);
+
+            string[] categorys = { "暴雨", "暴雪", "大风", "大雾" };
+
             EARLY_WARNING_COUNTRIES_BLL ebll = new EARLY_WARNING_COUNTRIES_BLL();
             List<EARLY_WARNING_COUNTRIES> elist =
                 ebll.GetList(
-                    a => a.COUNTRY == "青岛" && !a.WARNING_CONTENT.Contains("解除") && !a.WARNING_CONTENT.Contains("继续发布") && a.INSERTTIME >= startTime && a.INSERTTIME < endTime).OrderBy(a => a.INSERTTIME).ToList();
+                    a => a.COUNTRY == "青岛" && !a.WARNING_CONTENT.Contains("解除") && !a.WARNING_CONTENT.Contains("继续发布") && a.INSERTTIME >= startTime && a.INSERTTIME < endTime&& categorys.Contains(a.WARNING_CATAGRAY)).OrderBy(a => a.INSERTTIME).ToList();
 
             WarnCheck_BLL wbll = new WarnCheck_BLL();
             wbll.Delete(a => a.ReleaseTime >= startTime && a.ReleaseTime < endTime);

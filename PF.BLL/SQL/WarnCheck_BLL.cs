@@ -72,5 +72,67 @@ namespace PF.BLL.SQL
 
 
         }
+
+       public WarnCheck_ReachStation_ViewModel Caculate_Visibility(WarnCheck wc)
+       {
+           double minValue = 200;
+           double maxValue = 500;
+          
+            if (wc.WarningLevel == "黄色")
+           {
+               minValue = 200;
+               maxValue = 500;
+            }
+           else if (wc.WarningLevel == "橙色")
+           {
+               minValue = 50;
+               maxValue = 200;
+            }
+           else if (wc.WarningLevel == "红色")
+           {
+               minValue = 0;
+               maxValue = 50;
+            }
+
+           List<WarnCheck_Station> stations = new WarnCheck_Station_BLL().GetList().ToList();
+
+
+
+
+           DATAMINUTE_BLL dbll = new DATAMINUTE_BLL();
+
+           StringBuilder sb = new StringBuilder();
+
+           for (int i = 0; i < stations.Count; i++)
+           {
+               if (i != stations.Count - 1)
+               {
+                   sb.Append("'" + stations.ElementAt(i).StationName + "',");
+               }
+               else
+               {
+                   sb.Append("'" + stations.ElementAt(i).StationName + "'");
+               }
+
+           }
+
+           DateTime startTime = ((DateTime)wc.ReleaseTime).AddHours(-2);
+           DateTime endTime = ((DateTime)wc.ReleaseTime).AddHours(12);
+
+           string sql =
+               "select staname as StationName,fdate as DateTime,visibility as Value from (SELECT * FROM DATAMINUTE a WHERE a.staname in (" +
+               sb.ToString() + ")  and a.fdate>= to_date('" + startTime.ToString("yyyy-MM-dd HH:mm") +
+               "','yyyy-mm-dd hh24:mi') and  a.fdate<= to_date('" + endTime.ToString("yyyy-MM-dd HH:mm") +
+               "','yyyy-mm-dd hh24:mi') and visibility > " + minValue + " and visibility <= " + maxValue + "  order by a.fdate) where rownum <= 1";
+
+
+           List<WarnCheck_ReachStation_ViewModel> list = db.Database.SqlQuery<WarnCheck_ReachStation_ViewModel>(sql)
+               .ToList();
+
+
+           return list.FirstOrDefault();
+
+
+       }
     }
 }
