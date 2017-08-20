@@ -254,8 +254,10 @@ namespace PF.Web.YbUser
             Scheduling_Description_BLL bll = new Scheduling_Description_BLL();
             Scheduling_Description model = bll.Get(a => a.Year == year && a.Month == month);
             if (model != null)
-            {
-                Label_Description.Text = model.Description;
+            { 
+                Label_Description.Text = model.Description.Replace("\n", "<br/>");
+              
+                
             }
             else
             {
